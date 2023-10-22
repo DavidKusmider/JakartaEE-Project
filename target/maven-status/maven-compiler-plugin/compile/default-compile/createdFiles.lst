@@ -1,0 +1,4 @@
+entities/Client.class
+model/ClientDAO.class
+util/HibernateUtil.class
+ClientServletTest.class

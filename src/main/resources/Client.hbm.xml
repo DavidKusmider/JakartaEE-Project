@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="entities.Client" table="Client">
+        <id name="clientId">
+            <column name="clientId" sql-type="int(20)"/>
+        </id>
+        <property name="firstName">
+            <column name="firstName" sql-type="varchar(50)" length="50"/>
+        </property>
+
+        <property name="lastName">
+            <column name="lastName" sql-type="varchar(50)" length="50"/>
+        </property>
+
+        <property name="password">
+            <column name="password" sql-type="varchar(50)" length="50"/>
+        </property>
+
+		<property name="age">
+            <column name="age" sql-type="int(30)" length="50"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
