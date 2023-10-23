@@ -1,4 +1,4 @@
-DROP TABLE Client;
+DROP TABLE IF EXISTS Client;
 CREATE TABLE IF NOT EXISTS Client (
 	clientId int(20) NOT NULL,
 	firstName VARCHAR(30) NOT NULL,

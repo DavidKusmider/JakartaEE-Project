@@ -5,15 +5,6 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-  <servlet>
-	  <servlet-name>ClientServletTest</servlet-name>
-	  <servlet-class>ClientServletTest</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	  <servlet-name>ClientServletTest</servlet-name>
-	  <url-pattern>/ClientServletTest</url-pattern>
-  </servlet-mapping>
-
 
   <jsp-config>
 	  <jsp-property-group>

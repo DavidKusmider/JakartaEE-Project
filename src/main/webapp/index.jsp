@@ -9,7 +9,7 @@
 	<body>
 		<div id="container">
 			<h1>Test Client</h1>
-			<a href="/JakartaEE-Project/ClientServletTest">Page Test Client Database</a>
+			<a href="ClientServletTest">Page Test Client Database</a>
 		</div>
 	</body>
 
