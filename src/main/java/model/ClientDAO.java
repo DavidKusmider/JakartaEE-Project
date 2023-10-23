@@ -1,9 +1,9 @@
 package model;
 
+import entities.Client;
 import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import entities.Client;
 
 import java.util.*;
 

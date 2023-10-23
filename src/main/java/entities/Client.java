@@ -2,50 +2,63 @@ package entities;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "Client", schema = "Database_Jakarta_Project", catalog = "")
 public class Client {
-    private int clientId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@Column(name = "clientId", nullable = false)
+	private int clientId;
+	@Basic
+	@Column(name = "firstName", nullable = false, length = 30)
 	private String firstName;
+	@Basic
+	@Column(name = "lastName", nullable = false, length = 30)
 	private String lastName;
+	@Basic
+	@Column(name = "password", nullable = false, length = 30)
 	private String password;
+	@Basic
+	@Column(name = "age", nullable = false)
 	private int age;
 
-	public int getClientId(){
-		return this.clientId;
+	public int getClientId() {
+		return clientId;
 	}
 
-	public String getFirstName(){
-		return this.firstName;
+	public void setClientId(int clientId) {
+		this.clientId = clientId;
 	}
 
-	public String getLastName(){
-		return this.lastName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public String getPassword(){
-		return this.password;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public int getAge(){
-		return this.age;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setClientId(int newClientId){
-		this.clientId = newClientId;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public void setFirstName(String newFirstName){
-		this.firstName = newFirstName;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setLastName(String newLastName){
-		this.lastName = newLastName;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public void setPassword(String newPassword){
-		this.password = newPassword;
+	public int getAge() {
+		return age;
 	}
 
-	public void setAge(int newAge){
-		this.age = newAge;
+	public void setAge(int age) {
+		this.age = age;
 	}
 }

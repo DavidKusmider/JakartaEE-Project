@@ -4,25 +4,21 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="entities.Client" table="Client">
+    <class name="entities.Client" table="Client" schema="Database_Jakarta_Project">
         <id name="clientId">
-            <column name="clientId" sql-type="int(20)"/>
+            <column name="clientId" sql-type="int"/>
         </id>
         <property name="firstName">
-            <column name="firstName" sql-type="varchar(50)" length="50"/>
+            <column name="firstName" sql-type="varchar(30)" length="30"/>
         </property>
-
         <property name="lastName">
-            <column name="lastName" sql-type="varchar(50)" length="50"/>
+            <column name="lastName" sql-type="varchar(30)" length="30"/>
         </property>
-
         <property name="password">
-            <column name="password" sql-type="varchar(50)" length="50"/>
+            <column name="password" sql-type="varchar(30)" length="30"/>
         </property>
-
-		<property name="age">
-            <column name="age" sql-type="int(30)" length="50"/>
+        <property name="age">
+            <column name="age" sql-type="int"/>
         </property>
-
     </class>
 </hibernate-mapping>
