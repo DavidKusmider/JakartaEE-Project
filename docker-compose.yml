@@ -1,0 +1,33 @@
+version: '3'
+services:
+  tomcat:
+    build:
+      context: ./
+      dockerfile: Dockerfile.tomcat
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql
+    environment:
+      - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom
+    volumes:
+      - .:/app
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Secret123*ROOT
+      MYSQL_DATABASE: Database_Jakarta_Project
+      MYSQL_USER: CYTech
+      MYSQL_PASSWORD: Secret123*
+    volumes:
+      - ./Database_Jakarta_Project.sql:/docker-entrypoint-initdb.d/Database_Jakarta_project.sql
+
+  build:
+    build:
+      context: .
+      dockerfile: Dockerfile.build
+    volumes:
+      - .:/app
+
