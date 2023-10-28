@@ -1,6 +1,6 @@
 package model;
 
-import entities.Client;
+import entities.UserEntity;
 import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -8,45 +8,45 @@ import org.hibernate.Transaction;
 import java.util.*;
 
 
-public class ClientDAO {
+public class UserEntityDAO {
 
-	public Client getClientById(int clientId) {
+	public UserEntity getUserEntityById(int userId) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Client client = session.get(Client.class, clientId);
+		UserEntity user = session.get(UserEntity.class, userId);
 		session.close();
-		return client;
+		return user;
 	}
 
-	public List<Client> getAllClients() {
+	public List<UserEntity> getAllUserEntitys() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		List<Client> clients = session.createQuery("FROM Client", Client.class).list();
+		List<UserEntity> users = session.createQuery("FROM UserEntity", UserEntity.class).list();
 		session.close();
-		return clients;
+		return users;
 	}
 
-    public void saveClient(Client client) {
+    public void saveUserEntity(UserEntity user) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        session.save(client);
+        session.persist(user);
         tx.commit();
         session.close();
     }
 
-    public void deleteClient(int clientId) {
+    public void deleteUserEntity(int userId) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        Client client = session.get(Client.class, clientId);
-        if (client != null) {
-            session.delete(client);
+        UserEntity user = session.get(UserEntity.class, userId);
+        if (user != null) {
+            session.remove(user);
         }
         tx.commit();
         session.close();
     }
 
-    public void modifyClient(Client client) {
+    public void modifyUserEntity(UserEntity user) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        session.update(client);
+        session.merge(user);
         tx.commit();
         session.close();
     }

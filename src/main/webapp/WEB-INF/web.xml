@@ -5,12 +5,4 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-
-  <jsp-config>
-	  <jsp-property-group>
-		  <url-pattern>*.jsp</url-pattern><!-- inclut pour tous les fichier jsp  -->
-		  <include-prelude>/WEB-INF/taglibs.jsp</include-prelude> <!--le fichier taglibs.jsp   -->
-	  </jsp-property-group>
-  </jsp-config>
-
 </web-app>
