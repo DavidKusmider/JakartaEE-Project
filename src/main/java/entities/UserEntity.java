@@ -3,7 +3,7 @@ package entities;
 import jakarta.persistence.*;
 import model.Type;
 
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "User", schema = "Database_Jakarta_Project")
@@ -25,7 +25,7 @@ public class UserEntity {
 	@Column(name = "userAddress", nullable = false, length = 50)
 	private String userAddress;
 	@Basic
-	@Column(name = "userCreated", columnDefinition = "date default (CURDATE())")
+	@Column(name = "userCreated")
 	private Date userCreated;
 	@Basic
 	@Column(name = "isActive", nullable = true, columnDefinition = "tinyint(1) default (1)")
@@ -43,6 +43,16 @@ public class UserEntity {
 	@Basic
 	@Column(name = "userFidelityPoint", nullable = true)
 	private Integer userFidelityPoint;
+
+	@PrePersist
+    public void prePersist() {
+        if (userCreated == null) {
+            userCreated = new Date(); // Initialisez la date de création si elle est nulle
+        }
+		if (isActive == null) {
+            isActive = 1; // Initialisez la date de création si elle est nulle
+        }
+    }
 
 	public int getUserId() {
 		return userId;

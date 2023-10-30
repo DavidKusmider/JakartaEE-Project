@@ -24,4 +24,4 @@ services:
       MYSQL_USER: CYTech
       MYSQL_PASSWORD: Secret123*
     volumes:
-      - ./Database_Jakarta_Project.sql:/docker-entrypoint-initdb.d/Database_Jakarta_project.sql
+      - ./Database_Jakarta_Project.sql:/docker-entrypoint-initdb.d/Database_Jakarta_Project.sql
