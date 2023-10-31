@@ -35,8 +35,8 @@ public class UserEntity {
 	@Enumerated(EnumType.STRING)
 	private Type userType;
 	@Basic
-	@Column(name = "userRight", nullable = false)
-	private int userRight;
+	@Column(name = "userRight", nullable = true)
+	private Integer userRight;
 	@Basic
 	@Column(name = "userHistoryId", nullable = false)
 	private int userHistoryId;
@@ -52,6 +52,9 @@ public class UserEntity {
 		if (isActive == null) {
             isActive = 1; // Initialisez la date de création si elle est nulle
         }
+		if(userRight == null){
+			userRight = 1;
+		}
     }
 
 	public int getUserId() {

@@ -1,8 +1,43 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/authentication.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>AuthenticationVue</servlet-name>
+        <jsp-file>/WEB-INF/vue/authentication.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AuthenticationVue</servlet-name>
+        <url-pattern>/Welcome</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProductListVue</servlet-name>
+        <jsp-file>/WEB-INF/productList.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProductListVue</servlet-name>
+        <url-pattern>/productList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminPageVue</servlet-name>
+        <jsp-file>/WEB-INF/admin.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminPageVue</servlet-name>
+        <url-pattern>/adminPage</url-pattern>
+    </servlet-mapping>
 
 </web-app>

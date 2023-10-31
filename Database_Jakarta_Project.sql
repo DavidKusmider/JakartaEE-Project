@@ -45,7 +45,7 @@ create table if not exists User
     userCreated       date       default (CURDATE()),
     isActive          tinyint(1) default (1),
     userType          enum ('Client', 'Admin', 'Modo') NOT NULL,
-    userRight         int                              not null,
+    userRight         int                              ,
     userHistoryId     int                              not null,
     userFidelityPoint int        default (0),
     constraint PK_idUser PRIMARY KEY (userId),
