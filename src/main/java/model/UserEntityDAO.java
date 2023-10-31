@@ -19,7 +19,7 @@ public class UserEntityDAO {
 
 	public UserEntity getUserEntityByEmail(String mail) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		UserEntity user = session.createQuery("from UserEntity where userMail = :mail", UserEntity.class).setParameter("mail", mail).getSingleResult();
+		UserEntity user = session.createQuery("from UserEntity where userMail = :mail", UserEntity.class).setParameter("mail", mail).getSingleResultOrNull();
 		session.close();
 		return user;
 	}

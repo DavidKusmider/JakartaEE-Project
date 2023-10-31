@@ -13,16 +13,16 @@ public class UserEntity {
 	@Column(name = "userId", nullable = false)
 	private int userId;
 	@Basic
-	@Column(name = "userName", nullable = false, length = 50)
+	@Column(name = "userName", nullable = false, length = 100)
 	private String userName;
 	@Basic
-	@Column(name = "userPassword", nullable = false, length = 50)
+	@Column(name = "userPassword", nullable = false, length = 500)
 	private String userPassword;
 	@Basic
-	@Column(name = "userMail", nullable = false, length = 50)
+	@Column(name = "userMail", nullable = false, length = 100)
 	private String userMail;
 	@Basic
-	@Column(name = "userAddress", nullable = false, length = 50)
+	@Column(name = "userAddress", nullable = false, length = 100)
 	private String userAddress;
 	@Basic
 	@Column(name = "userCreated")
@@ -38,9 +38,6 @@ public class UserEntity {
 	@Column(name = "userRight", nullable = true)
 	private Integer userRight;
 	@Basic
-	@Column(name = "userHistoryId", nullable = false)
-	private int userHistoryId;
-	@Basic
 	@Column(name = "userFidelityPoint", nullable = true)
 	private Integer userFidelityPoint;
 
@@ -50,10 +47,16 @@ public class UserEntity {
             userCreated = new Date(); // Initialisez la date de création si elle est nulle
         }
 		if (isActive == null) {
-            isActive = 1; // Initialisez la date de création si elle est nulle
+            isActive = 1; // Initialisez l'activite si elle est nulle
         }
+		if(userType == null){
+			userType = Type.Client;
+		}
 		if(userRight == null){
 			userRight = 1;
+		}
+		if(userFidelityPoint == null){
+			userFidelityPoint = 0;
 		}
     }
 
@@ -129,14 +132,6 @@ public class UserEntity {
 		this.userRight = userRight;
 	}
 
-	public int getUserHistoryId() {
-		return userHistoryId;
-	}
-
-	public void setUserHistoryId(int userHistoryId) {
-		this.userHistoryId = userHistoryId;
-	}
-
 	public Integer getUserFidelityPoint() {
 		return userFidelityPoint;
 	}
@@ -154,7 +149,6 @@ public class UserEntity {
 
 		if (userId != that.userId) return false;
 		if (userRight != that.userRight) return false;
-		if (userHistoryId != that.userHistoryId) return false;
 		if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
 		if (userPassword != null ? !userPassword.equals(that.userPassword) : that.userPassword != null) return false;
 		if (userMail != null ? !userMail.equals(that.userMail) : that.userMail != null) return false;
@@ -179,7 +173,6 @@ public class UserEntity {
 		result = 31 * result + (isActive != null ? isActive.hashCode() : 0);
 		result = 31 * result + (userType != null ? userType.hashCode() : 0);
 		result = 31 * result + userRight;
-		result = 31 * result + userHistoryId;
 		result = 31 * result + (userFidelityPoint != null ? userFidelityPoint.hashCode() : 0);
 		return result;
 	}

@@ -38,18 +38,16 @@ create table if not exists VideoGameTheme
 create table if not exists User
 (
     userId            int                              not null auto_increment,
-    userName          varchar(50)                      not null,
-    userPassword      varchar(50)                      not null,
-    userMail          varchar(50)                      not null,
-    userAddress       varchar(50)                      not null,
+    userName          varchar(100)                     not null,
+    userPassword      varchar(500)                     not null,
+    userMail          varchar(100)                     not null,
+    userAddress       varchar(100)                     not null,
     userCreated       date       default (CURDATE()),
     isActive          tinyint(1) default (1),
     userType          enum ('Client', 'Admin', 'Modo') NOT NULL,
-    userRight         int                              ,
-    userHistoryId     int                              not null,
+    userRight         int,
     userFidelityPoint int        default (0),
-    constraint PK_idUser PRIMARY KEY (userId),
-    index (userHistoryId)
+    constraint PK_idUser PRIMARY KEY (userId)
 );
 
 create table if not exists History
@@ -58,8 +56,8 @@ create table if not exists History
     videoGameId       int     not null,
     videoGamePrice    decimal not null,
     videoGameQuantity int     not null,
-    constraint FK_videoGameIdHistory foreign key (videoGameId) references VideoGame (videoGameId),
-    constraint FK_historyId foreign key (historyId) references User (userHistoryId)
+    constraint FK_videoGameIdHistory foreign key (videoGameId) references VideoGame (videoGameId) on delete cascade ,
+    constraint FK_historyId foreign key (historyId) references User (userId) on delete cascade
 );
 
 
@@ -69,5 +67,5 @@ create table if not exists Discount
     discountAmount int not null,
     videoGameId    int not null,
     constraint PK_discountId PRIMARY KEY (discountId),
-    constraint FK_videoGameId foreign key (videoGameId) references VideoGame (videoGameId)
+    constraint FK_videoGameId foreign key (videoGameId) references VideoGame (videoGameId) on delete cascade
 );
