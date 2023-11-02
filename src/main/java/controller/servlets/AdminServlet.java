@@ -2,6 +2,8 @@ package controller.servlets;
 
 import java.io.*;
 
+import java.io.IOException;
+
 import entities.UserEntity;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;

@@ -1,4 +1,3 @@
-
 package controller.servlets;
 
 import java.io.IOException;
@@ -17,16 +16,20 @@ import model.Type;
 import model.VideoGameEntityDAO;
 import entities.VideoGameEntity;
 
-import org.json.simple.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONString;
+
 
 @WebServlet("/UpdateGameDataAJAX")
 public class UpdateGameDataAJAX extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       int videoGameId = Integer.parseInt(request.getParameter("videoGameId"));
-       String action = request.getParameter("action");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");
 
-        VideoGameEntityDAO videoGameDAO = new VideoGameEntityDAO();
+		VideoGameEntityDAO videoGameDAO = new VideoGameEntityDAO();
+		JSONObject jsonResponse = new JSONObject();
 
 		if (action.equals("Modify") || action.equals("Add") ) {
 			String name = request.getParameter("name");
@@ -37,6 +40,7 @@ public class UpdateGameDataAJAX extends HttpServlet {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 			Date releaseDate = null;
+
 			try {
 				releaseDate = new Date(dateFormat.parse(releaseDateStr).getTime());
 			} catch (java.text.ParseException e) {
@@ -44,46 +48,65 @@ public class UpdateGameDataAJAX extends HttpServlet {
 			}
 
 
-			VideoGameEntity videoGame = videoGameDAO.getVideoGameEntityById(videoGameId);
-			videoGame.setVideoGameName(name);
-			videoGame.setVideoGameDescription(description);
-			videoGame.setVideoGamePrice(price);
-			videoGame.setVideoGameStock(stock);
-			videoGame.setReleaseDate(releaseDate);
+			VideoGameEntity videoGame = new VideoGameEntity();
+
 
 			if (action.equals("Modify")) {
+				int videoGameId = Integer.parseInt(request.getParameter("videoGameId"));
+				videoGame = videoGameDAO.getVideoGameEntityById(videoGameId);
+				videoGame.setVideoGameName(name);
+				videoGame.setVideoGameDescription(description);
+				videoGame.setVideoGamePrice(price);
+				videoGame.setVideoGameStock(stock);
+				videoGame.setReleaseDate(releaseDate);
+
 				videoGameDAO.modifyVideoGameEntity(videoGame);
-				JSONObject jsonResponse = new JSONObject();
 				jsonResponse.put("success", true);
 
-				response.setContentType("application/json");
-				response.setCharacterEncoding("UTF-8");
-				response.getWriter().write(jsonResponse.toString());
+		} else if(action.equals("Add")) {
+				videoGame.setVideoGameName(name);
+				videoGame.setVideoGameDescription(description);
+				videoGame.setVideoGamePrice(price);
+				videoGame.setVideoGameStock(stock);
+				videoGame.setReleaseDate(releaseDate);
 
-			} else if(action.equals("Add")) {
-				videoGame.setVideoGameId(videoGameId);
 				videoGameDAO.saveVideoGameEntity(videoGame);
 
-				JSONObject jsonResponse = new JSONObject();
 				jsonResponse.put("success", true);
 
-				response.setContentType("application/json");
-				response.setCharacterEncoding("UTF-8");
-				response.getWriter().write(jsonResponse.toString());
-			}
+				List<VideoGameEntity> videoGames = videoGameDAO.getAllVideoGamesEntitys();
+				// Create a JSON array to hold the list of video games
+				JSONArray data = new JSONArray();
 
-			
+				// Add each video game to the data array
+				for (VideoGameEntity videoG : videoGames) {
+					JSONObject videoGameJSON = new JSONObject();
+					videoGameJSON.put("videoGameId", videoG.getVideoGameId());
+					videoGameJSON.put("videoGameName", videoG.getVideoGameName());
+					videoGameJSON.put("videoGameDescription", videoG.getVideoGameDescription());
+					videoGameJSON.put("videoGamePrice", videoG.getVideoGamePrice());
+					videoGameJSON.put("videoGameStock", videoG.getVideoGameStock());
+					videoGameJSON.put("releaseDate", videoG.getReleaseDate().toString());
+					data.put(videoGameJSON);
+				}
+
+				// Add the data array to the JSON response
+				jsonResponse.put("data", data);
+
+
+			} 
+
 		} else {
+			int videoGameId = Integer.parseInt(request.getParameter("videoGameId"));
 			VideoGameEntity videoGame = videoGameDAO.getVideoGameEntityById(videoGameId);
 			videoGameDAO.deleteVideoGameEntity(videoGameId);
-			JSONObject jsonResponse = new JSONObject();
 			jsonResponse.put("success", true);
 
-			response.setContentType("application/json");
-			response.setCharacterEncoding("UTF-8");
-			response.getWriter().write(jsonResponse.toString());
-
 		}
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().write(jsonResponse.toString());
+
 
 	}
 }

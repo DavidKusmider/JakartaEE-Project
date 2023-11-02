@@ -14,6 +14,8 @@ import model.Type;
 import model.VideoGameEntityDAO;
 import entities.VideoGameEntity;
 
+import entities.UserEntity;
+import model.UserEntityDAO;
 
 @WebServlet(name = "adminPage", value = "/adminPage")
 public class AdminPage extends HttpServlet {
@@ -26,7 +28,12 @@ public class AdminPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		VideoGameEntityDAO videoGameDAO = new VideoGameEntityDAO();
 		List<VideoGameEntity> videoGames = videoGameDAO.getAllVideoGamesEntitys();
+
+		UserEntityDAO userDAO = new UserEntityDAO(); 
+		List<UserEntity> users = userDAO.getAllUserEntitys();
+
 		request.setAttribute("videoGamesPARAM", videoGames);
+		request.setAttribute("usersPARAM", users);
 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
 	}
