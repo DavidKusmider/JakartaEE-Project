@@ -19,6 +19,24 @@ create table if not exists VideoGame
     constraint PK_VideoGame PRIMARY KEY (videoGameId)
 );
 
+INSERT INTO VideoGame (
+	videoGameName,
+	videoGameDescription,
+	videoGamePrice,
+	videoGameStock,
+	releaseDate
+) VALUES
+( "ARK : Survival Evolved", "primal", 23.99, 2,"2002-10-05"),
+( "Outer Wilds", "Space", 9.99, 10,"2010-12-14"),
+( "Battlefiel 1", "army", 10.99, 2,"2017-10-29"),
+( "The Witcher 3 : Wild Hunt", "adventure", 30.99, 2,"2016-01-29"),
+( "Undertale", "pixelart", 5.99, 2,"2016-8-25"),
+( "Gris", "atmosphere", 20.99, 2,"2018-03-23"),
+( "Gris", "atmosphere", 20.99, 2,"2018-03-23"),
+( "Gris", "atmosphere", 20.99, 2,"2018-03-23"),
+( "Gris", "atmosphere", 20.99, 2,"2018-03-23"),
+( "Gris", "atmosphere", 20.99, 2,"2018-03-23");
+
 create table if not exists Theme
 (
     themeId   int         not null auto_increment,
