@@ -39,7 +39,7 @@ create table if not exists User
 (
     userId            int                              not null auto_increment,
     userName          varchar(100)                     not null,
-    userPassword      varchar(500)                     not null,
+    userPassword      varchar(1000)                     not null,
     userMail          varchar(100)                     not null,
     userAddress       varchar(100)                     not null,
     userCreated       date       default (CURDATE()),

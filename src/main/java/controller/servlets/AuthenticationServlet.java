@@ -7,6 +7,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Type;
 import model.UserEntityDAO;
+import util.EmailSenderConfirmation;
 import util.EncryptPassword;
 
 import java.io.IOException;
@@ -28,13 +29,13 @@ public class AuthenticationServlet extends HttpServlet {
 			UserEntity user = userDAO.getUserEntityByEmail(mail);
 			if (user == null) {
 				response.sendRedirect(".");
-			} else if(user.getUserPassword().equals(hashedPassword)){
+			} else if (user.getUserPassword().equals(hashedPassword)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", user);
-				if(user.getUserType().equals(Type.Client)) {
+				if (user.getUserType().equals(Type.Client)) {
 					response.sendRedirect(request.getContextPath() + "/productList");
 					//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
-				}else if( user.getUserType().equals(Type.Admin) || user.getUserType().equals(Type.Modo)){
+				} else if (user.getUserType().equals(Type.Admin) || user.getUserType().equals(Type.Modo)) {
 					response.sendRedirect(request.getContextPath() + "/adminPage");
 					//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 				}
@@ -62,8 +63,7 @@ public class AuthenticationServlet extends HttpServlet {
 			// check if user already existing with the same mail address.
 			if (userCheck != null) {
 				response.sendRedirect(".");
-			}else {
-
+			} else {
 				user.setUserName(name);
 				user.setUserMail(mail);
 				user.setUserPassword(hashedPassword);
@@ -72,6 +72,10 @@ public class AuthenticationServlet extends HttpServlet {
 				userDAO.saveUserEntity(user);
 
 				HttpSession session = request.getSession();
+
+				// send confirmation mail
+				EmailSenderConfirmation.sendAccountConfirmationEmail(user);
+
 				session.setAttribute("user", user);
 				response.sendRedirect(request.getContextPath() + "/productList");
 				//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
