@@ -1,6 +1,7 @@
 package entities;
 
 import jakarta.persistence.Entity;
+import util.ThemeManager;
 
 import java.sql.Date;
 import java.util.List;
@@ -81,13 +82,14 @@ public class VideoGameEntity {
 		this.releaseDate = releaseDate;
 	}
 
-	public static String printVideoGame(List<VideoGameEntity> videoGameEntities){
+	public static String printVideoGame(List<VideoGameEntity> videoGameEntities, List<ThemeEntity> themeEntities, List<VideoGameThemeEntity> videoGameThemeEntities){
 		StringBuilder out = new StringBuilder();
 
 		for (VideoGameEntity v : videoGameEntities) {
 			out.append("<tr>");
 			out.append("<td>").append(v.getVideoGameName()).append("</td>");
 			out.append("<td>").append(v.getVideoGameDescription()).append("</td>");
+			out.append("<td>").append(ThemeManager.GetVideoGameThemes(v, themeEntities, videoGameThemeEntities)).append("</td>");
 			out.append("<td>").append(v.getVideoGamePrice()).append("</td>");
 			out.append("<td>").append(v.getReleaseDate()).append("</td>");
 			out.append("<td>").append(v.getVideoGameStock()).append("</td>");
