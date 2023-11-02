@@ -3,9 +3,10 @@ package entities;
 import jakarta.persistence.Entity;
 
 import java.sql.Date;
+import java.util.List;
 
 @Entity
-@jakarta.persistence.Table(name = "VideoGame", schema = "Database_Jakarta_Project", catalog = "")
+@jakarta.persistence.Table(name = "VideoGame", schema = "Database_Jakarta_Project")
 public class VideoGameEntity {
 	@jakarta.persistence.GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
 	@jakarta.persistence.Id
@@ -78,5 +79,20 @@ public class VideoGameEntity {
 
 	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
+	}
+
+	public static String printVideoGame(List<VideoGameEntity> videoGameEntities){
+		StringBuilder out = new StringBuilder();
+
+		for (VideoGameEntity v : videoGameEntities) {
+			out.append("<tr>");
+			out.append("<td>").append(v.getVideoGameName()).append("</td>");
+			out.append("<td>").append(v.getVideoGameDescription()).append("</td>");
+			out.append("<td>").append(v.getVideoGamePrice()).append("</td>");
+			out.append("<td>").append(v.getReleaseDate()).append("</td>");
+			out.append("<td>").append(v.getVideoGameStock()).append("</td>");
+			out.append("</tr>");
+		}
+		return out.toString();
 	}
 }
