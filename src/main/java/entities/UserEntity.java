@@ -38,9 +38,6 @@ public class UserEntity {
 	@Column(name = "userRight", nullable = false)
 	private int userRight;
 	@Basic
-	@Column(name = "userHistoryId", nullable = false)
-	private int userHistoryId;
-	@Basic
 	@Column(name = "userFidelityPoint", nullable = true)
 	private Integer userFidelityPoint;
 
@@ -126,14 +123,6 @@ public class UserEntity {
 		this.userRight = userRight;
 	}
 
-	public int getUserHistoryId() {
-		return userHistoryId;
-	}
-
-	public void setUserHistoryId(int userHistoryId) {
-		this.userHistoryId = userHistoryId;
-	}
-
 	public Integer getUserFidelityPoint() {
 		return userFidelityPoint;
 	}
@@ -151,7 +140,6 @@ public class UserEntity {
 
 		if (userId != that.userId) return false;
 		if (userRight != that.userRight) return false;
-		if (userHistoryId != that.userHistoryId) return false;
 		if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
 		if (userPassword != null ? !userPassword.equals(that.userPassword) : that.userPassword != null) return false;
 		if (userMail != null ? !userMail.equals(that.userMail) : that.userMail != null) return false;
@@ -176,7 +164,6 @@ public class UserEntity {
 		result = 31 * result + (isActive != null ? isActive.hashCode() : 0);
 		result = 31 * result + (userType != null ? userType.hashCode() : 0);
 		result = 31 * result + userRight;
-		result = 31 * result + userHistoryId;
 		result = 31 * result + (userFidelityPoint != null ? userFidelityPoint.hashCode() : 0);
 		return result;
 	}

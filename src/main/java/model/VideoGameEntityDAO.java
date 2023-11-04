@@ -5,8 +5,11 @@ import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.*;
+
+import entities.ThemeEntity;
 import org.hibernate.query.Query;
+
+import java.util.*;
 
 
 public class VideoGameEntityDAO {
@@ -25,7 +28,7 @@ public class VideoGameEntityDAO {
 		return videoGames;
 	}
 
-	public List<VideoGameEntity> researchVideoGame(String gameName) {
+  public List<VideoGameEntity> researchVideoGame(String gameName) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 
 		int id = -1;
@@ -49,31 +52,49 @@ public class VideoGameEntityDAO {
 		session.close();
 		return videoGames;
 	}
+  
+	public void saveVideoGameEntity(VideoGameEntity videoGame) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		session.persist(videoGame);
+		tx.commit();
+		session.close();
+	}
 
-    public void saveVideoGameEntity(VideoGameEntity videoGame) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        session.persist(videoGame);
-        tx.commit();
-        session.close();
-    }
+	public void deleteVideoGameEntity(int videoGameId) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		VideoGameEntity videoGame = session.get(VideoGameEntity.class, videoGameId);
+		if (videoGame != null) {
+			session.remove(videoGame);
+		}
+		tx.commit();
+		session.close();
+	}
 
-    public void deleteVideoGameEntity(int videoGameId) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        VideoGameEntity videoGame = session.get(VideoGameEntity.class, videoGameId);
-        if (videoGame != null) {
-            session.remove(videoGame);
-        }
-        tx.commit();
-        session.close();
-    }
+	public void modifyVideoGameEntity(VideoGameEntity videoGame) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		session.merge(videoGame);
+		tx.commit();
+		session.close();
+	}
 
-    public void modifyVideoGameEntity(VideoGameEntity videoGame) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        session.merge(videoGame);
-        tx.commit();
-        session.close();
-    }
+	public List<ThemeEntity> getAssociatedThemes(int videoGameId) {
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+			// Utilisez HQL (Hibernate Query Language) pour effectuer une jointure
+			String hql = "SELECT t FROM ThemeEntity t " +
+			"JOIN VideoGameThemeEntity vgt ON t.themeId = vgt.themeId " +
+			"WHERE vgt.videoGameId = :videoGameId";
+
+			Query<ThemeEntity> query = session.createQuery(hql, ThemeEntity.class);
+			query.setParameter("videoGameId", videoGameId);
+
+			return query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return Collections.emptyList();
+	}
 }
