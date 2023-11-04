@@ -21,7 +21,7 @@ import model.UserEntityDAO;
 public class AdminPageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
+		response.sendRedirect("/admin");
 	}
 
 
@@ -35,6 +35,6 @@ public class AdminPageServlet extends HttpServlet {
 		request.setAttribute("videoGamesPARAM", videoGames);
 		request.setAttribute("usersPARAM", users);
 
-		this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/admin").forward(request, response);
 	}
 }

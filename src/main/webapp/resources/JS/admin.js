@@ -11,7 +11,11 @@ function decrementValue(stockId) {
     var valueElement = document.getElementById(stockId);
     var value = parseInt(valueElement.value, 10);
     value = isNaN(value) ? 0 : value;
-    value--;
+	if(value !== 0 ) {
+		value--;
+	}else{
+		value = 0;
+	}
     valueElement.value = value;
     console.log(value);
 }
@@ -21,10 +25,11 @@ function updateGameData(videoGameId) {
     const name = document.getElementById("name_" + videoGameId).value;
     const description = document.getElementById("description_" + videoGameId).value;
     const price = document.getElementById("gamePrice_" + videoGameId).value;
-    const stock = document.getElementById("stock_" + videoGameId).value;
+    let stock = document.getElementById("stock_" + videoGameId).value;
     const releaseDate = document.getElementById("releaseDate_" + videoGameId).value;
     const action = document.getElementById("modifyButton_" + videoGameId).value;
 
+	stock = stock < 0 ? 0 : stock;
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/JakartaEE-Project/UpdateGameDataAJAX', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
