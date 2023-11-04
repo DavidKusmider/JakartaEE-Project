@@ -5,6 +5,9 @@ import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import entities.ThemeEntity;
+import org.hibernate.query.Query;
+
 import java.util.*;
 
 
@@ -49,5 +52,23 @@ public class VideoGameEntityDAO {
 		session.merge(videoGame);
 		tx.commit();
 		session.close();
+	}
+
+	public List<ThemeEntity> getAssociatedThemes(int videoGameId) {
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+			// Utilisez HQL (Hibernate Query Language) pour effectuer une jointure
+			String hql = "SELECT t FROM ThemeEntity t " +
+			"JOIN VideoGameThemeEntity vgt ON t.themeId = vgt.themeId " +
+			"WHERE vgt.videoGameId = :videoGameId";
+
+			Query<ThemeEntity> query = session.createQuery(hql, ThemeEntity.class);
+			query.setParameter("videoGameId", videoGameId);
+
+			return query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return Collections.emptyList();
 	}
 }

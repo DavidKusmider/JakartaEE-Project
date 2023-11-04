@@ -17,14 +17,16 @@ public class ProductListServlet extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		List<VideoGameEntity> videoGameEntities = new VideoGameEntityDAO().getAllVideoGameEntitys();
-		List<ThemeEntity> themeEntities = new ThemeEntityDAO().getAllThemeEntitys();
-		List<VideoGameThemeEntity> videoGameThemeEntities = new VideoGameThemeEntityDAO().getAllVideoGameThemeEntitys();
+		VideoGameEntityDAO videoGameDAO = new VideoGameEntityDAO();
+		List<VideoGameEntity> videoGameEntities = videoGameDAO.getAllVideoGameEntitys();
+
+		for (VideoGameEntity videoGame : videoGameEntities) {
+			List<ThemeEntity> associatedThemes = videoGameDAO.getAssociatedThemes(videoGame.getVideoGameId());
+			videoGame.setAssociatedThemes(associatedThemes);
+		}		
 
 		HttpSession session = request.getSession();
 		session.setAttribute("videoGames", videoGameEntities);
-		session.setAttribute("themes", themeEntities);
-		session.setAttribute("videoGameThemes", videoGameThemeEntities);
 		response.sendRedirect(request.getContextPath() + "/productList");
 	}
 

@@ -18,7 +18,6 @@
         <th>Is Active</th>
         <th>Type</th>
         <th>Right</th>
-        <th>History id</th>
         <th>Fidelity Point</th>
         <th>Action</th>
     </tr>
@@ -33,7 +32,6 @@
             <td>${user.isActive}</td>
             <td>${user.userType}</td>
             <td>${user.userRight}</td>
-            <td>${user.userHistoryId}</td>
             <td>${user.userFidelityPoint}</td>
             <td>
                 <form method="post" action="ClientServletTest">

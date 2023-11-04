@@ -14,26 +14,38 @@
 </head>
 <body>
 <h1>ProductList</h1>
-<%
-    List<VideoGameEntity> videoGameList = (List<VideoGameEntity>) session.getAttribute("videoGames");
-    List<ThemeEntity> themeList = (List<ThemeEntity>) session.getAttribute("themes");
-    List<VideoGameThemeEntity> videoGameThemeList = (List<VideoGameThemeEntity>) session.getAttribute("videoGameThemes");
-    if (videoGameList != null && !videoGameList.isEmpty()) {
-		out.println("<table>");
-		out.println("<tr>");
-		out.println("<td><strong>Name</strong></td>");
-        out.println("<td><strong>Description</strong></td>");
-        out.println("<td><strong>Theme(s)</strong></td>");
-        out.println("<td><strong>Price</strong></td>");
-        out.println("<td><strong>Release Date</strong></td>");
-        out.println("<td><strong>Stock</strong></td>");
-		out.println("</tr>");
-        out.println(VideoGameEntity.printVideoGame(videoGameList, themeList, videoGameThemeList));
-		out.println("</table>");
-    } else {
-        System.out.println("<h1>No video games available</h1>");
-        out.println("<h1>No video games available</h1>");
-    }
-%>
+
+
+<h2> Deuxieme methode</h2>
+<table>
+	<thead>
+		<tr>
+			<td>Game Name</td>
+			<td>Description</td>
+			<td>Price</td>
+			<td>Release date</td>
+			<td>Game Stock</td>
+			<td>Theme</td>
+		</tr>
+	</thead>
+
+	<tbody>
+		<c:forEach items="${videoGames}" var="videoGame">
+			<tr>
+				<td><strong><a href=ProductServlet?id=${videoGame.videoGameId}>${videoGame.videoGameName}</a></strong></td>
+				<td>${videoGame.videoGameDescription}</td>
+				<td>${videoGame.videoGamePrice}</td>
+				<td>${videoGame.releaseDate}</td>
+				<td>${videoGame.videoGameStock}</td>
+				<td>
+					<c:forEach items="${videoGame.associatedThemes}" var="theme">
+						${theme.getThemeName()}<br>
+					</c:forEach>
+                </td>
+			</tr>
+		</c:forEach>
+	</tbody>
+
+</table>
 </body>
 </html>

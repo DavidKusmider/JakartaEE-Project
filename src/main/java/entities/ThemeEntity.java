@@ -19,7 +19,7 @@ public class ThemeEntity {
 	}
 
 	@jakarta.persistence.Basic
-	@jakarta.persistence.Column(name = "themeName", nullable = false, length = 50)
+	@jakarta.persistence.Column(name = "themeName", nullable = false, length = 50, columnDefinition="varchar(50) not null")
 	private String themeName;
 
 	public String getThemeName() {

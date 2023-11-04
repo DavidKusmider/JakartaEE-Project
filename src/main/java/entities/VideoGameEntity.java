@@ -1,10 +1,12 @@
 package entities;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import util.ThemeManager;
 
 import java.sql.Date;
 import java.util.List;
+
+import entities.ThemeEntity;
 
 @Entity
 @jakarta.persistence.Table(name = "VideoGame", schema = "Database_Jakarta_Project")
@@ -14,8 +16,7 @@ public class VideoGameEntity {
 	@jakarta.persistence.Column(name = "videoGameId", nullable = false)
 	private int videoGameId;
 
-	public int getVideoGameId() {
-		return videoGameId;
+	public int getVideoGameId() { return videoGameId;
 	}
 
 	public void setVideoGameId(int videoGameId) {
@@ -80,6 +81,23 @@ public class VideoGameEntity {
 
 	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
+	}
+
+	@ManyToMany
+	@JoinTable(
+		name = "VideoGameTheme", // Nom de la table de jointure
+		joinColumns = @JoinColumn(name = "videoGameId"), // Colonne pour la clé étrangère de VideoGameEntity
+		inverseJoinColumns = @JoinColumn(name = "themeId") // Colonne pour la clé étrangère de ThemeEntity
+	)
+
+	private List<ThemeEntity> associatedTheme;
+
+	public void setAssociatedThemes(List<ThemeEntity> listOfThemes) {
+		this.associatedTheme = listOfThemes;
+	}
+
+	public List<ThemeEntity> getAssociatedThemes() {
+		return this.associatedTheme;	
 	}
 
 	public static String printVideoGame(List<VideoGameEntity> videoGameEntities, List<ThemeEntity> themeEntities, List<VideoGameThemeEntity> videoGameThemeEntities){

@@ -14,4 +14,15 @@
     <servlet-name>ProductListVue</servlet-name>
     <url-pattern>/productList</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+	  <servlet-name>ProductVue</servlet-name>
+	  <jsp-file>/WEB-INF/product.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>ProductVue</servlet-name>
+	  <url-pattern>/product</url-pattern>
+  </servlet-mapping>
+
 </web-app>
