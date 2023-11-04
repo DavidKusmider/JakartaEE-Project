@@ -81,17 +81,20 @@ create table if not exists User
 );
 
 INSERT INTO User (
-	userName,
-	userPassword,
-	userMail,
-	userAddress,
-	userCreated,
-	isActive,
-	userType,
-	userRight,
-	userFidelityPoint
-) VALUES
-( "Test", "secret", "test@test.com","tav","2023-03-23",true,"Client",7,0);
+    userName,
+    userPassword,
+    userMail,
+    userAddress,
+    userCreated,
+    userType,
+    userRight,
+    userFidelityPoint
+) VALUES 
+( "David", "secret", "d@ku.com", "Tav", CURDATE(), 'Client', 3, 0 ),
+( "kevin", "secret", "d@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
+( "Romain", "secret", "d@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
+( "Yann", "secret", "d@ku.com", "Tav", CURDATE(), 'Client', 3, 0 ),
+( "Lucas", "secret", "d@ku.com", "Tav", CURDATE(), 'Client', 3, 0 );
 
 
 create table if not exists History

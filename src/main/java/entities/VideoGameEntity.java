@@ -1,6 +1,7 @@
 package entities;
 
 import jakarta.persistence.*;
+
 import util.ThemeManager;
 
 import java.sql.Date;
@@ -9,11 +10,11 @@ import java.util.List;
 import entities.ThemeEntity;
 
 @Entity
-@jakarta.persistence.Table(name = "VideoGame", schema = "Database_Jakarta_Project")
+@Table(name = "VideoGame", schema = "Database_Jakarta_Project", catalog = "")
 public class VideoGameEntity {
-	@jakarta.persistence.GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-	@jakarta.persistence.Id
-	@jakarta.persistence.Column(name = "videoGameId", nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@Column(name = "videoGameId", nullable = false)
 	private int videoGameId;
 
 	public int getVideoGameId() { return videoGameId;
@@ -23,8 +24,8 @@ public class VideoGameEntity {
 		this.videoGameId = videoGameId;
 	}
 
-	@jakarta.persistence.Basic
-	@jakarta.persistence.Column(name = "videoGameName", nullable = false, length = 50)
+	@Basic
+	@Column(name = "videoGameName", nullable = false, length = 50)
 	private String videoGameName;
 
 	public String getVideoGameName() {
@@ -35,8 +36,8 @@ public class VideoGameEntity {
 		this.videoGameName = videoGameName;
 	}
 
-	@jakarta.persistence.Basic
-	@jakarta.persistence.Column(name = "videoGameDescription", nullable = false, length = 200)
+	@Basic
+	@Column(name = "videoGameDescription", nullable = false, length = 200)
 	private String videoGameDescription;
 
 	public String getVideoGameDescription() {
@@ -47,20 +48,20 @@ public class VideoGameEntity {
 		this.videoGameDescription = videoGameDescription;
 	}
 
-	@jakarta.persistence.Basic
-	@jakarta.persistence.Column(name = "videoGamePrice", nullable = false, precision = 0)
-	private int videoGamePrice;
+	@Basic
+	@Column(name = "videoGamePrice", nullable = false, precision = 0)
+	private double videoGamePrice;
 
-	public int getVideoGamePrice() {
+	public double getVideoGamePrice() {
 		return videoGamePrice;
 	}
 
-	public void setVideoGamePrice(int videoGamePrice) {
+	public void setVideoGamePrice(double videoGamePrice) {
 		this.videoGamePrice = videoGamePrice;
 	}
 
-	@jakarta.persistence.Basic
-	@jakarta.persistence.Column(name = "videoGameStock", nullable = false)
+	@Basic
+	@Column(name = "videoGameStock", nullable = false)
 	private int videoGameStock;
 
 	public int getVideoGameStock() {
@@ -71,8 +72,8 @@ public class VideoGameEntity {
 		this.videoGameStock = videoGameStock;
 	}
 
-	@jakarta.persistence.Basic
-	@jakarta.persistence.Column(name = "releaseDate", nullable = false)
+	@Basic
+	@Column(name = "releaseDate", nullable = false)
 	private Date releaseDate;
 
 	public Date getReleaseDate() {

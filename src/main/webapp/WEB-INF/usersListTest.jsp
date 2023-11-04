@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Client's list </title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/clientsListTest.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/clientsListTest.css"/>
 </head>
 <body>
 <h1>Client's list</h1>

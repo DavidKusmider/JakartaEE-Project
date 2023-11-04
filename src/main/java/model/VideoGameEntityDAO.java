@@ -5,6 +5,7 @@ import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+
 import entities.ThemeEntity;
 import org.hibernate.query.Query;
 
@@ -20,13 +21,38 @@ public class VideoGameEntityDAO {
 		return videoGame;
 	}
 
-	public List<VideoGameEntity> getAllVideoGameEntitys() {
+	public List<VideoGameEntity> getAllVideoGamesEntitys() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		List<VideoGameEntity> videoGames = session.createQuery("FROM VideoGameEntity", VideoGameEntity.class).list();
 		session.close();
 		return videoGames;
 	}
 
+  public List<VideoGameEntity> researchVideoGame(String gameName) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+
+		int id = -1;
+		try {
+			id = Integer.parseInt(gameName);
+		} catch (NumberFormatException e) {
+			// En cas d'erreur de conversion, nous laissons id à -1 pour indiquer que ce n'est pas un entier valide.
+		}
+
+		String likePattern = '%' + gameName + '%';
+
+		// Créez une requête avec des paramètres nommés
+		Query<VideoGameEntity> query = session.createQuery(
+			"FROM VideoGameEntity WHERE videoGameId = :id OR videoGameName LIKE :likePattern", VideoGameEntity.class
+		);
+
+		query.setParameter("id", id);
+		query.setParameter("likePattern", likePattern);
+
+		List<VideoGameEntity> videoGames = query.list();
+		session.close();
+		return videoGames;
+	}
+  
 	public void saveVideoGameEntity(VideoGameEntity videoGame) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
