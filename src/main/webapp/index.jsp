@@ -12,7 +12,11 @@
 			<a href="ClientServletTest">Page Test Client Database</a>
 
 			<h1>Admin Page</h1>
-			<a href="adminPage">Link to admin page</a>
+			<a href="adminPageServlet">Link to admin page</a>
+
+			<h1>List of Video Games</h1>
+			<a href="ProductListServlet">Link to all games</a>
+
 
 		</div>
 	</body>

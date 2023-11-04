@@ -89,7 +89,6 @@ public class UpdateUserDataAJAX extends HttpServlet {
 				user.setIsActive(isActive);
 				user.setUserType(userType);
 				user.setUserRight(userRight);
-				user.setUserHistoryId(userHistoryId);
 				user.setUserFidelityPoint(userFidelityPoint);
 
 				userDAO.modifyUserEntity(user);

@@ -17,8 +17,8 @@ import entities.VideoGameEntity;
 import entities.UserEntity;
 import model.UserEntityDAO;
 
-@WebServlet(name = "adminPage", value = "/adminPage")
-public class AdminPage extends HttpServlet {
+@WebServlet(name = "adminPageServlet", value = "/adminPageServlet")
+public class AdminPageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);

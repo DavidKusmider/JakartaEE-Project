@@ -1,9 +1,12 @@
 <%@ include file="taglibs.jspf"%>
-<html>
-<head>
-    <title>Cart</title>
-</head>
-<body>
-
-</body>
+<html lang="en">
+	<head>
+		<title>Cart</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+	
+	</body>
 </html>

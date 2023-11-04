@@ -18,7 +18,7 @@ public class ProductListServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		VideoGameEntityDAO videoGameDAO = new VideoGameEntityDAO();
-		List<VideoGameEntity> videoGameEntities = videoGameDAO.getAllVideoGameEntitys();
+		List<VideoGameEntity> videoGameEntities = videoGameDAO.getAllVideoGamesEntitys();
 
 		for (VideoGameEntity videoGame : videoGameEntities) {
 			List<ThemeEntity> associatedThemes = videoGameDAO.getAssociatedThemes(videoGame.getVideoGameId());
