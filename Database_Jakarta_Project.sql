@@ -46,7 +46,7 @@ create table if not exists Theme
 
 INSERT INTO Theme (
 	themeName
-) VALUES 
+) VALUES
 ( "adventure" ),
 ( "horror");
 
@@ -62,7 +62,7 @@ create table if not exists VideoGameTheme
 INSERT INTO VideoGameTheme (
 	themeId,
 	videoGameId
-) VALUES 
+) VALUES
 ( 1,1);
 
 create table if not exists User
@@ -89,7 +89,7 @@ INSERT INTO User (
     userType,
     userRight,
     userFidelityPoint
-) VALUES 
+) VALUES
 ( "David", "secret", "d@ku.com", "Tav", CURDATE(), 'Client', 3, 0 ),
 ( "kevin", "secret", "d@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
 ( "Romain", "secret", "d@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),

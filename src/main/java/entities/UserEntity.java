@@ -13,16 +13,16 @@ public class UserEntity {
 	@Column(name = "userId", nullable = false)
 	private int userId;
 	@Basic
-	@Column(name = "userName", nullable = false, length = 50)
+	@Column(name = "userName", nullable = false, length = 100)
 	private String userName;
 	@Basic
-	@Column(name = "userPassword", nullable = false, length = 50)
+	@Column(name = "userPassword", nullable = false, length = 1000)
 	private String userPassword;
 	@Basic
-	@Column(name = "userMail", nullable = false, length = 50)
+	@Column(name = "userMail", nullable = false, length = 100)
 	private String userMail;
 	@Basic
-	@Column(name = "userAddress", nullable = false, length = 50)
+	@Column(name = "userAddress", nullable = false, length = 100)
 	private String userAddress;
 	@Basic
 	@Column(name = "userCreated")
@@ -35,8 +35,8 @@ public class UserEntity {
 	@Enumerated(EnumType.STRING)
 	private Type userType;
 	@Basic
-	@Column(name = "userRight", nullable = false)
-	private int userRight;
+	@Column(name = "userRight", nullable = true)
+	private Integer userRight;
 	@Basic
 	@Column(name = "userFidelityPoint", nullable = true)
 	private Integer userFidelityPoint;
@@ -47,8 +47,17 @@ public class UserEntity {
             userCreated = new Date(); // Initialisez la date de création si elle est nulle
         }
 		if (isActive == null) {
-            isActive = 1; // Initialisez la date de création si elle est nulle
+            isActive = 1; // Initialisez l'activite si elle est nulle
         }
+		if(userType == null){
+			userType = Type.Client;
+		}
+		if(userRight == null){
+			userRight = 1;
+		}
+		if(userFidelityPoint == null){
+			userFidelityPoint = 0;
+		}
     }
 
 	public int getUserId() {
