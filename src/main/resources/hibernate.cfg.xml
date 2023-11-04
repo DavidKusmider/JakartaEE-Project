@@ -18,6 +18,9 @@ Configuration DTD 3.0//EN"
 		<property name="hibernate.use_sql_comments">true</property>
 
 		<mapping class="entities.UserEntity"/>
+		<mapping class="entities.VideoGameEntity"/>
+		<mapping class="entities.ThemeEntity" />
+		<mapping class="entities.VideoGameThemeEntity" />
 
 	</session-factory>
 </hibernate-configuration>
