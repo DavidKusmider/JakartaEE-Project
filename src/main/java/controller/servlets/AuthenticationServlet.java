@@ -7,7 +7,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Type;
 import model.UserEntityDAO;
-import util.EmailSenderConfirmation;
+import util.EmailSender;
 import util.EncryptPassword;
 
 import java.io.IOException;
@@ -76,7 +76,7 @@ public class AuthenticationServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 
 				// send confirmation mail
-				EmailSenderConfirmation.sendAccountConfirmationEmail(user);
+				EmailSender.sendAccountConfirmationEmail(user);
 
 				session.setAttribute("user", user);
 				response.sendRedirect(request.getContextPath() + "/productList");
