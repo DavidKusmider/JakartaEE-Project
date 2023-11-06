@@ -39,6 +39,8 @@ public class AuthenticationServlet extends HttpServlet {
 					response.sendRedirect(request.getContextPath() + "/adminPageServlet");
 					//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 				}
+			}else{
+				response.sendRedirect(".");
 			}
 		}
 	}

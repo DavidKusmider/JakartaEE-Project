@@ -1,11 +1,9 @@
 drop table if exists VideoGameTheme;
-drop table if exists ClientDiscount;
+drop table if exists CartRow;
 drop table if exists History;
 drop table if exists Discount;
-drop table if exists Cart;
 drop table if exists VideoGame;
 drop table if exists Theme;
-drop table if exists Orders;
 drop table if exists User;
 
 create table if not exists VideoGame
@@ -90,11 +88,11 @@ INSERT INTO User (
     userRight,
     userFidelityPoint
 ) VALUES
-( "David", "secret", "d@ku.com", "Tav", CURDATE(), 'Client', 3, 0 ),
-( "kevin", "secret", "d@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
-( "Romain", "secret", "d@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
-( "Yann", "secret", "d@ku.com", "Tav", CURDATE(), 'Client', 3, 0 ),
-( "Lucas", "secret", "d@ku.com", "Tav", CURDATE(), 'Client', 3, 0 );
+( "David", "secret", "d1@ku.com", "Tav", CURDATE(), 'Client', 3, 0 ),
+( "kevin", "secret", "d2@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
+( "Romain", "secret", "d3@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
+( "Yann", "secret", "d4@ku.com", "Tav", CURDATE(), 'Client', 3, 0 ),
+( "Lucas", "secret", "d5@ku.com", "Tav", CURDATE(), 'Client', 3, 0 );
 
 
 create table if not exists History
@@ -124,12 +122,9 @@ create table if not exists CartRow
     videoGameId    int not null,
     quantity       int not null DEFAULT 1,
     constraint PK_cartId PRIMARY KEY (cartId),
-    constraint FK_userIdCart foreign key (userId) references User (userId),
-    constraint FK_videoGameIdCart foreign key (videoGameId) references VideoGame (videoGameId)
+    constraint FK_userIdCart foreign key (userId) references User (userId) on delete cascade ,
+    constraint FK_videoGameIdCart foreign key (videoGameId) references VideoGame (videoGameId) on delete cascade
 );
 
-INSERT INTO CartRow (cartId, userId, videoGameId, quantity) VALUES
-(2, 1, 2, 2);
-
-INSERT INTO VideoGame (videoGameId, videoGameName, videoGameDescription, videoGamePrice, videoGameStock, releaseDate) VALUES
-(2,'Test2','TestTest',12,2,'2022-03-08');
+INSERT INTO CartRow (userId, videoGameId, quantity) VALUES
+(1, 1, 2);

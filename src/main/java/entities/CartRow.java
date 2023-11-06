@@ -32,7 +32,7 @@ public class CartRow {
     public void setQuantity(int quantity) { this.quantity = quantity; }
     public int getQuantity() { return quantity; }
 
-    public int getPrice(){
+    public double getPrice(){
         VideoGameDAO gameDAO = new VideoGameDAO();
         VideoGameEntity game = gameDAO.getGameById(this.gameId);
         return game.getVideoGamePrice();
