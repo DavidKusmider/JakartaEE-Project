@@ -18,7 +18,7 @@
 			<a href="ProductListServlet">Link to all games</a>
 
 
+			<a href="CartServletTest">Page Test Panier</a>
 		</div>
 	</body>
-
 </html>

@@ -11,7 +11,7 @@ Configuration DTD 3.0//EN"
 		<property name="hibernate.connection.password">Secret123*</property>
 		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
 		<property name="hibernate.current_session_context_class">thread</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect </property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
 		<property name="hibernate.show_sql">true </property>
 		<property name="hibernate.format_sql">true </property>
@@ -23,6 +23,7 @@ Configuration DTD 3.0//EN"
 		<mapping class="entities.UserEntity"/>
 		<mapping class="entities.VideoGameEntity"/>
 		<mapping class="entities.VideoGameThemeEntity"/>
+		<mapping class="entities.CartRow"/>
 
 	</session-factory>
 </hibernate-configuration>

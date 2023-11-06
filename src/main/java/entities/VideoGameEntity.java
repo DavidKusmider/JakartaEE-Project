@@ -1,6 +1,7 @@
 package entities;
 
 import jakarta.persistence.*;
+import model.VideoGameDAO;
 
 import java.sql.Date;
 import java.util.List;
@@ -66,9 +67,7 @@ public class VideoGameEntity {
 		return videoGameStock;
 	}
 
-	public void setVideoGameStock(int videoGameStock) {
-		this.videoGameStock = videoGameStock;
-	}
+	public void setVideoGameStock(int videoGameStock) { this.videoGameStock = videoGameStock; }
 
 	@Basic
 	@Column(name = "releaseDate", nullable = false)
@@ -96,6 +95,13 @@ public class VideoGameEntity {
 	}
 
 	public List<ThemeEntity> getAssociatedThemes() {
-		return this.associatedTheme;	
+		return this.associatedTheme;
+	}
+
+	public void changeStock(int stock, int videoGameId) {
+		VideoGameDAO gameDAO = new VideoGameDAO();
+		VideoGameEntity game = gameDAO.getGameById(videoGameId);
+		game.setVideoGameStock(stock);
+		gameDAO.modifyGame(game);
 	}
 }
