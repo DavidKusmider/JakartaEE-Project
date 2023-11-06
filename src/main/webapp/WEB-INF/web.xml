@@ -21,6 +21,16 @@
         <url-pattern>/Welcome</url-pattern>
     </servlet-mapping>
 
+	<servlet>
+		<servlet-name>ProfileVue</servlet-name>
+		<jsp-file>/WEB-INF/profile.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProfileVue</servlet-name>
+		<url-pattern>/profile</url-pattern>
+	</servlet-mapping>
+
     <servlet>
         <servlet-name>AdminPageVue</servlet-name>
         <jsp-file>/WEB-INF/admin.jsp</jsp-file>
