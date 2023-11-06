@@ -57,6 +57,12 @@
 		  <version>8.0.33</version>
 	  </dependency>
 
+<!-- Email sending API -->
+	  <dependency>
+		  <groupId>com.courier</groupId>
+		  <artifactId>courier-java</artifactId>
+		  <version>2.1.0</version>
+	  </dependency>
   </dependencies>
 
   <build>

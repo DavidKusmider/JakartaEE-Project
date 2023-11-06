@@ -10,7 +10,7 @@
 		<div id="container">
 			<h1>Test Client</h1>
 			<a href="ClientServletTest">Page Test Client Database</a>
+			<a href="CartServletTest">Page Test Panier</a>
 		</div>
 	</body>
-
 </html>

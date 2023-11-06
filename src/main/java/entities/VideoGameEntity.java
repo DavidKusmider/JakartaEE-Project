@@ -1,6 +1,7 @@
 package entities;
 
 import jakarta.persistence.Entity;
+import model.VideoGameDAO;
 
 import java.sql.Date;
 
@@ -64,9 +65,7 @@ public class VideoGameEntity {
 		return videoGameStock;
 	}
 
-	public void setVideoGameStock(int videoGameStock) {
-		this.videoGameStock = videoGameStock;
-	}
+	public void setVideoGameStock(int videoGameStock) { this.videoGameStock = videoGameStock; }
 
 	@jakarta.persistence.Basic
 	@jakarta.persistence.Column(name = "releaseDate", nullable = false)
@@ -78,5 +77,12 @@ public class VideoGameEntity {
 
 	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
+	}
+
+	public void changeStock(int stock, int videoGameId) {
+		VideoGameDAO gameDAO = new VideoGameDAO();
+		VideoGameEntity game = gameDAO.getGameById(videoGameId);
+		game.setVideoGameStock(stock);
+		gameDAO.modifyGame(game);
 	}
 }

@@ -71,3 +71,20 @@ create table if not exists Discount
     constraint PK_discountId PRIMARY KEY (discountId),
     constraint FK_videoGameId foreign key (videoGameId) references VideoGame (videoGameId)
 );
+
+create table if not exists CartRow
+(
+    cartId         int not null auto_increment,
+    userId         int not null,
+    videoGameId    int not null,
+    quantity       int not null DEFAULT 1,
+    constraint PK_cartId PRIMARY KEY (cartId),
+    constraint FK_userIdCart foreign key (userId) references User (userId),
+    constraint FK_videoGameIdCart foreign key (videoGameId) references VideoGame (videoGameId)
+);
+
+INSERT INTO CartRow (cartId, userId, videoGameId, quantity) VALUES
+(2, 1, 2, 2);
+
+INSERT INTO VideoGame (videoGameId, videoGameName, videoGameDescription, videoGamePrice, videoGameStock, releaseDate) VALUES
+(2,'Test2','TestTest',12,2,'2022-03-08');
