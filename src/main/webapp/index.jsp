@@ -22,6 +22,11 @@
 
 
 			<a href="CartServletTest">Page Test Panier</a>
+
+			<form method="get" action="authentication">
+				<input type="submit" value="Log out" />
+			</form>
+
 		</div>
 	</body>
 </html>

@@ -3,6 +3,7 @@ package controller.servlets;
 import java.io.IOException;
 
 import entities.CartRow;
+import entities.UserEntity;
 import entities.VideoGameEntity;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -93,32 +94,36 @@ public class CartServletTest extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        if ("orderPaid".equals(action)) {
-            int userIdParam = Integer.parseInt(request.getParameter("userIdPARAM").trim());
-            UserEntityDAO userDAO = new UserEntityDAO();
-            sendOrderConfirmationEmail(userDAO.getUserEntityById(userIdParam));
-            CartEntityDAO cartDAO = new CartEntityDAO(userIdParam);
-            List<CartRow> cart = cartDAO.getAllCartRows();
-            for (CartRow cartRow: cart) {
-                cartDAO.delete(cartRow.getCartId());
+        if(request.getSession().getAttribute("user")!= null) {
+            String action = request.getParameter("action");
+            if ("orderPaid".equals(action)) {
+                int userIdParam = Integer.parseInt(request.getParameter("userIdPARAM").trim());
+                UserEntityDAO userDAO = new UserEntityDAO();
+                sendOrderConfirmationEmail(userDAO.getUserEntityById(userIdParam));
+                CartEntityDAO cartDAO = new CartEntityDAO(userIdParam);
+                List<CartRow> cart = cartDAO.getAllCartRows();
+                for (CartRow cartRow : cart) {
+                    cartDAO.delete(cartRow.getCartId());
+                }
+                request.setAttribute("userIdPARAM", userIdParam);
+                this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
             }
-            request.setAttribute("userIdPARAM", userIdParam);
-            this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-        }
 
-        //int userId = Integer.parseInt(request.getParameter("userIdPARAM"));
-        int userId=1;
-        CartEntityDAO cartDAO = new CartEntityDAO(userId);
-        List<CartRow> cart = cartDAO.getAllCartRows();
-        double totalPrice = 0;
-        for (CartRow cartRow: cart) {
-            totalPrice += cartRow.getPrice()*cartRow.getQuantity();
-        }
-        request.setAttribute("userIdPARAM", userId);
-        request.setAttribute("commandPARAM", cart);
-        request.setAttribute("totalPricePARAM",totalPrice);
+            int userId = ((UserEntity) request.getSession().getAttribute("user")).getUserId();
+            //int userId = Integer.parseInt(request.getParameter("userIdPARAM"));
+            CartEntityDAO cartDAO = new CartEntityDAO(userId);
+            List<CartRow> cart = cartDAO.getAllCartRows();
+            double totalPrice = 0;
+            for (CartRow cartRow : cart) {
+                totalPrice += cartRow.getPrice() * cartRow.getQuantity();
+            }
+            request.setAttribute("userIdPARAM", userId);
+            request.setAttribute("commandPARAM", cart);
+            request.setAttribute("totalPricePARAM", totalPrice);
 
-        this.getServletContext().getRequestDispatcher("/WEB-INF/cart.jsp").forward(request, response);
+            this.getServletContext().getRequestDispatcher("/WEB-INF/cart.jsp").forward(request, response);
+        }else{
+            response.sendRedirect(request.getContextPath());
+        }
     }
 }

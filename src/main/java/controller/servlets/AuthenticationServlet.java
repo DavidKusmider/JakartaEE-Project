@@ -17,31 +17,36 @@ public class AuthenticationServlet extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String mail = request.getParameter("mailLogin");
-		String password = request.getParameter("passwordLogin");
+		if(request.getSession().getAttribute("user") == null) {
+			String mail = request.getParameter("mailLogin");
+			String password = request.getParameter("passwordLogin");
 
-		String hashedPassword = new EncryptPassword().Encrypt(password);
+			String hashedPassword = new EncryptPassword().Encrypt(password);
 
-		if (mail == null || mail.trim().isEmpty() || password == null || password.trim().isEmpty()) {
-			response.sendRedirect(".");
-		} else {
-			UserEntityDAO userDAO = new UserEntityDAO();
-			UserEntity user = userDAO.getUserEntityByEmail(mail);
-			if (user == null) {
+			if (mail == null || mail.trim().isEmpty() || password == null || password.trim().isEmpty()) {
 				response.sendRedirect(".");
-			} else if (user.getUserPassword().equals(password)/*user.getUserPassword().equals(hashedPassword)*/) {
-				HttpSession session = request.getSession();
-				session.setAttribute("user", user);
-				if (user.getUserType().equals(Type.Client)) {
-					response.sendRedirect(request.getContextPath() + "/index");
-					//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
-				} else if (user.getUserType().equals(Type.Admin) || user.getUserType().equals(Type.Modo)) {
-					response.sendRedirect(request.getContextPath() + "/adminPageServlet");
-					//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
+			} else {
+				UserEntityDAO userDAO = new UserEntityDAO();
+				UserEntity user = userDAO.getUserEntityByEmail(mail);
+				if (user == null) {
+					response.sendRedirect(".");
+				} else if (user.getUserPassword().equals(password)/*user.getUserPassword().equals(hashedPassword)*/) {
+					HttpSession session = request.getSession();
+					session.setAttribute("user", user);
+					if (user.getUserType().equals(Type.Client)) {
+						response.sendRedirect(request.getContextPath() + "/index");
+						//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
+					} else if (user.getUserType().equals(Type.Admin) || user.getUserType().equals(Type.Modo)) {
+						response.sendRedirect(request.getContextPath() + "/adminPageServlet");
+						//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
+					}
+				} else {
+					response.sendRedirect(".");
 				}
-			}else{
-				response.sendRedirect(".");
 			}
+		} else if (request.getSession().getAttribute("user") != null) {
+			request.getSession().invalidate();
+			response.sendRedirect(".");
 		}
 	}
 
