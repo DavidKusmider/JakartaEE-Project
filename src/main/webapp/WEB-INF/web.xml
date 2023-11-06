@@ -13,7 +13,7 @@
 
     <servlet>
         <servlet-name>AuthenticationVue</servlet-name>
-        <jsp-file>/WEB-INF/vue/authentication.jsp</jsp-file>
+        <jsp-file>/WEB-INF/authentication.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
@@ -50,5 +50,15 @@
 	  <servlet-name>ProductVue</servlet-name>
 	  <url-pattern>/product</url-pattern>
   </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IndexVue</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IndexVue</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
 
 </web-app>

@@ -33,10 +33,10 @@ public class AuthenticationServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", user);
 				if (user.getUserType().equals(Type.Client)) {
-					response.sendRedirect(request.getContextPath() + "/productList");
+					response.sendRedirect(request.getContextPath() + "/index");
 					//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 				} else if (user.getUserType().equals(Type.Admin) || user.getUserType().equals(Type.Modo)) {
-					response.sendRedirect(request.getContextPath() + "/adminPage");
+					response.sendRedirect(request.getContextPath() + "/adminPageServlet");
 					//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 				}
 			}
