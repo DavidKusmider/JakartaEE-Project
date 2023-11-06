@@ -17,6 +17,9 @@
 			<h1>List of Video Games</h1>
 			<a href="ProductListServlet">Link to all games</a>
 
+			<h1>Profile</h1>
+			<a href="ProfileServlet">Profile</a>
+
 
 			<a href="CartServletTest">Page Test Panier</a>
 		</div>
