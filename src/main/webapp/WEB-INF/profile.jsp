@@ -2,11 +2,12 @@
 <html lang="en">
 	<head>
 		<title>Cart</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<%@ include file="/WEB-INF/head.jsp" %>
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
+		<%@ include file="/WEB-INF/header.jsp" %>
+
 		<h1>Profil de l'utilisateur</h1>
 		<c:if test="${user ne null}">
 		<p>Nom d'utilisateur : ${user.userName}</p>

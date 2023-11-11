@@ -2,8 +2,7 @@
 <html>
 <head>
     <title>Cart</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<%@ include file="/WEB-INF/head.jsp" %>
     <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AWWXYZ8Roz4DUf2sWAyz6nTArrGfOwWE6EcEIsaHeK9keQY0L63PlD9YjaobcUi8uKZ0-I3oOgIN-nyp"></script>
     <script>
         paypal
@@ -29,9 +28,8 @@
     </script>
 </head>
 <body>
-    <header>
+	<%@ include file="/WEB-INF/header.jsp" %>
 
-    </header>
     <main>
         <table>
             <tr>
@@ -39,6 +37,14 @@
                 <th>Quantité</th>
                 <th>Prix</th>
             </tr>
+
+			<c:choose>
+				<c:when test="${not empty commandPARAM}">
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+			</c:choose>
+
             <c:forEach items="${commandPARAM}" var="cart">
             <tr>
                 <td>${cart.getName()}</td>

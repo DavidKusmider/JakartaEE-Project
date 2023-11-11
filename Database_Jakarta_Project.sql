@@ -92,6 +92,7 @@ INSERT INTO User (
 ( "kevin", "secret", "d2@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
 ( "Romain", "secret", "d3@ku.com", "Tav", CURDATE(), 'Modo', 7, 0 ),
 ( "Yann", "secret", "d4@ku.com", "Tav", CURDATE(), 'Client', 3, 0 ),
+( "CYTech", "c7267d9b7abd409c7ceb3cb7a8a43adc99f67eb856fcf71c1e884b4d0e9a5d35", "cytech@gmail.com", "Tav", CURDATE(), 'Admin', 7, 0 ),
 ( "Lucas", "secret", "d5@ku.com", "Tav", CURDATE(), 'Client', 3, 0 );
 
 

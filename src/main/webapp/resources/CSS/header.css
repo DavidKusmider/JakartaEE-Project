@@ -1,0 +1,376 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; 
+}
+
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	background-color: #202731;
+	color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+
+    position: fixed;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	top: 0;
+	width: 100%;
+	justify-content: space-evenly;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 40px 0;
+	height: 110px;
+	z-index: 10;
+	backdrop-filter: blur(0); /* initial blur */
+	transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.header-scrolled {
+    backdrop-filter: blur(10px); /* ajustez la quantité de flou souhaitée lors du défilement */
+	margin: 0;
+	transform: scale(0.9);
+}
+
+.buttonHeader {
+	position: relative;
+	padding: 10px 5px;
+	text-transform: upppercase;
+	color: #03e9f4;
+	font-size: 1.2rem;
+	font-weight: bold;
+	transition: .5s;
+	overflow: hidden;
+	text-align: center;
+	padding: 20px 20px;
+}
+
+.buttonHeader:hover {
+	background-color: #03e9f4;
+	color: #050801;
+	box-shadow: 0 0 5px #03e9f4,
+				0 0 25px #03e9f4,
+				0 0 50px #03e9f4,
+				0 0 200px #03e9f4;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+		
+}
+
+.buttonHeader:nth-child(2) {
+	filter:hue-rotate(225deg);
+}
+
+.LoginProfilButton {
+    filter: hue-rotate(270deg);
+}
+
+.buttonHeader span {
+	position: absolute;
+	display: block;
+}
+
+.buttonHeader span:nth-child(1) {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, #03e9f4);
+	animation: animate1 1s infinite;
+}
+
+@keyframes animate1 {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+.buttonHeader span:nth-child(2) {
+	top: 0;
+	right: 0;
+	width: 1px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #03e9f4);
+	animation: animate2 1s infinite;
+	animation-delay: .25s;
+}
+
+@keyframes animate2 {
+	0% {
+		top: -100%;
+	}
+	100% {
+		top: 100%;
+	}
+}
+
+.buttonHeader span:nth-child(3) {
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 1px;
+	background: linear-gradient(270deg, transparent, #03e9f4);
+	animation: animate3 1s infinite;
+	animation-delay: .5s;
+}
+
+@keyframes animate3 {
+	0% {
+		right: -100%;
+	}
+	100% {
+		right: 100%;
+	}
+}
+
+.buttonHeader span:nth-child(4) {
+	bottom: -100%;
+	left: 0;
+	width: 1px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #03e9f4);
+	animation: animate4 1s infinite;
+	animation-delay: .75s;
+}
+
+@keyframes animate4 {
+	0% {
+		bottom: -100%;
+	}
+	100% {
+		bottom: 100%;
+	}
+}
+
+#place_for_title {
+	content: "";
+	width: 180px;
+	height: 90px;
+}
+
+
+#searchBar {
+	padding: 10px;
+	margin-left: 5vw;
+    border: white solid 1.5px;
+    border-radius: 20px;
+    background-color: transparent; /* Couleur de fond translucide */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    outline: none; /* Supprime la bordure de focus par défaut */
+    transition: background-color 0.3s ease;
+}
+
+#searchBar::placeholder {
+    color: #888; /* Couleur du texte de l'indicateur de lieu */
+}
+
+#searchBar:focus {
+    background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond légèrement plus opaque lors du focus */
+}
+
+/* ############################# TITLE ##############################33 */
+
+.box {
+	position: fixed;
+	top: 25%;
+	left: 33%;
+	width: 30vw;
+	height: 15vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+    transition: top 0.5s ease, transform 0.5s ease;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.box h1 {
+	color: #fff;
+	font-size: 5em;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-shadow: 0 0 10px #00b3ff,
+				0 0 20px #00b3ff,
+				0 0 40px #00b3ff,
+				0 0 80px #00b3ff,
+				0 0 120px #00b3ff;
+	animation: animateNeon 5s linear infinite;
+}
+
+.header-scrolledH1 {
+    top: 1vh; /* Ajustez la nouvelle position du titre lors du défilement */
+    left: 33%; /* Centrez le titre horizontalement */
+    transform: translateY(-32%) scale(0.3); /* Ajustez la position horizontale */
+	z-index: 20;
+}
+
+@keyframes animateNeon {
+	0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92% {
+		color: #0e3742;
+		text-shadow: none;
+	} 
+	18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100% {
+		color: #fff;
+		text-shadow: 0 0 10px #00b3ff,
+					0 0 20px #00b3ff,
+					0 0 40px #00b3ff,
+					0 0 80px #00b3ff,
+					0 0 120px #00b3ff;
+	}
+}
+
+#leftLightbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 100%;
+	border-radius: 10px;
+	background: #fff;
+	z-index: 2;
+	box-shadow: 0 0 10px #00b3ff,
+				0 0 20px #00b3ff,
+				0 0 40px #00b3ff,
+				0 0 80px #00b3ff,
+				0 0 120px #00b3ff;
+	animation: animateLightbar 2s linear;
+}
+
+#rightLightbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 100%;
+	border-radius: 10px;
+	background: #fff;
+	z-index: 2;
+	box-shadow: 0 0 10px #00b3ff,
+				0 0 20px #00b3ff,
+				0 0 40px #00b3ff,
+				0 0 80px #00b3ff,
+				0 0 120px #00b3ff;
+	opacity: 0;
+}
+
+#topLightbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 10px;
+	border-radius: 10px;
+	background: #fff;
+	z-index: 2;
+	box-shadow: 0 0 10px #00b3ff,
+				0 0 20px #00b3ff,
+				0 0 40px #00b3ff,
+				0 0 80px #00b3ff,
+				0 0 120px #00b3ff;
+	opacity:  0;	
+}
+
+#bottomLightbar {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 10px;
+	border-radius: 10px;
+	background: #fff;
+	z-index: 2;
+	box-shadow: 0 0 10px #00b3ff,
+				0 0 20px #00b3ff,
+				0 0 40px #00b3ff,
+				0 0 80px #00b3ff,
+				0 0 120px #00b3ff;
+	opacity: 0;
+}
+
+@keyframes showVerticalLightbar
+{
+    0%,99%
+	{
+        opacity:  0;
+    }
+    100%
+	{
+        opacity:  1;
+    }
+}
+
+@keyframes showHorizontalLightbar
+{
+    0%,80%
+	{
+		transform: scaleY(0) translateX(0);
+		opacity: 0;
+
+    }
+    100%
+	{
+		transform: scaleY(1) translateX(0);
+        opacity:  1;
+    }
+}
+
+.lightbar.visible {
+    animation: showHorizontalLightbar 2.4s forwards;
+}
+
+
+
+@keyframes animateLightbar
+{
+	0%,5%
+	{
+		transform: scaleY(0) translateX(0);
+	}
+	10%
+	{
+		transform: scaleY(1) translateX(0);
+	}
+	90%
+	{
+		transform: scaleY(1) translateX(calc(600px - 10px));
+	}
+	95%,100%
+	{
+		transform: scaleY(0) translateX(calc(600px - 10px));
+	}
+}
+
+#topLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #202731;
+    animation: animateTopLayer 3.8s linear forwards; /* Ajoutez "forwards" ici */
+}
+
+@keyframes animateTopLayer {
+    0%, 2.5% {
+        transform: translateX(0);
+    }
+    5% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(100%); /* Assurez-vous d'ajouter cette étape finale */
+    }
+}

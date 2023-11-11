@@ -30,7 +30,7 @@ public class AuthenticationServlet extends HttpServlet {
 				UserEntity user = userDAO.getUserEntityByEmail(mail);
 				if (user == null) {
 					response.sendRedirect(".");
-				} else if (user.getUserPassword().equals(password)/*user.getUserPassword().equals(hashedPassword)*/) {
+				} else if (user.getUserPassword().equals(hashedPassword)) {
 					HttpSession session = request.getSession();
 					session.setAttribute("user", user);
 					if (user.getUserType().equals(Type.Client)) {

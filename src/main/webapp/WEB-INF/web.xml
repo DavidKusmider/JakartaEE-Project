@@ -6,10 +6,7 @@
          version="5.0">
 
   <display-name>Archetype Created Web Application</display-name>
-
-    <welcome-file-list>
-        <welcome-file>/WEB-INF/authentication.jsp</welcome-file>
-    </welcome-file-list>
+  
 
     <servlet>
         <servlet-name>AuthenticationVue</servlet-name>
@@ -39,6 +36,16 @@
   <servlet-mapping>
 	  <servlet-name>AdminPageVue</servlet-name>
 	  <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	  <servlet-name>AllThemesVue</servlet-name>
+	  <jsp-file>/WEB-INF/allThemes.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>AllThemesVue</servlet-name>
+	  <url-pattern>/allThemes</url-pattern>
   </servlet-mapping>
 
   <servlet>

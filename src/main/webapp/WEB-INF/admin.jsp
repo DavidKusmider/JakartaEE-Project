@@ -4,12 +4,13 @@
 <html lang="en">
 	<head>
 		<title>Admin Page</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<%@ include file="/WEB-INF/head.jsp" %>
 		<link href="${pageContext.request.contextPath}/resources/CSS/adminPage.css" rel="stylesheet">
 		<script src="${pageContext.request.contextPath}/resources/JS/admin.js"></script>
 	</head>
 	<body>
+		<%@ include file="/WEB-INF/header.jsp" %>
+
 		<%
 		// UserEntity user = (UserEntity) session.getAttribute("user");
 		// if(user == null || user.getUserType().equals(Type.Client)){
