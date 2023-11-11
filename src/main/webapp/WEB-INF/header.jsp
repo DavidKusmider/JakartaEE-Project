@@ -27,7 +27,7 @@
 
 		</c:when>
 		<c:otherwise>
-			<a href="/JakartaEE-Project/authentication" id="Login-button" class="buttonHeader LoginProfilButton">
+			<a href="/JakartaEE-Project/login" id="Login-button" class="buttonHeader LoginProfilButton">
 				<span></span>
 				<span></span>
 				<span></span>
