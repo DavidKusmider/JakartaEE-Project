@@ -11,6 +11,8 @@
 	<body>
 		<%@ include file="/WEB-INF/header.jsp" %>
 
+		<%@ include file="/WEB-INF/mainTitle.jsp" %>
+
 		<%
 		// UserEntity user = (UserEntity) session.getAttribute("user");
 		// if(user == null || user.getUserType().equals(Type.Client)){
@@ -18,7 +20,7 @@
 		// }
 		%>
 
-		<h1>Page Admin</h1>
+		<h1 id="mainTitleAdmin">Page Admin</h1>
 
 		<input type="text" onchange="research(this)" placeholder="rechercher" />
 

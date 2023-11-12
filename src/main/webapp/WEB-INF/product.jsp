@@ -6,26 +6,114 @@
 <html lang="en">
 	<head>
 		<title>Product</title>
+		<link href="${pageContext.request.contextPath}/resources/CSS/product.css" rel="stylesheet">
 		<%@ include file="/WEB-INF/head.jsp" %>
-		<link href="css/style.css" rel="stylesheet">
+		<script defer src="${pageContext.request.contextPath}/resources/JS/index.js"></script>
 	</head>
 	<body>
-	<%@ include file="/WEB-INF/header.jsp" %>
 
-		<h1>${product.videoGameName}</h1>
-		<h2>Information</h2>
-		
-		<h3>Description</h3>
-		<p>${product.videoGameDescription}</h1>
+		<%@ include file="/WEB-INF/header.jsp" %>
 
-		<h3>Price</h3>
-		<p>${product.videoGamePrice}</h1>
+		<%@ include file="/WEB-INF/mainTitle.jsp" %>
 
-		<h3>Stock</h3>
-		<p>${product.videoGameStock}</h1>
+		<div class="waweProduct">
+			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+				<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+			</svg>
+		</div>
 
-		<h3>Release date</h3>
-		<p>${product.releaseDate}</h1>
-	
+		<div class="spacerProduct layerProduct"></div>
+
+
+		<div id="mainSection">
+
+			<h1 id="gameNameTitle">${product.videoGameName}</h1>
+
+			<section>
+
+				<article>	
+					<div id="carousel">
+
+				<div id="slide">
+					<div class="item" style="background-image: url(./resources/pictures/ARK-picture.jpeg);">
+						<div class="content">
+							<div class="name">LUNDEV</div>
+							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<button>See more</button>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(./resources/pictures/Gris-picture.avif);">
+						<div class="content">
+							<div class="name">LUNDEV</div>
+							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<button>See more</button>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(./resources/pictures/Undertale-picture.jpg);">
+						<div class="content">
+							<div class="name">LUNDEV</div>
+							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<button>See more</button>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(./resources/pictures/theWitcherIII-picture.jpg);">
+						<div class="content">
+							<div class="name">LUNDEV</div>
+							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<button>See more</button>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(./resources/pictures/OuterWilds-picture.webp);">
+						<div class="content">
+							<div class="name">LUNDEV</div>
+							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<button>See more</button>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(./resources/pictures/battlefield1-picture.webp);">
+						<div class="content">
+							<div class="name">LUNDEV</div>
+							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<button>See more</button>
+						</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+					<button id="next"><i class="fa-solid fa-angle-right"></i></button>
+				</div>
+
+			</div>
+				</article>
+
+				<article id="informationProduct">
+
+					<h3>A propos du jeu</h3>
+					<p>${product.videoGameDescription}</p>
+
+									
+					
+					<h3>Release date</h3>
+					<p>${product.releaseDate}</p>
+
+					<div id="priceStock">
+						<p>Stock ${product.videoGameStock}</p>
+
+						<p>${product.videoGamePrice}$</p>
+					</div>
+
+					<div id="controlAddCart">
+						<button>-</button>
+						0
+						<button>+</button>
+						<button>Add to Cart</button>
+					</div>
+
+				</article>
+				
+
+			</section>
+		</div>
+
 	</body>
 </html>

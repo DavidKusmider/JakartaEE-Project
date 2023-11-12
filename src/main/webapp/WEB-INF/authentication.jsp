@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>Sign Up / Login</title>
-    <%@ include file="/WEB-INF/head.jsp" %>
-
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/authentication.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <%@ include file="/WEB-INF/head.jsp" %>
 </head>
 <body>
 <%@ include file="/WEB-INF/header.jsp" %>
+<%@ include file="/WEB-INF/mainTitle.jsp" %>
 <div class="CONN-INSC">
     <div class="container_INS_CONN" id="container">
         <div class="form-container sign-up-container">
