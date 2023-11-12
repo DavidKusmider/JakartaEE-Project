@@ -24,12 +24,12 @@ public class AuthenticationServlet extends HttpServlet {
 			String hashedPassword = new EncryptPassword().Encrypt(password);
 
 			if (mail == null || mail.trim().isEmpty() || password == null || password.trim().isEmpty()) {
-				response.sendRedirect(".");
+				response.sendRedirect(request.getContextPath() + "/login");
 			} else {
 				UserEntityDAO userDAO = new UserEntityDAO();
 				UserEntity user = userDAO.getUserEntityByEmail(mail);
 				if (user == null) {
-					response.sendRedirect(".");
+					response.sendRedirect(request.getContextPath() + "/login");
 				} else if (user.getUserPassword().equals(hashedPassword)) {
 					HttpSession session = request.getSession();
 					session.setAttribute("user", user);
@@ -41,12 +41,12 @@ public class AuthenticationServlet extends HttpServlet {
 						//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 					}
 				} else {
-					response.sendRedirect(".");
+					response.sendRedirect(request.getContextPath() + "/login");
 				}
 			}
 		} else if (request.getSession().getAttribute("user") != null) {
 			request.getSession().invalidate();
-			response.sendRedirect(".");
+			response.sendRedirect(request.getContextPath() + "/login");
 		}
 	}
 
@@ -58,7 +58,7 @@ public class AuthenticationServlet extends HttpServlet {
 		String address = request.getParameter("address");
 
 		if (name == null || name.trim().isEmpty() || mail == null || mail.trim().isEmpty() || password == null || password.trim().isEmpty() || address == null || address.trim().isEmpty()) {
-			response.sendRedirect(".");
+			response.sendRedirect(request.getContextPath() + "/login");
 		} else {
 
 			String hashedPassword = new EncryptPassword().Encrypt(password);
@@ -84,7 +84,7 @@ public class AuthenticationServlet extends HttpServlet {
 				EmailSender.sendAccountConfirmationEmail(user);
 
 				session.setAttribute("user", user);
-				response.sendRedirect(request.getContextPath() + "/productList");
+				response.sendRedirect(request.getContextPath() + "/ProductListServlet");
 				//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 			}
 		}
