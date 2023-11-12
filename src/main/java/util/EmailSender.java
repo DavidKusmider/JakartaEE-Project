@@ -79,6 +79,41 @@ public class EmailSender {
         }
     }
 
+    public static void sendContactForm(
+            String name,
+            String email,
+            String objectMessage,
+            String typeMessage,
+            String message
+    ) {
+
+        Courier.init("pk_prod_NN1TZXNX1P45T5JZP61VWN8B0JY2");
+
+        SendEnhancedRequestBody request = new SendEnhancedRequestBody();
+        SendRequestMessage messageRequest = new SendRequestMessage();
+
+        HashMap<String, String> to = new HashMap<String, String>();
+        to.put("email","barreromai@cy-tech.fr");
+        messageRequest.setTo(to);
+        messageRequest.setTemplate("TX3XN3C3PKM74CMMGJMQ853KG8SX");
+
+        HashMap<String, Object> data = new HashMap<String, Object>();
+        data.put("nameUser", name);
+        data.put("emailUser",email);
+        data.put("subject", objectMessage);
+        data.put("typeMessage", typeMessage);
+        data.put("message", message);
+        messageRequest.setData(data);
+
+        request.setMessage(messageRequest);
+        try {
+            SendEnhancedResponseBody response = new SendService().sendEnhancedMessage(request);
+            System.out.println(response);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         UserEntity user = new UserEntity();
         user.setUserAddress("123 rue des ...");

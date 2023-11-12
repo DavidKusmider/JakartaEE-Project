@@ -78,4 +78,14 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ContactVue</servlet-name>
+        <jsp-file>/WEB-INF/contactUs.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ContactVue</servlet-name>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+
 </web-app>

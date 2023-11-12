@@ -304,9 +304,3 @@ textarea::placeholder {
     border: 1px solid red;
     background-color: pink;
 }
-
-.imgLogin{
-    width: 64px;
-    height: 64px;
-    margin: 20px 0;
-}

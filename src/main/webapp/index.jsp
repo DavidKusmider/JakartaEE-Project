@@ -105,6 +105,8 @@
 
 
 			<a href="CartServletTest">Page Test Panier</a>
+			
+			<a href="contact">Contact Us</a>
 
 			<form method="get" action="authentication">
 				<input type="submit" value="Log out" />
