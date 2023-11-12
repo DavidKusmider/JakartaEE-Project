@@ -29,43 +29,43 @@
 				<div id="slide">
 					<div class="item" style="background-image: url(./resources/pictures/ARK-picture.jpeg);">
 						<div class="content">
-							<div class="name">LUNDEV</div>
-							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<div class="name">Ark: Survival Evolved</div>
+							<div class="des">Ark : Survival Evolved est un jeu d'action et d'aventure dans lequel vous devez survivre sur une ile deserte, mais une ile peuplee de dinosaures et d'autres creatures anciennes. Le jeu se joue a la premiere ou a la troisieme personne, et vos personnages peuvent voyager a pied ou chevaucher votre propre bete prehistorique.</div>
 							<button>See more</button>
 						</div>
 					</div>
 					<div class="item" style="background-image: url(./resources/pictures/Gris-picture.avif);">
 						<div class="content">
-							<div class="name">LUNDEV</div>
-							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<div class="name">Ark: Survival Evolved</div>
+							<div class="des">Ark : Survival Evolved est un jeu d'action et d'aventure dans lequel vous devez survivre sur une ile deserte, mais une ile peuplee de dinosaures et d'autres creatures anciennes. Le jeu se joue a la premiere ou a la troisieme personne, et vos personnages peuvent voyager a pied ou chevaucher votre propre bete prehistorique.</div>
 							<button>See more</button>
 						</div>
 					</div>
 					<div class="item" style="background-image: url(./resources/pictures/Undertale-picture.jpg);">
 						<div class="content">
-							<div class="name">LUNDEV</div>
-							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<div class="name">Undertale</div>
+							<div class="des">Bienvenue dans UNDERTALE. Dans ce RPG, vous controlez un humain qui tombe sous terre dans le monde des monstres. Vous devez maintenant trouver le moyen de sortir... ou rester piege pour toujours.</div>
 							<button>See more</button>
 						</div>
 					</div>
 					<div class="item" style="background-image: url(./resources/pictures/theWitcherIII-picture.jpg);">
 						<div class="content">
-							<div class="name">LUNDEV</div>
-							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<div class="name">The Witcher 3: Wild Hunt</div>
+							<div class="des">Vous incarnez Geralt de Riv, un mercenaire et tueur de monstres. Devant vous s'etend un continent infeste de monstres et dechire par la guerre, que vous pouvez explorer a votre guise. Votre contrat actuel ? Retrouver Ciri, l'enfant de la prophetie, une arme vivante capable de changer le monde.</div>
 							<button>See more</button>
 						</div>
 					</div>
 					<div class="item" style="background-image: url(./resources/pictures/OuterWilds-picture.webp);">
 						<div class="content">
-							<div class="name">LUNDEV</div>
-							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<div class="name">Outer Wilds</div>
+							<div class="des">Nomme Game of the Year 2019 par Giant Bomb, Polygon, Eurogamer et The Guardian, acclame par la critique et recompense par de nombreux prix, Outer Wilds est un jeu mysterieux en monde ouvert, mettant en scene un systeme solaire piege dans une boucle temporelle infinie.</div>
 							<button>See more</button>
 						</div>
 					</div>
 					<div class="item" style="background-image: url(./resources/pictures/battlefield1-picture.webp);">
 						<div class="content">
-							<div class="name">LUNDEV</div>
-							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+							<div class="name">Battlefield 1</div>
+							<div class="des">Rejoignez la grande communaute de Battlefield et plongez dans les combats epiques de la Grande Guerre dans ce jeu de tir en vue subjective acclame par la critique. Battlefield 1 a remporte le Game Critics Awards du meilleur jeu d'action de l'E3 2016 et le prix du meilleur jeu d'action 2016 de la Gamescom.</div>
 							<button>See more</button>
 						</div>
 					</div>

@@ -28,7 +28,7 @@
 							<div>
 								<h2>Adventure</h2>
 
-								<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+								<p>Transportez-vous dans des mondes captivants et mysterieux, explorer des terres inconnues, resolver des enigmes complexes et affronter des defis passionnants.</p>
 							</div>
 						</a>
 
@@ -36,7 +36,7 @@
 							<div>
 								<h2>Multiplayer</h2>
 
-								<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+								<p>Interagisser en temps reel avec d'autres joueurs, que ce soit en cooperation ou en competition. Creer des mondes virtuels partages, collaborer pour atteindre des objectifs communs.</p>
 							</div>
 						</a>				
 					</div>
@@ -46,7 +46,7 @@
 							<div>
 								<h2>Solo</h2>
 
-								<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+								<p>Plongez au coeur une aventure immersive dans un contexte fantastique, futuriste ou realiste ou vos choix, interactions avec le monde virtuel faconnent l'evolution de l'histoire.</p>
 							</div>
 						</a>
 					</div>
@@ -57,7 +57,7 @@
 							<div>
 								<h2>Survival</h2>
 
-								<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+								<p>Confrontez-vous a des donditions extremes, tels que des mondes post-apocalyptiques, des iles desertes ou des zones infestees de zombies avec un seul but : SURVIVRE.</p>
 							</div>
 						</a>
 					</div>
@@ -66,7 +66,7 @@
 						<a href="#" class="neon-button theme2">
 							<div>
 								<h2>Building</h2>
-								<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+								<p>Decouvrez un univers ou votre creativite est la cle. Eriger des villes florissantes, concevez des parcs a theme spectaculaires, ou contruisez des forteresses impenetrables.</p>
 							</div>
 						</a>				
 					</div>
@@ -77,7 +77,7 @@
 					<a href="#" class="neon-button  theme4">
 						<div>
 							<h2>First-Play</h2>
-							<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+							<p>Rejoignez un univers immersif ou l'exploration et la decouverte sont au coeur de l'experience sublimee par des graphismes epoustouflants et une bande-son envoutante.</p>
 						</div>
 					</a>
 				</div> 
@@ -85,7 +85,7 @@
 					<a href="#" class="neon-button theme3">
 						<div>
 							<h2>Third-Play</h2>
-							<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+							<p>Rejoignez un univers immersif ou les frontieres entre le joueur et le personnage deviennent floues, offrant une perspective unique qui transcende les limites du gameplay conventionnel.</p>
 						</div>
 					</a>
 				</div> 
