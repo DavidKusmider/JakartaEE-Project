@@ -83,35 +83,26 @@
 
 		<div class="spacer layer2"></div>
 
-		<section >
+		<section id="section2" >
 			<h2 id="gej-title">Tentez des genres de jeunes incongrues</h2>	
 			
 			<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
 
-		</section>
-
-		<div id="container">
-			<h1>Test Client</h1>
-			<a href="ClientServletTest">Page Test Client Database</a>
-
-			<h1>Admin Page</h1>
-			<a href="adminPageServlet">Link to admin page</a>
-
-			<h1>List of Video Games</h1>
-			<a href="ProductListServlet">Link to all games</a>
-
-			<h1>Profile</h1>
-			<a href="ProfileServlet">Profile</a>
-
-
-			<a href="CartServletTest">Page Test Panier</a>
-			
-			<a href="contact">Contact Us</a>
-
-			<form method="get" action="authentication">
-				<input type="submit" value="Log out" />
+			<form method="get" action="authentication" id="logOut-button" class="buttonHeader LoginProfilButton">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				<input type="submit" id="logOut-input" value="Log out" />
 			</form>
 
-		</div>
+		</section>
+
+
+
+
+
+		<%@ include file="/WEB-INF/footer.jsp" %>
+
 	</body>
 </html>

@@ -296,3 +296,24 @@
 .theme4:focus::after {
 	opacity: 1;
 }
+
+.waweProduct {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(0deg);
+}
+
+.waweProduct svg {
+    position: relative;
+    display: block;
+    width: calc(100%);
+    height: 58px;
+}
+
+.waweProduct .shape-fill {
+    fill: #560090;
+}

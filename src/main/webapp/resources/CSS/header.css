@@ -5,8 +5,7 @@
 }
 
 body {
-	font-family: Arial, sans-serif;
-	text-align: center;
+	font-family: Arial, sans-serif; text-align: center;
 	background-color: #202731;
 	color: white;
 }
@@ -64,7 +63,7 @@ header {
 }
 
 .buttonHeader:nth-child(2) {
-	filter:hue-rotate(225deg);
+	filter: hue-rotate(225deg);
 }
 
 .LoginProfilButton {

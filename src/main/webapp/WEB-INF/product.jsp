@@ -115,5 +115,11 @@
 			</section>
 		</div>
 
+		<div id="test">
+
+		</div>
+
+		<%@ include file="/WEB-INF/footer.jsp" %>
+
 	</body>
 </html>

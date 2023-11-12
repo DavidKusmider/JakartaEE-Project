@@ -3,7 +3,7 @@ body {
 }
 
 #gameNameTitle {
-	transform: translateY(-40vh)  translateX(1vw); 
+	transform: translateY(-47vh)  translateX(1vw); 
 	z-index: 5;
 }
 
@@ -20,15 +20,14 @@ body {
 	background-image: url("../pictures/product/layered-steps-haikei.svg");
 }
 
-waweProduct
 .waweProduct {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    transform: rotate(90deg);
+    transform: rotate(0deg);
 }
 
 .waweProduct svg {
@@ -50,6 +49,7 @@ waweProduct
 	width: 65vw;
     backdrop-filter: blur(10px); /* ajustez la quantité de flou souhaitée lors du défilement */
 	border-radius: 20px;
+	border: yellow solid 2px
 }
 
 section {
@@ -197,4 +197,8 @@ section {
 }
 .buttons button:hover{
     background-color: #bac383;
+}
+
+#test {
+	margin: 30vw 0;
 }

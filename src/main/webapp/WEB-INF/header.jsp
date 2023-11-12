@@ -38,6 +38,4 @@
 		</c:otherwise>
 	</c:choose>	
 	<a href="/JakartaEE-Project/CartServletTest">Panier</a>
-
-	<c:out value="${user}" />
 </header>
