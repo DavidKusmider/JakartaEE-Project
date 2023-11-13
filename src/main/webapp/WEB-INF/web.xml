@@ -6,7 +6,7 @@
          version="5.0">
 
   <display-name>Archetype Created Web Application</display-name>
-  
+
 
     <servlet>
         <servlet-name>AuthenticationVue</servlet-name>

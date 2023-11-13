@@ -31,13 +31,13 @@ public class HistoryEntity {
 
 	@jakarta.persistence.Basic
 	@jakarta.persistence.Column(name = "videoGamePrice", nullable = false, precision = 0)
-	private int videoGamePrice;
+	private double videoGamePrice;
 
-	public int getVideoGamePrice() {
+	public double getVideoGamePrice() {
 		return videoGamePrice;
 	}
 
-	public void setVideoGamePrice(int videoGamePrice) {
+	public void setVideoGamePrice(double videoGamePrice) {
 		this.videoGamePrice = videoGamePrice;
 	}
 

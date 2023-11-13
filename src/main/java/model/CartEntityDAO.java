@@ -49,4 +49,10 @@ public class CartEntityDAO {
         session.close();
     }
 
+    public CartRow getCartRowById(int cartId) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        CartRow cartRow = session.get(CartRow.class, cartId);
+        session.close();
+        return cartRow;
+    }
 }

@@ -44,7 +44,7 @@ public class EmailSender {
         CartEntityDAO cartDAO = new CartEntityDAO(user.getUserId());
         List<CartRow> cart = cartDAO.getAllCartRows();
 
-        String res ="\nNom du produit \t \tQuantité \t \tPrix total\n";     //TODO gérer le problème d'affichage
+        String res ="\nName of the video game \t \tQuantity \t \tTotal price\n";     //TODO gérer le problème d'affichage
         double totalPrice = 0;
         for (CartRow cartRow: cart) {
             res = res + cartRow.getName() + " \t \t" + cartRow.getQuantity() + " \t \t" + cartRow.getPrice()*cartRow.getQuantity() + " euros\n";

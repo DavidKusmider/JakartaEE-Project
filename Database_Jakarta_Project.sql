@@ -95,6 +95,8 @@ INSERT INTO User (
 ( "CYTech", "c7267d9b7abd409c7ceb3cb7a8a43adc99f67eb856fcf71c1e884b4d0e9a5d35", "cytech@gmail.com", "Tav", CURDATE(), 'Admin', 7, 0 ),
 ( "Lucas", "secret", "d5@ku.com", "Tav", CURDATE(), 'Client', 3, 0 );
 
+INSERT INTO User (userName, userPassword, userMail, userAddress, userCreated, userType, userRight, userFidelityPoint)
+VALUE ('Lucas','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','lucas2@gmail.com','TestVille',CURDATE(),'Client',1,100);
 
 create table if not exists History
 (
@@ -128,4 +130,4 @@ create table if not exists CartRow
 );
 
 INSERT INTO CartRow (userId, videoGameId, quantity) VALUES
-(1, 1, 2);
+(9, 1, 2);
