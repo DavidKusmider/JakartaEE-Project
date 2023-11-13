@@ -1,12 +1,14 @@
+<%@include file="taglibs.jspf" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <header>
-	<a href="/JakartaEE-Project/ProductListServlet" class="buttonHeader">
+	<a href="${pageContext.request.contextPath}/ProductListServlet" class="buttonHeader">
 		<span></span>
 		<span></span>
 		<span></span>
 		<span></span>
 		Tous les jeux
 	</a>
-	<a href="/JakartaEE-Project/AllThemesServlet" class="buttonHeader">
+	<a href="${pageContext.request.contextPath}/AllThemesServlet" class="buttonHeader">
 		<span></span>
 		<span></span>
 		<span></span>
@@ -17,7 +19,7 @@
 	<input type="text" id="searchBar" placeholder="SearchBar"/>
 	<c:choose>
 		<c:when test="${not empty user}">
-			<a href="/JakartaEE-Project/ProfileServlet" id="Profil-button" class="buttonHeader LoginProfilButton">
+			<a href="${pageContext.request.contextPath}/ProfileServlet" id="Profil-button" class="buttonHeader LoginProfilButton">
 				<span></span>
 				<span></span>
 				<span></span>
@@ -27,7 +29,7 @@
 
 		</c:when>
 		<c:otherwise>
-			<a href="/JakartaEE-Project/login" id="Login-button" class="buttonHeader LoginProfilButton">
+			<a href="${pageContext.request.contextPath}/login" id="Login-button" class="buttonHeader LoginProfilButton">
 				<span></span>
 				<span></span>
 				<span></span>
@@ -37,5 +39,5 @@
 
 		</c:otherwise>
 	</c:choose>	
-	<a href="/JakartaEE-Project/CartServletTest">Panier</a>
+	<a href="${pageContext.request.contextPath}/CartServletTest">Panier</a>
 </header>
