@@ -88,4 +88,14 @@
         <url-pattern>/contact</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AboutUsVue</servlet-name>
+        <jsp-file>/WEB-INF/aboutUs.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AboutUsVue</servlet-name>
+        <url-pattern>/aboutUs</url-pattern>
+    </servlet-mapping>
+
 </web-app>
