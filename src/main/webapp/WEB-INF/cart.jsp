@@ -15,45 +15,52 @@
     </script>
     <main id="main">
         <c:choose>
-			<c:when test="${not empty commandPARAM}">
-                <table id="cartTable">
-                <tbody id="tbody">
-                    <tr>
-                        <th>Name of the video game</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Remove from the cart</th>
-                    </tr>
-                    <c:forEach items="${commandPARAM}" var="cart">
-                        <tr id="row_${cart.getCartId()}">
-                            <td>${cart.getName()}</td>
-                            <form method="post" action="CartServletTest">
-                                <input type="hidden" name="gameIdPARAM" value="${cart.gameId}">
-                                <input type="hidden" name="userIdPARAM" value="${userIdPARAM}">
-                                <input type="hidden" name="cartIdPARAM" value="${cart.getCartId()}">
-                                <input type="hidden" name="fidelityPoints" value="${fidelityPointsPARAM}">
-                                <td>
-                                    <input type="button" id="remove_${cart.getCartId()}" onclick="decrementValue('${cart.getCartId()}','${userIdPARAM}','${cart.getGameId()}')" value="Decrement" />
-                                    <input type="text" id="quantity_${cart.getCartId()}" name="quantityPARAM" value="${cart.getQuantity()}">
-                                    <input type="button" id="add_${cart.getCartId()}" onclick="incrementValue('${cart.getCartId()}','${userIdPARAM}','${cart.getGameId()}')" value="Increment" />
-                                </td>
-                                <td id="price_${cart.getCartId()}">${cart.getPrice()*cart.getQuantity()} euros</td> <!-- TODO -->
-                                <td><input type="button" name="action" onclick="deleteCartRow('${cart.getCartId()}','${userIdPARAM}')" value="Delete"></td>
-                            </form>
-                        </tr>
-                    </c:forEach>
-                    <tr>
-                        <td id="price">Total Price: ${totalPricePARAM-fidelityPointsUsed} euros</td> <!-- TODO -->
-                        <td></td>
-                        <td>
-                            <div id="paypal"></div>
-                        </td>
-                    </tr>
-                </tbody>
-                </table>
+            <c:when test="${right==0}">
+                <span>You do not have access to this feature due to a temporary banishment. If you have any complaints, please contact us <a href="contact">there</a>.</span>
             </c:when>
-			<c:otherwise>
-                <span>You do not have any video game in your shopping cart.</span>
+            <c:otherwise>
+                <c:choose>
+                    <c:when test="${not empty commandPARAM}">
+                        <table id="cartTable">
+                            <tbody id="tbody">
+                            <tr>
+                                <th>Name of the video game</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Remove from the cart</th>
+                            </tr>
+                            <c:forEach items="${commandPARAM}" var="cart">
+                                <tr id="row_${cart.getCartId()}">
+                                    <td>${cart.getName()}</td>
+                                    <form method="post" action="CartServletTest">
+                                        <input type="hidden" name="gameIdPARAM" value="${cart.gameId}">
+                                        <input type="hidden" name="userIdPARAM" value="${userIdPARAM}">
+                                        <input type="hidden" name="cartIdPARAM" value="${cart.getCartId()}">
+                                        <input type="hidden" name="fidelityPoints" value="${fidelityPointsPARAM}">
+                                        <td>
+                                            <input type="button" id="remove_${cart.getCartId()}" onclick="decrementValue('${cart.getCartId()}','${userIdPARAM}','${cart.getGameId()}')" value="Decrement" />
+                                            <input type="text" id="quantity_${cart.getCartId()}" name="quantityPARAM" value="${cart.getQuantity()}">
+                                            <input type="button" id="add_${cart.getCartId()}" onclick="incrementValue('${cart.getCartId()}','${userIdPARAM}','${cart.getGameId()}')" value="Increment" />
+                                        </td>
+                                        <td id="price_${cart.getCartId()}">${cart.getPrice()*cart.getQuantity()} euros</td> <!-- TODO -->
+                                        <td><input type="button" name="action" onclick="deleteCartRow('${cart.getCartId()}','${userIdPARAM}')" value="Delete"></td>
+                                    </form>
+                                </tr>
+                            </c:forEach>
+                            <tr>
+                                <td id="price">Total Price: ${totalPricePARAM-fidelityPointsUsed} euros</td> <!-- TODO -->
+                                <td></td>
+                                <td>
+                                    <div id="paypal"></div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </c:when>
+                    <c:otherwise>
+                        <span>You do not have any video game in your shopping cart.</span>
+                    </c:otherwise>
+                </c:choose>
             </c:otherwise>
         </c:choose>
 

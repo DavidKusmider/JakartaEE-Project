@@ -96,6 +96,14 @@ public class UpdateGameDataAJAX extends HttpServlet {
 
 			} 
 
+		} else if (action.equals("modifyStock")) {
+			int stock = Integer.parseInt(request.getParameter("stock"));
+			int videoGameId = Integer.parseInt(request.getParameter("videoGameId"));
+			VideoGameEntityDAO videoGameEntityDAO = new VideoGameEntityDAO();
+			VideoGameEntity videoGameEntity = videoGameEntityDAO.getVideoGameEntityById(videoGameId);
+			videoGameEntity.setVideoGameStock(stock);
+			videoGameEntityDAO.modifyVideoGameEntity(videoGameEntity);
+			jsonResponse.put("success", true);
 		} else {
 			int videoGameId = Integer.parseInt(request.getParameter("videoGameId"));
 			VideoGameEntity videoGame = videoGameDAO.getVideoGameEntityById(videoGameId);

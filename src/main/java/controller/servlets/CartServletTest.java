@@ -118,10 +118,23 @@ public class CartServletTest extends HttpServlet {
         UserEntityDAO userDAO = new UserEntityDAO();
         UserEntity user = userDAO.getUserEntityById(userId);
         int fidelityPoints = user.getUserFidelityPoint();
+
+        if (user.getUserRight()>0) {
+            if (user.getUserRight()==1) {
+                fidelityPoints = 0;
+            }
+            request.setAttribute("right", 1);
+        } else {
+            request.setAttribute("right", 0);
+        }
+
         int fidelityPointsUsed = fidelityPoints;
         if (fidelityPoints>=(int) Math.floor(totalPrice)) {
             fidelityPointsUsed=(int) Math.floor(totalPrice)-1;
         }
+
+
+
         request.setAttribute("userIdPARAM", userId);
         request.setAttribute("commandPARAM", cart);
         request.setAttribute("totalPricePARAM",totalPrice);
@@ -178,10 +191,21 @@ public class CartServletTest extends HttpServlet {
             UserEntityDAO userDAO = new UserEntityDAO();
             UserEntity user = userDAO.getUserEntityById(userId);
             int fidelityPoints = user.getUserFidelityPoint();
+
+            if (user.getUserRight()>0) {
+                if (user.getUserRight()==1) {
+                    fidelityPoints = 0;
+                }
+                request.setAttribute("right", 1);
+            } else {
+                request.setAttribute("right", 0);
+            }
+
             int fidelityPointsUsed = fidelityPoints;
             if (fidelityPoints>=(int) Math.floor(totalPrice)) {
                 fidelityPointsUsed=(int) Math.floor(totalPrice)-1;
             }
+
             request.setAttribute("userIdPARAM", userId);
             request.setAttribute("commandPARAM", cart);
             request.setAttribute("totalPricePARAM", totalPrice);
@@ -190,7 +214,7 @@ public class CartServletTest extends HttpServlet {
 
             this.getServletContext().getRequestDispatcher("/WEB-INF/cart.jsp").forward(request, response);
         }else{
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect(request.getContextPath()+"/login");
         }
     }
 }
