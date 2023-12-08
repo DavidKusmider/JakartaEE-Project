@@ -97,5 +97,13 @@
         <servlet-name>AboutUsVue</servlet-name>
         <url-pattern>/aboutUs</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>CartVue</servlet-name>
+        <jsp-file>/WEB-INF/cart.jsp</jsp-file>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>CartVue</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
 </web-app>

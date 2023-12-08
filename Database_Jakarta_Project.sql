@@ -1,5 +1,10 @@
+drop database if exists Database_Jakarta_Project;
+
+create database if not exists Database_Jakarta_Project;
+
+use Database_Jakarta_Project;
+
 drop table if exists VideoGameTheme;
-drop table if exists CartRow;
 drop table if exists History;
 drop table if exists Discount;
 drop table if exists VideoGame;
@@ -117,17 +122,3 @@ create table if not exists Discount
     constraint PK_discountId PRIMARY KEY (discountId),
     constraint FK_videoGameId foreign key (videoGameId) references VideoGame (videoGameId) on delete cascade
 );
-
-create table if not exists CartRow
-(
-    cartId         int not null auto_increment,
-    userId         int not null,
-    videoGameId    int not null,
-    quantity       int not null DEFAULT 1,
-    constraint PK_cartId PRIMARY KEY (cartId),
-    constraint FK_userIdCart foreign key (userId) references User (userId) on delete cascade ,
-    constraint FK_videoGameIdCart foreign key (videoGameId) references VideoGame (videoGameId) on delete cascade
-);
-
-INSERT INTO CartRow (userId, videoGameId, quantity) VALUES
-(9, 1, 2);

@@ -11,6 +11,7 @@
 		<script defer src="${pageContext.request.contextPath}/resources/JS/index.js"></script>
 	</head>
 	<body>
+	<script src="${pageContext.request.contextPath}/resources/JS/manageQuantityProduct.js"></script>
 
 		<%@ include file="/WEB-INF/header.jsp" %>
 
@@ -99,14 +100,14 @@
 					<div id="priceStock">
 						<p>Stock ${product.videoGameStock}</p>
 
-						<p>${product.videoGamePrice}$</p>
+						<p><span id="priceVideoGame">${product.videoGamePrice}</span>$</p>
 					</div>
 
 					<div id="controlAddCart">
-						<button>-</button>
-						0
-						<button>+</button>
-						<button>Add to Cart</button>
+						<button id="decrement" onclick="decrementQuantity()">-</button>
+						<span id="quantity">0</span>
+						<button id="increment" onclick="incrementQuantity(${product.videoGameStock})">+</button>
+						<button id="addCartButton" onclick="addToCartSession(${product.videoGameId}, ${product.videoGamePrice})">Add to Cart</button>
 					</div>
 
 				</article>
