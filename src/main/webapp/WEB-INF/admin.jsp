@@ -5,11 +5,13 @@
 	<head>
 		<title>Admin Page</title>
 		<%@ include file="/WEB-INF/head.jsp" %>
-		<link href="${pageContext.request.contextPath}/resources/CSS/adminPage.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/css/adminPage.css" rel="stylesheet">
 		<script src="${pageContext.request.contextPath}/resources/JS/admin.js"></script>
 	</head>
 	<body>
 		<%@ include file="/WEB-INF/header.jsp" %>
+
+		<%@ include file="/WEB-INF/mainTitle.jsp" %>
 
 		<%
 		// UserEntity user = (UserEntity) session.getAttribute("user");
@@ -18,7 +20,7 @@
 		// }
 		%>
 
-		<h1>Page Admin</h1>
+		<h1 id="mainTitleAdmin">Page Admin</h1>
 
 		<input type="text" onchange="research(this)" placeholder="rechercher" />
 
@@ -141,6 +143,9 @@
 				</c:if>
 			
 			</c:forEach>
+
+
+		<%@ include file="/WEB-INF/footer.jsp" %>
 
 	</body>
 

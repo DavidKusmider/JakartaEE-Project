@@ -199,3 +199,66 @@ input[name="grid"][value="2"]:checked ~ .list .item{
     text-align: left;
     align-items: center;
 }
+
+.waweProduct {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(0deg);
+}
+
+.waweProduct svg {
+    position: relative;
+    display: block;
+    width: calc(100%);
+    height: 58px;
+}
+
+.waweProduct .shape-fill {
+    fill: #560090;
+}
+
+.waweProduct {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(0deg);
+}
+
+.waweProduct svg {
+    position: relative;
+    display: block;
+    width: calc(100%);
+    height: 58px;
+}
+
+.waweProduct .shape-fill {
+    fill: #560090;
+}
+
+.waweProduct {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(0deg);
+}
+
+.waweProduct svg {
+    position: relative;
+    display: block;
+    width: calc(100%);
+    height: 58px;
+}
+
+.waweProduct .shape-fill {
+    fill: #560090;
+}

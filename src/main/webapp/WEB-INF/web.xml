@@ -6,7 +6,7 @@
          version="5.0">
 
   <display-name>Archetype Created Web Application</display-name>
-  
+
 
     <servlet>
         <servlet-name>AuthenticationVue</servlet-name>
@@ -69,13 +69,13 @@
   </servlet-mapping>
 
     <servlet>
-        <servlet-name>IndexVue</servlet-name>
-        <jsp-file>/index.jsp</jsp-file>
+        <servlet-name>ContactVue</servlet-name>
+        <jsp-file>/WEB-INF/contactUs.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>IndexVue</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <servlet-name>ContactVue</servlet-name>
+        <url-pattern>/contact</url-pattern>
     </servlet-mapping>
 
 </web-app>

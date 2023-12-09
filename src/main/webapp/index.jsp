@@ -1,7 +1,7 @@
 <html lang="en">
 	<head>
 		<title>Home - JakartaEE-Project</title>
-		<link href="${pageContext.request.contextPath}/resources/CSS/index.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/css/index.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 		<%@ include file="/WEB-INF/head.jsp" %>
 		<script defer src="${pageContext.request.contextPath}/resources/JS/index.js"></script>
@@ -27,45 +27,38 @@
 			<div id="carousel">
 
 				<div id="slide">
-					<div class="item" style="background-image: url(./resources/pictures/ARK-picture.jpeg);">
+					<div class="item" style="background-image: url(./resources/pictures/games/11.png);">
 						<div class="content">
 							<div class="name">Ark: Survival Evolved</div>
-							<div class="des">Ark : Survival Evolved est un jeu d'action et d'aventure dans lequel vous devez survivre sur une ile deserte, mais une ile peuplee de dinosaures et d'autres creatures anciennes. Le jeu se joue a la premiere ou a la troisieme personne, et vos personnages peuvent voyager a pied ou chevaucher votre propre bete prehistorique.</div>
+							<div class="des">Ark : Survival Evolved est un jeu d'action et d'aventure dans lequel vous devez survivre sur une ile deserte, mais une ile peuplee de dinosaures et d'autres creatures anciennes.</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(./resources/pictures/Gris-picture.avif);">
+					<div class="item" style="background-image: url(./resources/pictures/games/1.png);">
 						<div class="content">
-							<div class="name">Ark: Survival Evolved</div>
-							<div class="des">Ark : Survival Evolved est un jeu d'action et d'aventure dans lequel vous devez survivre sur une ile deserte, mais une ile peuplee de dinosaures et d'autres creatures anciennes. Le jeu se joue a la premiere ou a la troisieme personne, et vos personnages peuvent voyager a pied ou chevaucher votre propre bete prehistorique.</div>
+							<div class="name">Assassin’s Creed Mirage</div>
+							<div class="des">Mirage se déroule principalement dans la Bagdad du IXe siècle et met en scène Basim Ibn Ishaq. Historiquement, c'est l'époque de l'anarchie de Samarra, une période instable.</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(./resources/pictures/Undertale-picture.jpg);">
+					<div class="item" style="background-image: url(./resources/pictures/games/7.png);">
 						<div class="content">
-							<div class="name">Undertale</div>
-							<div class="des">Bienvenue dans UNDERTALE. Dans ce RPG, vous controlez un humain qui tombe sous terre dans le monde des monstres. Vous devez maintenant trouver le moyen de sortir... ou rester piege pour toujours.</div>
+							<div class="name">Minecraft</div>
+							<div class="des">Explorez des mondes générés aléatoirement et construisez tout ce qui vous passe par la tête, d'un abri de fortune au plus fabuleux des châteaux.</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(./resources/pictures/theWitcherIII-picture.jpg);">
+					<div class="item" style="background-image: url(./resources/pictures/games/12.png);">
 						<div class="content">
-							<div class="name">The Witcher 3: Wild Hunt</div>
-							<div class="des">Vous incarnez Geralt de Riv, un mercenaire et tueur de monstres. Devant vous s'etend un continent infeste de monstres et dechire par la guerre, que vous pouvez explorer a votre guise. Votre contrat actuel ? Retrouver Ciri, l'enfant de la prophetie, une arme vivante capable de changer le monde.</div>
+							<div class="name">Rust</div>
+							<div class="des">Il peut être difficile pour un débutant de passer les premières étapes cruciales après la période de reproduction, car c'est le PvE habituel que l'on peut attendre d'un jeu de survie.</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(./resources/pictures/OuterWilds-picture.webp);">
+					<div class="item" style="background-image: url(./resources/pictures/games/14.png);">
 						<div class="content">
-							<div class="name">Outer Wilds</div>
-							<div class="des">Nomme Game of the Year 2019 par Giant Bomb, Polygon, Eurogamer et The Guardian, acclame par la critique et recompense par de nombreux prix, Outer Wilds est un jeu mysterieux en monde ouvert, mettant en scene un systeme solaire piege dans une boucle temporelle infinie.</div>
-							<button>See more</button>
-						</div>
-					</div>
-					<div class="item" style="background-image: url(./resources/pictures/battlefield1-picture.webp);">
-						<div class="content">
-							<div class="name">Battlefield 1</div>
-							<div class="des">Rejoignez la grande communaute de Battlefield et plongez dans les combats epiques de la Grande Guerre dans ce jeu de tir en vue subjective acclame par la critique. Battlefield 1 a remporte le Game Critics Awards du meilleur jeu d'action de l'E3 2016 et le prix du meilleur jeu d'action 2016 de la Gamescom.</div>
+							<div class="name">Terraria</div>
+							<div class="des">Terraria est un jeu d'exploration en deux dimensions dans lequel le joueur cherche à aménager le monde selon ses propres choix - et compétences en matière de combat, d'artisanat, collecte de ressources !</div>
 							<button>See more</button>
 						</div>
 					</div>
@@ -83,28 +76,25 @@
 
 		<div class="spacer layer2"></div>
 
-		<section >
+		<section id="section2" >
 			<h2 id="gej-title">Tentez des genres de jeunes incongrues</h2>	
 			
 			<p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
 
+			<form method="get" action="authentication" id="logOut-button" class="buttonHeader LoginProfilButton">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				<input type="submit" id="logOut-input" value="Log out" />
+			</form>
+
 		</section>
 
-		<div id="container">
-			<h1>Test Client</h1>
-			<a href="ClientServletTest">Page Test Client Database</a>
-
-			<h1>Admin Page</h1>
-			<a href="adminPageServlet">Link to admin page</a>
-
-			<h1>List of Video Games</h1>
-			<a href="ProductListServlet">Link to all games</a>
-
-			<h1>Profile</h1>
-			<a href="ProfileServlet">Profile</a>
 
 
-			<a href="CartServletTest">Page Test Panier</a>
+
+
 
 			<form method="get" action="authentication">
 				<input type="submit" value="Log out" />
