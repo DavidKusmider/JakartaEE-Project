@@ -1,9 +1,10 @@
 <%@ include file="taglibs.jspf"%>
 <html lang="en">
 	<head>
-		<title>Cart</title>
+		<title>Profile</title>
 		<%@ include file="/WEB-INF/head.jsp" %>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/profile.css">
+		<script src="${pageContext.request.contextPath}/resources/JS/profile.js"></script>
 	</head>
 	<body>
 		<%@ include file="/WEB-INF/header.jsp" %>
@@ -18,12 +19,96 @@
 		<h1 id="titleProfile">Profil de l'utilisateur</h1>
 
 		<c:if test="${user ne null}">
-			<div id="informationProfile">
-				<p>Nom d'utilisateur : ${user.userName}</p>
-				<p>Adresse email : ${user.userMail}</p>
-				<p>Votre Adresse : ${user.userAddress}</p>
-				<p>Vos points de fidélités : ${user.userFidelityPoint}</p>
-			</div>
+			<table id="informationProfile">
+				<tbody id="tbody">
+				<tr id="Username">
+					<td>
+						User name:
+					</td>
+					<td id="name__place">
+							${user.userName}
+					</td>
+					<td></td>
+					<td>
+						<button onclick="modifyName()" class="buttonHeader">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							Modify your user name
+						</button>
+					</td>
+				</tr>
+				<tr id="E-mail">
+					<td>
+						E-mail address:
+					</td>
+					<td id="mail__place">
+							${user.userMail}
+					</td>
+					<td></td>
+					<td>
+						<button onclick="modifyMail()" class="buttonHeader">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							Modify your e-mail
+						</button>
+					</td>
+				</tr>
+				<tr id="Address">
+					<td>
+						Your address:
+					</td>
+					<td id="address__place">
+							${user.userAddress}
+					</td>
+					<td></td>
+					<td>
+						<button onclick="modifyAddress()" class="buttonHeader">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							Modify your address
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Your fidelity points:
+					</td>
+					<td>
+							${user.userFidelityPoint}
+					</td>
+				</tr>
+				<tr id="Password">
+					<td></td>
+					<td>
+						<button onclick="modifyPassword()"  class="buttonHeader">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							Modify your password
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<button onclick="deleteAccount()" class="buttonHeader color__red">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							Delete your account
+						</button>
+					</td>
+				</tr>
+				</tbody>
+			</table>
 		</c:if>
 		<c:if test="${user eq null}">
 			<h2 id="titleError">Vous n'êtes pas connecté. Veuillez vous connecter pour afficher votre profil.</h2>

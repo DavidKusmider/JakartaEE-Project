@@ -90,10 +90,10 @@
                         Lucas GUILLOT</h2>
                     </div>
                     <p class="position">Développeur</p>
-                    <p>A CHANGER</p>
+                    <p>Etudiant en 2ème année à CY TECH Cergy, je me passionne pour l'informatique, avec un intérêt particulier pour l'Intelligence Artificielle et la cybersécurité. Mon parcours d'ingénieur nourrit ma curiosité et ma volonté de contribuer aux avancées technologiques, tout en développant des solutions innovantes et sécurisées. </p>
                     <div class="socials_icons">
                                 <span>
-                                    <a href="https://www.linkedin.com/in/robin-meneust/" target="_blank">
+                                    <a href="https://www.linkedin.com/in/lucas-guillot/" target="_blank">
                                         <i class="fa-brands fa-linkedin"></i>
                                     </a>
                                 </span>

@@ -56,7 +56,7 @@
 }
 
 #informationProfile {
-	margin: 40vh 30vw;
+	margin: auto;
 }
 
 .waweProduct {
@@ -78,4 +78,88 @@
 
 .waweProduct .shape-fill {
     fill: #560090;
+}
+
+tr {
+	margin: 5px;
+	margin-bottom: 10px;
+}
+
+button {
+	background-color: transparent;
+	border: transparent;
+}
+
+button.color__red {
+	filter: hue-rotate(170deg);
+}
+
+.input1 {
+	padding: 10px;
+	border: white solid 1.5px;
+	border-radius: 20px;
+	background-color: transparent; /* Couleur de fond translucide */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+	outline: none; /* Supprime la bordure de focus par défaut */
+	transition: background-color 0.3s ease;
+}
+
+.input1::placeholder {
+	color: #888; /* Couleur du texte de l'indicateur de lieu */
+}
+
+.input1:focus {
+	background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond légèrement plus opaque lors du focus */
+}
+
+.input2 {
+	padding: 10px;
+	border: white solid 1.5px;
+	border-radius: 20px;
+	background-color: transparent; /* Couleur de fond translucide */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+	outline: none; /* Supprime la bordure de focus par défaut */
+	transition: background-color 0.3s ease;
+}
+
+.input2::placeholder {
+	color: #888; /* Couleur du texte de l'indicateur de lieu */
+}
+
+.input2:focus {
+	background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond légèrement plus opaque lors du focus */
+}
+
+.submit {
+	padding: 10px;
+	color: #03e9f4;
+	border: solid 1.5px;
+	border-radius: 20px;
+	border-color: #03e9f4;
+	background-color: transparent;
+	box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+	outline: none;
+	transition: background-color 0.3s ease;
+	filter: hue-rotate(270deg);
+}
+
+.submit:hover {
+	color: black;
+	background-color: #03e9f4;
+}
+
+#form {
+	position: relative;
+	animation: slideDown 2s ease-out;
+}
+
+@keyframes slideDown {
+	from {
+		top: -50px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
 }
