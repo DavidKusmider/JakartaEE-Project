@@ -2,6 +2,7 @@ package controller.servlets;
 
 import java.io.IOException;
 
+import entities.HistoryEntity;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -31,6 +32,25 @@ public class ProductServlet extends HttpServlet {
 
                 // Placez le produit dans l'objet request
                 request.setAttribute("product", videoGame);
+
+				int initialQuantity = 0;
+
+				if(request.getSession().getAttribute("cart") != null){
+					List<HistoryEntity> cart = (List<HistoryEntity>) request.getSession().getAttribute("cart");
+					HistoryEntity itemFound = null;
+					for(HistoryEntity item : cart){
+						if(item.getVideoGameId() == videoGame.getVideoGameId()){
+							itemFound = item;
+						}
+					}
+					if(itemFound != null){
+						request.setAttribute("initialQuantity", itemFound.getVideoGameQuantity());
+					}else{
+						request.setAttribute("initialQuantity", initialQuantity);
+					}
+				}else{
+					request.setAttribute("initialQuantity", initialQuantity);
+				}
 
                 // Redirigez vers la page JSP de détails du produit
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/product");

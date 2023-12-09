@@ -1,4 +1,5 @@
 <%@ include file="taglibs.jspf"%>
+<%@ page import="util.CartUtil" %>
 <html>
 <head>
     <title>Cart</title>
@@ -25,7 +26,7 @@
                     <c:otherwise>
                         <table>
                             <tr>
-                                <th>Video Game ID</th>
+                                <th>Video Game Name</th>
                                 <th></th>
                                 <th>Quantity</th>
                                 <th></th>
@@ -35,7 +36,7 @@
                             </tr>
                         <c:forEach items="${ cart }" var="item" varStatus="status">
                             <tr id="${item.getVideoGameId()}">
-                                <td>${item.getVideoGameId()}</td>
+                                <td>${CartUtil.getVideoGameNameIdForCart(item.getVideoGameId())}</td>
                                 <td><button class="decrementCart" onclick="decrementCart(${item.getVideoGameId()})">-</button></td>
                                 <td><span id="quantity">${item.getVideoGameQuantity()}</span></td>
                                 <td><button class="incrementCart" onclick="incrementCart(${item.getVideoGameId()})">+</button></td>

@@ -105,7 +105,7 @@
 
 					<div id="controlAddCart">
 						<button id="decrement" onclick="decrementQuantity()">-</button>
-						<span id="quantity">0</span>
+						<span id="quantity">${initialQuantity}</span>
 						<button id="increment" onclick="incrementQuantity(${product.videoGameStock})">+</button>
 						<button id="addCartButton" onclick="addToCartSession(${product.videoGameId}, ${product.videoGamePrice})">Add to Cart</button>
 					</div>

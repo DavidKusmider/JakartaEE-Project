@@ -23,6 +23,7 @@ public class ManageCartServlet extends HttpServlet {
 
 		JSONObject jsonResponse = new JSONObject();
 		HttpSession session = request.getSession();
+		HistoryEntity itemToModify = null;
 
 		VideoGameEntityDAO videoGameEntityDAO = new VideoGameEntityDAO();
 
@@ -34,63 +35,56 @@ public class ManageCartServlet extends HttpServlet {
 		Integer videoGameIdPARAM = Integer.parseInt(request.getParameter("videoGameId"));
 
 		if(action != null) {
-			switch (action) {
-				case "delete":
-					HistoryEntity itemToRemove = null;
-					for (HistoryEntity item : cart) {
-						if (item.getVideoGameId() == videoGameIdPARAM) {
-							itemToRemove = item;
-						}
+			if(action.equals("delete")) {
+				HistoryEntity itemToRemove = null;
+				for (HistoryEntity item : cart) {
+					if (item.getVideoGameId() == videoGameIdPARAM) {
+						itemToRemove = item;
 					}
-					if (itemToRemove != null){
-						cart.remove(itemToRemove);
-						jsonResponse.put("success", true);
-						jsonResponse.put("action", "delete");
-						session.setAttribute("cart", cart);
+				}
+				if (itemToRemove != null) {
+					cart.remove(itemToRemove);
+					jsonResponse.put("success", true);
+					jsonResponse.put("action", "delete");
+					session.setAttribute("cart", cart);
+				}
+			}else if (action.equals("decrement")) {
+				for (HistoryEntity item : cart) {
+					if (item.getVideoGameId() == videoGameIdPARAM) {
+						itemToModify = item;
 					}
-				case "decrement":
-					HistoryEntity itemToModify = null;
-					for (HistoryEntity item : cart) {
-						if (item.getVideoGameId() == videoGameIdPARAM) {
-							itemToModify = item;
-						}
+				}
+				if (itemToModify != null) {
+					itemToModify.setVideoGameQuantity(itemToModify.getVideoGameQuantity() - 1);
+					cart.set(cart.indexOf(itemToModify), itemToModify);
+					jsonResponse.put("success", true);
+					jsonResponse.put("action", "decrement");
+					session.setAttribute("cart", cart);
+				}
+			} else if (action.equals("increment")) {
+
+				itemToModify = null;
+				for (HistoryEntity item : cart) {
+					if (item.getVideoGameId() == videoGameIdPARAM) {
+						itemToModify = item;
 					}
-					if(itemToModify != null){
-						itemToModify.setVideoGameQuantity(itemToModify.getVideoGameQuantity()-1);
-						cart.set(cart.indexOf(itemToModify), itemToModify);
-						jsonResponse.put("success", true);
-						jsonResponse.put("action", "decrement");
-						session.setAttribute("cart", cart);
+				}
+				if (itemToModify != null) {
+					VideoGameEntity videoGameEntity = videoGameEntityDAO.getVideoGameEntityById(itemToModify.getVideoGameId());
+					if (itemToModify.getVideoGameQuantity() < videoGameEntity.getVideoGameStock()) {
+						itemToModify.setVideoGameQuantity(itemToModify.getVideoGameQuantity() + 1);
+					} else {
+						itemToModify.setVideoGameQuantity(itemToModify.getVideoGameQuantity());
 					}
-				case "increment":
-					itemToModify = null;
-					for (HistoryEntity item : cart) {
-						if (item.getVideoGameId() == videoGameIdPARAM) {
-							itemToModify = item;
-						}
-					}
-					if(itemToModify != null){
-						VideoGameEntity videoGameEntity = videoGameEntityDAO.getVideoGameEntityById(itemToModify.getVideoGameId());
-						if(itemToModify.getVideoGameQuantity() < videoGameEntity.getVideoGameStock()) {
-							itemToModify.setVideoGameQuantity(itemToModify.getVideoGameQuantity() + 1);
-							cart.set(cart.indexOf(itemToModify), itemToModify);
-							jsonResponse.put("success", true);
-							jsonResponse.put("action", "increment");
-							session.setAttribute("cart", cart);
-						}else{
-							itemToModify.setVideoGameQuantity(itemToModify.getVideoGameQuantity());
-							cart.set(cart.indexOf(itemToModify), itemToModify);
-							jsonResponse.put("success", true);
-							jsonResponse.put("action", "increment");
-							session.setAttribute("cart", cart);
-						}
-					}
+					cart.set(cart.indexOf(itemToModify), itemToModify);
+					jsonResponse.put("success", true);
+					jsonResponse.put("action", "increment");
+					session.setAttribute("cart", cart);
+				}
 			}
 		}else {
 			if (user == null || cart == null) {
 				jsonResponse.put("success", false);
-				//response.sendRedirect(request.getContextPath() + "/authentication");
-				//request.getRequestDispatcher(request.getContextPath() + "/authentication");
 			} else {
 				int userId = user.getUserId();
 				int quantityDesired = Integer.parseInt(request.getParameter("quantityDesired"));
@@ -104,7 +98,17 @@ public class ManageCartServlet extends HttpServlet {
 				history.setVideoGameQuantity(quantityDesired);
 
 				List<HistoryEntity> historyEntityList = (List<HistoryEntity>) session.getAttribute("cart");
-				historyEntityList.add(history);
+				HistoryEntity alreadyAdded = null;
+				for(HistoryEntity item : cart){
+					if(item.getVideoGameId() == history.getVideoGameId()){
+						alreadyAdded = item;
+					}
+				}
+				if(alreadyAdded == null){
+					historyEntityList.add(history);
+				}else{
+					historyEntityList.set(historyEntityList.indexOf(alreadyAdded), history);
+				}
 
 				session.setAttribute("cart", historyEntityList);
 
