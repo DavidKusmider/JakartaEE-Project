@@ -1,7 +1,6 @@
 // Manage the '+' and '-' button in the cart page
 
 function incrementCart(videoGameId) {
-    console.log("increment");
     let quantity = parseInt(document.getElementById("quantity").innerHTML);
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/JakartaEE-Project/ManageCartServlet', true);
@@ -22,7 +21,6 @@ function incrementCart(videoGameId) {
 }
 
 function decrementCart(videoGameId) {
-    console.log("decrement");
     let quantity = parseInt(document.getElementById("quantity").innerHTML);
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/JakartaEE-Project/ManageCartServlet', true);
@@ -50,7 +48,6 @@ function decrementCart(videoGameId) {
 
 // Remove item from cart
 function removeItemFromCart(videoGameId){
-    console.log("delete");
     const rowToRemove = document.getElementById(videoGameId);
 
     const xhr = new XMLHttpRequest();
