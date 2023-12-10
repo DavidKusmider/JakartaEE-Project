@@ -52,7 +52,7 @@ tr {
 
 /* top wave */
 
-.waweProduct {
+.waveProduct {
     position: relative;
     bottom: 0;
     left: 0;
@@ -63,14 +63,14 @@ tr {
     z-index: 1;
 }
 
-.waweProduct svg {
+.waveProduct svg {
     position: relative;
     display: block;
     width: calc(100%);
     height: 58px;
 }
 
-.waweProduct .shape-fill {
+.waveProduct .shape-fill {
     fill: #560090;
 }
 

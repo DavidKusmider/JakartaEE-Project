@@ -322,7 +322,7 @@ textarea.input {
     }
 }
 
-.waweProduct {
+.waveProduct {
     position: relative;
     bottom: 0;
     left: 0;
@@ -332,13 +332,13 @@ textarea.input {
     transform: rotate(0deg);
 }
 
-.waweProduct svg {
+.waveProduct svg {
     position: relative;
     display: block;
     width: calc(100%);
     height: 58px;
 }
 
-.waweProduct .shape-fill {
+.waveProduct .shape-fill {
     fill: #560090;
 }

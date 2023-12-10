@@ -96,4 +96,14 @@
         <servlet-name>CartVue</servlet-name>
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IndexVue</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IndexVue</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
 </web-app>

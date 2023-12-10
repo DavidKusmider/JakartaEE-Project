@@ -39,7 +39,7 @@ img {
 	z-index: 2;
 }
 
-.blue-wawe {
+.blue-wave {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,14 +49,14 @@ img {
     transform: rotate(180deg);
 }
 
-.blue-wawe svg {
+.blue-wave svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
     height: 346px;
 }
 
-.blue-wawe .shape-fill {
+.blue-wave .shape-fill {
     fill: #000000;
 }
 
