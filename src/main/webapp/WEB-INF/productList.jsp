@@ -56,7 +56,6 @@ table tr td {
 							<div class="price">
 								<span class="new">${videoGame.videoGamePrice}</span>
 							</div>
-							<button class="addCard">Add to card</button>
 						</div>
 					</div>
 

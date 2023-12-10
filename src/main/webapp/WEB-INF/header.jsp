@@ -38,6 +38,17 @@
 			</a>
 
 		</c:otherwise>
-	</c:choose>	
-	<a href="${pageContext.request.contextPath}/CartServletTest">Panier</a>
+	</c:choose>
+	<c:choose>
+		<c:when test="${not empty user}">
+			<a href="${pageContext.request.contextPath}/CartServlet" class="buttonHeader">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Panier
+			</a>
+		</c:when>
+		<c:otherwise></c:otherwise>
+	</c:choose>
 </header>
