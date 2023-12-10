@@ -23,6 +23,10 @@
     opacity: 0;
 	background-repeat: no-repeat;
 }
+
+#card {color:white;}
+#card:visited {color:white;}
+
 .item .img{
     padding:10px;
     width:100%;
@@ -37,14 +41,6 @@
     height: max-content;
     opacity: 0;
     transition: all 0.5s ease; /* Ajoutez une transition pour créer une animation fluide */
-}
-
-.content:hover {
-    letter-spacing: 1px;
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    height: max-content;
-    opacity: 1;
 }
 
 .content:hover{
@@ -64,6 +60,14 @@
     font-weight: 600;
     margin-top:10px;
 }
+
+.content .description{
+    font-size: 15px;
+    font-weight: 600;
+    margin-top:10px;
+    text-align: justify;
+}
+
 .content .price{
     margin-top:10px;
     font-size: 15px;
