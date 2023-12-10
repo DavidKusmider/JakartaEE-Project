@@ -84,6 +84,12 @@ section {
 	justify-content: space-around;
 }
 
+img {
+    width: 40vw;
+    height: 40vh;
+    padding: 50px;
+}
+
 #carousel{
     position: relative;
     width: 40vw;

@@ -36,54 +36,9 @@
 					<div id="carousel">
 
                         <div id="slide">
-                            <div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/11.png);">
-                                <div class="content">
-                                    <div class="name">LUNDEV</div>
-                                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                                    <button>See more</button>
-                                </div>
-                            </div>
-                            <div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/Gris-picture.avif);">
-                                <div class="content">
-                                    <div class="name">LUNDEV</div>
-                                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                                    <button>See more</button>
-                                </div>
-                            </div>
-                            <div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/1.png);">
-                                <div class="content">
-                                    <div class="name">LUNDEV</div>
-                                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                                    <button>See more</button>
-                                </div>
-                            </div>
-                            <div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/5.png);">
-                                <div class="content">
-                                    <div class="name">LUNDEV</div>
-                                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                                    <button>See more</button>
-                                </div>
-                            </div>
-                            <div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/9.png);">
-                                <div class="content">
-                                    <div class="name">LUNDEV</div>
-                                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                                    <button>See more</button>
-                                </div>
-                            </div>
-                            <div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/6.png);">
-                                <div class="content">
-                                    <div class="name">LUNDEV</div>
-                                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                                    <button>See more</button>
-                                </div>
+                            <div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/${product.videoGameId}.png);">
                             </div>
 				</div>
-				<div class="buttons">
-					<button id="prev"><i class="fa-solid fa-angle-left"></i></button>
-					<button id="next"><i class="fa-solid fa-angle-right"></i></button>
-				</div>
-
 			</div>
 				</article>
 
