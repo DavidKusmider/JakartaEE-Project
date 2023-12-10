@@ -16,7 +16,7 @@
 			</svg>
 		</div>
 
-		<h1 id="titleProfile">Profil de l'utilisateur</h1>
+		<h1 id="titleProfile">User's Profile</h1>
 
 		<c:if test="${user ne null}">
 			<table id="informationProfile">
@@ -111,7 +111,7 @@
 			</table>
 		</c:if>
 		<c:if test="${user eq null}">
-			<h2 id="titleError">Vous n'êtes pas connecté. Veuillez vous connecter pour afficher votre profil.</h2>
+			<h2 id="titleError">You are not connected. Please log in to see your profile.</h2>
 		</c:if>
 
 			<div class="bubbles">

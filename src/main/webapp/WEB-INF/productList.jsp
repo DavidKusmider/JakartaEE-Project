@@ -43,7 +43,7 @@ table tr td {
 			<div class="list">
 				<c:forEach items="${videoGames}" var="videoGame">
 				<a id="card" href=ProductServlet?id=${videoGame.videoGameId}>
-					<div class="item"  style="background-image: url(./resources/pictures/Undertale-picture.jpg);">
+					<div class="item"  style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/${videoGame.videoGameId}.png); background-size: contain">
 						<div class="content">
 							<div class="category">
 								<c:forEach items="${videoGame.associatedThemes}" var="theme">
@@ -51,10 +51,9 @@ table tr td {
 								</c:forEach>
 							</div>
 							<div class="title">${videoGame.videoGameName}</div>
-							<div class="title">${videoGame.videoGameDescription}</div>
-							<div class="title">${videoGame.videoGameStock}</div>
+							<div class="title">Stock : ${videoGame.videoGameStock}</div>
 							<div class="price">
-								<span class="new">${videoGame.videoGamePrice}</span>
+								<span class="new">Price : ${videoGame.videoGamePrice} $</span>
 							</div>
 						</div>
 					</div>

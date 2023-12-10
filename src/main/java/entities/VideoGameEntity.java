@@ -36,7 +36,7 @@ public class VideoGameEntity {
 	}
 
 	@Basic
-	@Column(name = "videoGameDescription", nullable = false, length = 200)
+	@Column(name = "videoGameDescription", nullable = false, length = 10000)
 	private String videoGameDescription;
 
 	public String getVideoGameDescription() {

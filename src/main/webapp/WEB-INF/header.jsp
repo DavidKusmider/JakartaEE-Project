@@ -6,14 +6,14 @@
 		<span></span>
 		<span></span>
 		<span></span>
-		Tous les jeux
+		All games
 	</a>
 	<a href="${pageContext.request.contextPath}/AllThemesServlet" class="buttonHeader">
 		<span></span>
 		<span></span>
 		<span></span>
 		<span></span>
-		Les Themes Tendances	
+		Trending Themes
 	</a>
 	<div id="place_for_title"></div>
 	<input type="text" id="searchBar" placeholder="SearchBar"/>
@@ -46,7 +46,7 @@
 				<span></span>
 				<span></span>
 				<span></span>
-				Panier
+				Cart
 			</a>
 		</c:when>
 		<c:otherwise></c:otherwise>
