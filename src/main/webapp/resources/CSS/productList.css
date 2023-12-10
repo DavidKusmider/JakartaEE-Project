@@ -12,20 +12,25 @@
 .list{
     display: grid;
     grid-template-columns: auto auto auto auto;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .item{
     text-align: center;
     position: relative;
     background-color: #202731;
-    padding:20px;
-    margin:5px;
+    padding: 5px;
+    margin: 5px;
     opacity: 0;
 	background-repeat: no-repeat;
+    width: calc(100vw/5);
+    height: calc(100vw*1080/(5*1920));
 }
 .item .img{
-    padding:10px;
-    width:100%;
+    padding: 5px;
+    width: 100%;
     text-align: center;
 }
 .item .img img{
@@ -33,26 +38,20 @@
 }
 .content {
     letter-spacing: 1px;
-    padding: 20px;
-    height: max-content;
+    padding: 5px;
+    /*height: max-content;*/
     opacity: 0;
     transition: all 0.5s ease; /* Ajoutez une transition pour créer une animation fluide */
+    width: -moz-available;
+    height: calc(100vw*1920/(17*1080));
 }
 
 .content:hover {
     letter-spacing: 1px;
     backdrop-filter: blur(10px);
-    padding: 20px;
-    height: max-content;
+    padding: 5px;
+    /*height: max-content;*/
     opacity: 1;
-}
-
-.content:hover{
-	letter-spacing: 1px;
-    backdrop-filter: blur(10px); /* ajustez la quantité de flou souhaitée lors du défilement */
-	padding:20px;
-	height: max-content;
-	opacity: 1;
 }
 
 .content .category{
@@ -119,11 +118,14 @@ input[name="grid"][value="1"]:checked ~ .filterGrid label[for="grid-1"]{
 }
 input[name="grid"][value="2"]:checked ~ .filterGrid label[for="grid-2"]{
     background-color: #ECD0AD;
-}input[name="grid"][value="3"]:checked ~ .filterGrid label[for="grid-3"]{
-    background-color: #ECD0AD;
-}input[name="grid"][value="4"]:checked ~ .filterGrid label[for="grid-4"]{
+}
+input[name="grid"][value="3"]:checked ~ .filterGrid label[for="grid-3"]{
     background-color: #ECD0AD;
 }
+input[name="grid"][value="4"]:checked ~ .filterGrid label[for="grid-4"]{
+    background-color: #ECD0AD;
+}
+
 @keyframes effectChangeGrid{
     from{
         opacity: 0;
@@ -133,6 +135,7 @@ input[name="grid"][value="2"]:checked ~ .filterGrid label[for="grid-2"]{
         transform: translate(0,0);
     }
 }
+
 @keyframes effectChangeGrid2{
     from{
         opacity: 0;
@@ -142,6 +145,7 @@ input[name="grid"][value="2"]:checked ~ .filterGrid label[for="grid-2"]{
         transform: translate(0,0);
     }
 }
+
 @keyframes effectChangeGrid3{
     from{
         opacity: 0;
@@ -151,6 +155,7 @@ input[name="grid"][value="2"]:checked ~ .filterGrid label[for="grid-2"]{
         transform: translate(0,0);
     }
 }
+
 @keyframes effectChangeGrid4{
     from{
         opacity: 0;
@@ -160,6 +165,7 @@ input[name="grid"][value="2"]:checked ~ .filterGrid label[for="grid-2"]{
         transform: translate(0,0);
     }
 }
+
 input[name="grid"][value="1"]:checked ~ .list .item{
     animation:effectChangeGrid 1s ease-in-out 1 forwards
 }
@@ -193,12 +199,12 @@ input[name="grid"][value="4"]:checked ~ .list .item{
 .item:nth-child(8){
     animation-delay: 1.4s!important;
 }
-input[name="grid"][value="1"]:checked ~ .list .item,
+/*input[name="grid"][value="1"]:checked ~ .list .item,
 input[name="grid"][value="2"]:checked ~ .list .item{
     display: flex;
-    text-align: left;
+    text-align: center;
     align-items: center;
-}
+}*/
 
 .waweProduct {
     position: relative;
