@@ -150,7 +150,8 @@ img {
 .item .des{
     margin: 20px 0;
     opacity: 0;
-    animation: showcontent 1s ease-in-out 0.3s 1 forwards
+    animation: showcontent 1s ease-in-out 0.3s 1 forwards;
+    font-weight: bold
 }
 .item button{
     padding: 10px 20px;

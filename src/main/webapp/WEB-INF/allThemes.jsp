@@ -23,17 +23,12 @@
 		</div>
 
 
-		<h1 id="MainThemesTitle">Favourites Themes</h1>
+		<h1 id="MainThemesTitle">Favorite Themes</h1>
 
 		<section id="themesContainer">
 			<div id="topThemeContainer">
 				<div id="leftContainer">
 					<div id="firstThemeContainer">
-						<%-- ${Theme.themeId} à utiliser au lieu de le mettre en brut -->
-						<%-- <c items=${Theme} var="theme"> -->
-						<%--<c:forEach items="${videoGames}" var="videoGame">
-								<a id="card" href=ProductServlet?id=${videoGame.videoGameId}>
-							</c:forEach>--%>
 						<a href="ThemeServlet?id=1" class="neon-button theme2">
 							<div>
 								<h2>Adventure</h2>
@@ -46,7 +41,7 @@
 							<div>
 								<h2>Multiplayer</h2>
 
-								<p>Interact in real time with other players, whether in cooperation or in competition. Create shared virtual worlds and work together to achieve common goals. Interact in real time with other players, whether in cooperation or in competition. Create shared virtual worlds and work together to achieve common goals</p>
+								<p>Interact in real time with other players, whether in cooperation or in competition. Create shared virtual worlds and work together to achieve common goals.</p>
 							</div>
 						</a>				
 					</div>
@@ -77,7 +72,7 @@
 						<a href="ThemeServlet?id=5" class="neon-button theme2">
 							<div>
 								<h2>Building</h2>
-								<p>Confront extreme conditions such as post-apocalyptic worlds, deserted islands and zombie-infested areas with one aim: TO SURVIVE.</p>
+								<p>Discover a world where your creativity is key. Build thriving cities, design spectacular theme parks, or construct impenetrable fortresses.</p>
 							</div>
 						</a>				
 					</div>

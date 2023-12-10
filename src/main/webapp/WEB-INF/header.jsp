@@ -4,14 +4,14 @@
 		<span></span>
 		<span></span>
 		<span></span>
-		Tous les jeux
+		All games
 	</a>
 	<a href="/JakartaEE-Project/AllThemesServlet" class="buttonHeader">
 		<span></span>
 		<span></span>
 		<span></span>
 		<span></span>
-		Les Themes Tendances	
+		Trend Themes
 	</a>
 	<div id="place_for_title"></div>
 	<input type="text" id="searchBar" placeholder="SearchBar"/>
@@ -37,7 +37,7 @@
 
 		</c:otherwise>
 	</c:choose>	
-	<a href="/JakartaEE-Project/CartServletTest">Panier</a>
+	<a href="/JakartaEE-Project/CartServletTest">Cart</a>
 
 	<c:out value="${user}" />
 </header>

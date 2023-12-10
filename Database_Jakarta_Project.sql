@@ -24,70 +24,47 @@ INSERT INTO VideoGame (
 	videoGameStock,
 	releaseDate
 ) VALUES
-("Assassin’s Creed Mirage","Assassin’s Creed Mirage sur PC est un jeu vidéo d'action et d'aventure, le treizième opus majeur de la série et le successeur d'AC Valhalla. Mirage se déroule principalement dans la Bagdad du IXe siècle et met en scène Basim Ibn Ishaq. Historiquement, c'est l'époque de l'anarchie de Samarra, une période instable marquée par des changements constants de dirigeants. Dans le jeu, Basim - vu pour la première fois dans Assassin's Creed Valhalla - passe du statut de voleur de rue à celui d'Assassin à part entière.",45.00,25,"5 octobre 2023"),
+("Assassin’s Creed Mirage","Assassin''s Creed Mirage is an action-adventure video game, the thirteenth major installment in the series and the successor to AC Valhalla. Mirage takes place mainly in ninth-century Baghdad and features Basim Ibn Ishaq. Historically, this was the time of the anarchy of Samarra, an unstable period marked by constant changes of rulers. In the game, Basim, first seen in Assassin''s Creed Valhalla, goes from being a street thief to a fully-fledged Assassin.",45.00,25,"2023-01-05"),
 
-("Assassin's Creed Valhalla","Assassin's Creed Valhalla pour PC est le 12ème épisode de la série Assassin's Creed, et ce dernier se déroule au 9ème siècle (à partir de 873) et vous emmène partout en Europe pour faire voyager votre clan d'une Norvège gravement surpeuplée et déchirée par la guerre vers l'Angleterre, une terre verdoyante où règnent la paix, la prospérité et des champs fertiles où vous pourrez faire pousser vos récoltes. Le Royaume-Uni a peut-être la réputation d'être un pays froid et pluvieux, mais comparé à la désolation qui règne en Arctique, ce n'est pas si mal comme substitut ! Il s'agit d'un jeu d'action et d'aventure dans un open world.",10.00,25,"10 novembre 2020"),
+("Assassin's Creed Valhalla","Assassin''s Creed Valhalla is the 12th installment in the Assassin''s Creed series, and it''s set in the 9th century (from 873) and takes you all over Europe as your clan travels from severely overpopulated and war-torn Norway to England, a verdant land of peace, prosperity and fertile fields where you can grow your crops. The UK may have a reputation for being a cold, rainy country, but compared to the desolation that reigns in the Arctic, it''s not such a bad substitute! This is an open-world action-adventure game.",10.00,25,"2020-11-10"),
 
-("Assassin's Creed III Remastered","Revivez la Révolution Américaine ou vivez-la pour la première fois dans Assassin's Creed III Remastered, avec des graphismes améliorés et de nouvelles mécaniques de jeu. 1775. Les Colonies Américaines sont sur le point de se révolter. Vous incarnez Connor, et vous battez pour la liberté de votre peuple et de votre nation. Choisissez vos armes parmi une vaste sélection, et assassinez vos ennemis de multiples façons.",9.00,25,"29 mars 2019"),
+("Assassin's Creed III Remastered","Relive the American Revolution or experience it for the first time in Assassin''s Creed III Remastered, with improved graphics and new gameplay mechanics. 1775. The American Colonies are on the verge of revolt. As Connor, you fight for the freedom of your people and your nation. Choose your weapons from a vast selection, and assassinate your enemies in a multitude of ways.",9.00,25,"2019-03-29"),
 
-("Resident Evil 4","La survie n'est que le début. Six ans se sont écoulés depuis la catastrophe biologique de Raccoon City. L'agent Leon S. Kennedy, l'un des survivants du drame, est envoyé secourir la fille du président qui a été kidnappée. Son enquête le mène jusqu'à un village européen isolé, dont les habitants cachent un effroyable secret. Et ainsi se lève le rideau d'une histoire de sauvetage audacieux et d'horreur atroce, où se mêlent vie, mort, terreur et catharsis. Avec un gameplay modernisé, une histoire revisitée et des graphismes ultra détaillés, Resident Evil 4 signe la renaissance d'un monstre de l'industrie. Replongez dans le cauchemar qui a révolutionné les jeux d'horreur et de survie.",30.00,25,"24 mars 2023"),
+("Resident Evil 4","Survival is just the beginning. Six years have passed since the biological disaster at Raccoon City. Agent Leon S. Kennedy, one of the survivors, is sent to rescue the President''s kidnapped daughter. His investigation leads him to an isolated European village whose inhabitants are hiding a terrible secret. And so the curtain rises on a story of daring rescue and gruesome horror, where life, death, terror and catharsis mingle. With updated gameplay, a revisited story and ultra-detailed graphics, Resident Evil 4 marks the rebirth of an industry behemoth. Immerse yourself in the nightmare that revolutionized horror and survival games.",30.00,25,"2023-03-24"),
 
+("Forza Motorsport","Forza Motorsport is the equivalent of Forza Motorsport 8, except that it''s more of a reboot of the original game than a sequel: hence the lack of a number next to the name. It''s a motor racing simulation video game. This new opus features more than 500 cars with 800 upgrades (the upgrades to be earned are unique to each car and obtained by spending time driving and accumulating XP), including some from all eras of motor racing (80 from all eras), 100 of which are new to the game.",56.00,25,"2023-10-10"),
 
+("Battlefield 2042","Battlefield 2042 is a first-person shooter with a strong multiplayer focus. The game, the twelfth in the series (which also boasts over forty expansion packs), is set in the not-too-distant future (as the name suggests), which means there are plenty of high-tech, futuristic weapons and gadgets, such as deployable drones, turrets and robot dogs.",13.00,25,"2021-11-19"),
 
-("Forza Motorsport","Forza Motorsport sur PC est l'équivalent de Forza Motorsport 8, à la différence près qu'il s'agit plus d'un reboot du jeu original que d'une suite : d'où l'absence de numéro à côté du nom. C'est un jeu vidéo de simulation de course automobile. Ce nouvel opus propose plus de 500 voitures avec 800 améliorations (les améliorations devront être gagnées étant uniques à chaque voiture et obtenues en passant du temps de conduite, et en accumulant de l'XP), dont certaines de toutes les époques de la course automobile (80 de toutes les époques) et 100 d'entre elles sont des nouveautés dans le jeu.",56.00,25,"10 octobre 2023"),
+("Minecraft","Explore randomly generated worlds and build anything you can think of, from a makeshift shelter to the most fabulous of castles. Play in Creative mode with unlimited resources, or dig to the center of the world to craft weapons and armor to defeat the dangerous creatures of Survival mode. Climb steep mountains, discover intricate caverns and mine large veins of ore.",21.00,25,"2011-11-19"),
 
-("Battlefield 2042","Battlefield 2042 pour PC est un jeu vidéo de tir à la première personne avec un fort accent sur le multijoueur. Le jeu, le douzième de la série (qui compte également plus de quarante packs d'extension), se déroule dans un futur assez proche (comme son nom l'indique), ce qui signifie qu'il y a beaucoup d'armes et de gadgets high-tech et futuristes, comme des drones déployables, des tourelles et des chiens robots.",13.00,25,"19 novembre 2021"),
+("Fortnite","Fortnite is an online video game available in three modes. Initially, the first game mode (Fortnite: Save the World) was released, and made little headway. But then Battle Royale mode was launched and Fortnite quickly became the most popular game in the world, winning awards every year since its release. Today, it''s still one of the most popular games.",5.00,25,"2017-07-25"),
 
-("Minecraft","Explorez des mondes générés aléatoirement et construisez tout ce qui vous passe par la tête, d''un abri de fortune au plus fabuleux des châteaux. Jouez en mode Créatif avec des ressources illimitées, ou creusez jusqu''au centre du monde pour fabriquer armes et armures afin de vaincre les dangereuses créatures du mode Survie. Gravissez des montagnes escarpées, découvrez des cavernes complexes et extrayez de grandes veines de minerai.",21.00,25,"19 novembre 2011"),
+("HumanitZ","A zombie invasion has eradicated all civilisation. Hordes of zeeks have risen to the top of the food chain, becoming ferocious predators. A few years later, Man is an endangered species and only a few pockets of resistance manage to survive in this desolate world. Welcome to HumanitZ, an isometric open-world survival game where you can try to change things and put humanity back where it belongs at the top of the food chain. Will you risk exploring the cities in search of loot, knowing that zombies are waiting around every corner? Or will you prefer the countryside, trying to survive by hunting, fishing and farming?",24.00,25,"2023-09-18"),
 
-("Fortnite","Fortnite est un jeu vidéo en ligne disponible en trois modes. Au départ, le premier mode de jeu (Fortnite : Save the World) est sorti, et n'a guère progressé. Mais le mode Battle Royale a ensuite été lancé et Fortnite est rapidement devenu le jeu le plus populaire au monde, remportant des prix chaque année depuis sa sortie. Aujourd'hui, il est toujours l'un des jeux les plus populaires.",5.00,25,"25 juillet 2017"),
+("7 Days to Die","7 Days to Die started out as an early access-funded survival horror game that succeeded in reaching its goal and made its way onto the market as a successful product. In the game, the player must not only survive enemies and combat, but also simply live: finding food, water, shelter, etc. are all essential to the character''s survival.",24.00,25,"2013-12-13"),
 
+("ARK : Survival Evolved","As a man or woman stranded naked, freezing and starving on a mysterious island, you must hunt, gather, craft items, grow plants and build shelters to survive. Use your skills and cunning to kill, tame, mate and ride dinosaurs and primitive creatures living on the Ark, teaming up with hundreds of players to survive, dominate and ... escape! The following features are included in the game from release. We have many more features and enhancements planned for the long-term development roadmap, and here''s what you''ll experience right now in ARK: tame, train, breed and ride dinosaurs in a living ecosystem.",15.00,25,"2017-08-27"),
 
+("Rust","Rust is a multiplayer survival game available online only. It can be difficult for a beginner to get through the crucial first stages after the breeding period, because not only is it the usual PvE you''d expect from a survival game, but it''s PvP at the same time: so you start the game naked, armed only with a rock and a torch when you could be facing a well-armed military man just waiting for the perfect moment to attack his enemy!",20.00,25,"2018-02-08"),
 
-("HumanitZ","Une invasion zombie a éradiqué toute civilisation. Des hordes de zeeks se sont hissées tout en haut de la chaîne alimentaire en devenant de féroces prédateurs. Quelques années plus tard, l’Homme est une espèce en voie de disparation et seules quelques poches de résistance parviennent à survivre dans ce monde désolé. Bienvenue dans HumanitZ, un jeu en vue isométrique de survie en monde ouvert où vous pouvez essayer de changer les choses et de remettre l’humanité à la place qui est la sienne - tout en haut de la chaîne alimentaire. Vous risquerez-vous à explorer les villes en quête de loot, sachant que les zombies vous attendent à chaque coin de rue ? Ou préférerez-vous plutôt la campagne, pour essayer de survivre en chassant, pêchant et cultivant vos terres ?",24.00,25,"18 septembre 2023"),
+("Stardew Valley","Stardew Valley on PC is a game that allows players to get away from the hustle and bustle of their daily lives, whether at school or work, and see what it''s like to take over a slightly run-down farm, work to grow crops, collect money, give gifts to neighbors and much more. It''s a farm simulation game, a role-playing game, although the action is gentle and focused on farming, rather than the usual RPG combat tactics.",20.00,25,"2016-02-26"),
 
-/*("Resident Evil 4","","",23.99,25,""), déjà créé avant pour une autre catégorie*/
+("Terraria","Terraria is a two-dimensional exploration game in which players seek to shape the world according to their own choices and also their combat, crafting and resource-gathering skills! Create a character and set out to explore the world watch out for nightfall and zombies, so your first task will almost always be to build yourself some sort of shelter. It gets really dark at night in the game, so don''t forget to find, buy or create some sort of light source.",7.00,25,"2011-05-16"),
 
-("7 Days to Die","7 Days to Die sur PC a commencé comme un jeu d'horreur de survie financé par un early access qui a réussi à atteindre son objectif et a fait son chemin sur le marché comme un produit abouti. Dans le jeu, le joueur doit non seulement survivre aux ennemis et aux combats, mais aussi simplement vivre : trouver de la nourriture, de l'eau, un abri, etc. sont tous essentiels à la survie du personnage.",24.00,25,"13 décembre 2013"),
+("Cyberpunk 2077","Cyberpunk 2077 is an open-world action-adventure game set in Night City, a megalopolis obsessed with power, seduction and body modification. You play as V, an outlaw mercenary in search of a unique implant that holds the key to immortality. Customise your character''s cyberware, skills and play style, and explore this immense city where every choice you make will have a direct impact on the story and the world around you.",60.00,25,"2020-12-10"),
 
-("ARK : Survival Evolved","En tant qu'homme ou femme échoué nu, en train de gelé et de mourir de faim sur une île mystérieuse, vous devez chasser, récolter, fabriquer des objets, faire pousser des plantes et construire des abris pour survivre. Utilisez vos compétences et votre ruse pour tuer, apprivoiser, faire accoupler et chevaucher des dinosaures et des créatures primitives vivant sur l'Arche, en faisant équipe avec des centaines de joueurs pour survivre, dominer et ... s'échapper ! Les fonctions suivantes sont présentes dans le jeu dès sa sortie. Nous avons de nombreux autres aspects et améliorations prévues pour la feuille de route à long terme du développement, et voici ce que vous allez vivre dès maintenant dans ARK: APPRIVOISEZ, ENTRAINEZ, FAITES REPRODUIRE ET CHEVAUCHEZ LES DINOSAURES DANS UN ÉCOSYSTÈME VIVANT",15.00,25,"27 août 2017"),
+("Call Of Duty : Modern Warfare III","In the direct sequel to Call of Duty: Modern Warfare II, Captain Price and Task Force 141 face the ultimate threat. Ultranationalist war criminal Vladimir Makarov is expanding his reach across the globe, forcing Task Force 141 to fight like never before. Modern Warfare III celebrates the 20th anniversary of Call of Duty with one of the largest collections of Multiplayer maps ever assembled both fan favorites and brand-new maps. The 16 launch maps from Modern Warfare 2 (2009) have been updated with new modes and gameplay features and will be available from launch, while more than 12 new 6v6 maps will fuel the post-launch seasons.",70.00,25,"2023-11-10"),
 
-("Rust","Rust for PC Rust est un jeu de survie multi-joueurs disponible uniquement en ligne. Il peut être difficile pour un débutant de passer les premières étapes cruciales après la période de reproduction, car non seulement c'est le PvE habituel que l'on peut attendre d'un jeu de survie, mais c'est en même temps du PvP : ainsi vous débuter dans le jeu en étant nu, seulement muni d'une pierre et d'une torche alors que vous pourriez faire face pourrait à un militaire bien armé qui attend juste le moment parfait pour attaquer son ennemi !",20.00,25,"8 février 2018"),
+("Car Mechanic Simulator 2021","Car Mechanic Simulator 2021 is a new production with a well-established player base. Start as a new car garage owner and work your way up to a service empire. Get your hands dirty in a simulation game with incredibly realistic detail. Get ready to work on 4000+ unique parts and over 72 cars. Roll up your sleeves and immerse yourself in an insanely realistic garage environment.",25.00,25,"2021-08-11"),
 
-("Stardew Valley","Stardew Valley sur PC est un jeu qui permet aux joueurs de s'éloigner de l'agitation de leur vie quotidienne, que ce soit à l'école ou au travail, et de voir ce que c'est que de reprendre une ferme un peu délabrée, de travailler pour faire des récoltes, de récolter de l'argent, de faire des cadeaux aux voisins et bien plus encore. Il s'agit d'un jeu de simulation de ferme, un jeu de rôle, bien que l'action soit douce et axée sur l'agriculture, plutôt que sur les tactiques de combat habituelles d'un RPG.",20.00,25,"26 février 2016"),
+("Team Fortress Classic","Team Fortress Classic, one of the most popular online action games of all time, features more than nine character classes from medic to spy to demolisher who compete uniquely of online team warfare. Each character class has unique weapons, items and abilities, and teams compete online in a variety of game modes.",24.00,25,"1999-04-01"),
 
-/*("ARK : Survival Evolved","","",23.99,25,""), déjà créé avant pour une autre catégorie*/
+("Watch_Dogs 2","Watch Dogs 2 is the sequel to the first game in the series, and we recently learned that it will be getting a third edition shortly. It''s a third-person action-adventure game set in an open world. You play as Marcus Holloway, a rebel trying to thwart the city authorities'' attempts to control the population using high-tech surveillance equipment. Marcus Holloway is a member of a hacktivist gang, one of their best members, and it''s his job to carry out missions, bringing supporters to the gang, known as DedSec.",5.00,25,"2016-11-29"),
 
-/*("7 Days to Die","","",23.99,25,""), déjà créé avant pour une autre catégorie*/
+("GTA V","Grand Theft Auto V is an action-adventure game, the fifth in the GTA series. As with the other games in the series, you gain experience by committing crimes. The game alternates between third-person and first-person narrative, and you''ll play as three criminals, committing robberies and trying to avoid a particular government agency. You don''t just choose a character to play as, as the narrative allows you to switch from one character to another. The game is set in the fictional city of San Andreas, which is based on the Southern California way of life. Although much of the game''s scripted action takes place in the city, the world is much larger than in the previous GTA and players can explore it freely. The city is in Blaine County, close to another city, Los Santos (both equally fictional) and all areas can be accessed from the start of the game.",10.00,25,"2015-04-14"),
 
-
-
-/*("Forza Motorsport","","",23.99,25,""), déjà créé avant pour une autre catégorie*/
-
-("Terraria","Terraria pour PC est un jeu d'exploration en deux dimensions dans lequel le joueur cherche à aménager le monde selon ses propres choix - et aussi ses compétences en matière de combat, d'artisanat et de collecte de ressources !",7.00,25,"16 mai 2011"),
-
-/*("Red Dead Redemption 2","Red Dead Redemption 2 pour PC est un jeu d'action et d'aventure, open world, dans lequel le joueur peut errer librement et jouer à la troisième personne, tout en revenant à la première personne en mode simulation. Le joueur peut commettre des crimes, mais il doit ensuite être prêt à être traqué par les forces de l'ordre, prêt à faire peser toute la force de la loi contre le malfaiteur !",16.00,25,"5 décembre 2019"),*/
-
-("Cyberpunk 2077","Cyberpunk 2077 est un jeu d’action-aventure en monde ouvert qui se déroule à Night City, une mégalopole obsédée par le pouvoir, la séduction et les modifications corporelles. Vous incarnez V, mercenaire hors-la-loi à la recherche d’un implant unique qui serait la clé de l’immortalité. Personnalisez les cyberlogiciels, les compétences et le style de jeu de votre personnage, et explorez cette ville immense où chacun de vos choix aura un impact direct sur l’histoire et le monde qui vous entoure.",60.00,25,"10 décembre 2020"),
-
-
-
-/*("Battlefield 2042","","",12.85,25,""), déjà créé avant pour une autre catégorie*/
-
-("Call Of Duty : Modern Warfare III","Dans la suite directe de Call of Duty: Modern Warfare II, le capitaine Price et la Task Force 141 affrontent la menace ultime. Le criminel de guerre ultranationaliste Vladimir Makarov étend son emprise à travers le monde, obligeant la Task Force 141 à se battre comme jamais auparavant.Modern Warfare III célèbre le 20e anniversaire de Call of Duty avec l'une des plus grandes collections de cartes Multijoueur jamais réunies (à la fois des favoris des fans et de toutes nouvelles cartes). Les 16 cartes de lancement de Modern Warfare 2 (2009) ont été modernisées avec de nouveaux modes et de nouvelles fonctionnalités de jeu et seront disponibles dès le lancement, tandis que plus de 12 nouvelles cartes 6v6 alimenteront les saisons après le lancement.",70.00,25,"10 novembre 2023"),
-
-("Car Mechanic Simulator 2021","Car Mechanic Simulator 2021 est une nouvelle production avec une base de joueurs bien établie. Commencez en tant que nouveau propriétaire d'un garage automobile et faites votre chemin vers un empire du service. Mettez la main à la pâte dans un jeu de simulation aux détails incroyablement réalistes. Préparez-vous à travailler sur 4000+ pièces uniques et plus de 72 voitures. Relevez vos manches et plongez dans un environnement de garage d'un réalisme fou.",25.00,25,"	11 août 2021"),
-
-("Team Fortress Classic","Team Fortress Classic, l'un des jeux d'action en ligne les plus populaires de tous les temps, propose plus de neuf classes de personnages - de l'infirmier à l'espion en passant par le démolisseur - qui s'affrontent dans un style unique de guerre d'équipe en ligne. Chaque classe de personnage possède des armes, des objets et des capacités uniques, et les équipes s'affrontent en ligne dans divers modes de jeu.",24.00,25,"1 avril 1999"),
-
-
-/*("Fortnite","","",23.99,25,""), déjà créé avant pour une autre catégorie*/
-
-("Watch_Dogs 2","Watch Dogs 2 sur PC est la suite du premier jeu de la même série, et on a appris depuis peu qu’il bénéficiera d'une troisième édition dans peu de temps. Il s'agit d'un jeu d'action et d'aventure à la troisième personne au sein d’un open world. Vous incarnez Marcus Holloway, un rebelle qui tente de déjouer les tentatives des autorités de la ville pour contrôler la population à l'aide d'équipements de surveillance de haute technologie. Marcus Holloway est membre d'un gang de hacktivistes, l'un de leurs meilleurs membres, et c'est son travail de mener à bien des missions, d'amener des partisans au gang, connu sous le nom de DedSec.",5.00,25,"29 novembre 2016"),
-
-("GTA V","Grand Theft Auto V pour PC est un jeu d'action et d'aventure, le cinquième de la série GTA. Comme pour les autres jeux de la série, vous gagnez en expérience en commettant des crimes. Le jeu alterne entre le récit à la troisième personne et le jeu à la première personne et serez amené à jouer comme trois criminels en commettant des vols et essayant d'éviter une agence gouvernementale déterminée. Vous ne choisissez pas seulement un personnage à jouer, car le récit vous permet de switcher d'un personnage à un autre. Le jeu se déroule dans la ville fictive de San Andreas qui est basée sur le mode de vie du sud de la Californie. Bien qu'une grande partie de l'action scénarisée du jeu se déroule en ville, le monde est beaucoup plus vaste que dans la RGT précédente et les joueurs peuvent l'explorer librement. La ville se trouve dans le comté de Blaine, près d'une autre ville, Los Santos (les deux sont toute aussi fictives) et toutes les zones peuvent être accessibles dès le début du jeu.",10.00,25,"14 avril 2015"),
-
-("Red Dead Redemption 2","Red Dead Redemption 2 pour PC est un jeu d'action et d'aventure, open world, dans lequel le joueur peut errer librement et jouer à la troisième personne, tout en revenant à la première personne en mode simulation. Le joueur peut commettre des crimes, mais il doit ensuite être prêt à être traqué par les forces de l'ordre, prêt à faire peser toute la force de la loi contre le malfaiteur ! RDR2, comme on l'appelle affectueusement, est sorti sur d'autres plates-formes avant la sortie sur PC, ce qui lui a valu le titre de jeu le plus vendu de tous les temps, avant que les chiffres du jeu PC ne soient inclus. La raison de la popularité du jeu n'est pas difficile à voir.",16.00,25,"5 décembre 2019");
+("Red Dead Redemption 2","Red Dead Redemption 2 is an open-world action-adventure game in which the player can roam freely and play in third-person, while reverting to first-person in simulation mode. The player can commit crimes, but must then be ready to be hunted down by the forces of law and order, ready to bring the full force of the law to bear against the evildoer! RDR2, as it is affectionately known, was released on other platforms before the PC release, earning it the title of best-selling game of all time, before the figures for the PC game were included. The reason for the game''s popularity is not hard to see.",16.00,25,"2019-12-05");
 
 create table if not exists Theme
 (
@@ -120,27 +97,27 @@ INSERT INTO VideoGameTheme (
 	themeId,
 	videoGameId
 ) VALUES
-(1,1),
-(1,2),
+(1,1), (5,1),
+(1,2), (5,2),
 (1,3), (5,3),
-(1,4), (5,4),
+(1,4), (3,4), (5,4),
 (2,5), (5,5),
-(1,6), (2,6),
+(1,6), (2,6), (6,6),
 (2,7), (4,7),
-(2,8), (5,8), (7,8),
-(1,9), (5,9),
-(1,10), (5,10),
-(1,11), (5,11),
-(4,12), (5,12),
+(3,8), (4,8), (7,8),
+(1,9), (3,9), (5,9),
+(1,10), (3,10), (5,10),
+(1,11), (3,11), (5,11),
+(2,12), (3,12), (4,12),
 (4,13), (5,13),
 (1,14), (5,14),
 (1,15), (5,15), (7,15),
-(5,16),
+(2,16), (5,16), (6,16),
 (2,17), (5,17), (6,17),
-(5,18), (6,18),
-(2,19), (6,19),
-(1,20), (5,20), (7,20),
-(1,21), (5,21), (7,21);
+(2,18), (6,18),
+(1,19), (2,19), (6,19),
+(1,20), (2,20), (5,20), (7,20),
+(1,21), (5,21);
 
 create table if not exists User
 (

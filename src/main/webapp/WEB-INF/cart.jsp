@@ -33,9 +33,9 @@
     <main>
         <table>
             <tr>
-                <th>Nom du produit</th>
-                <th>Quantité</th>
-                <th>Prix</th>
+                <th>Product name</th>
+                <th>Quantity</th>
+                <th>Price</th>
             </tr>
 
 			<c:choose>
