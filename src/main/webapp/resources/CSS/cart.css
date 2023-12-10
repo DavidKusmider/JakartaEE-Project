@@ -1,0 +1,18 @@
+.buttonCart{
+    background-color: #202731;
+    color: white;
+    border-radius: 20px;
+    border: yellow solid 2px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.buttonCart:hover{
+    cursor: pointer;
+}
+
+td {
+    text-align: center;
+    text-decoration: none;
+}

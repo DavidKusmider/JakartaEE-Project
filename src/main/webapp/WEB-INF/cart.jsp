@@ -4,16 +4,19 @@
 <head>
     <title>Cart</title>
     <meta charset="UTF-8">
-	<%@ include file="/WEB-INF/head.jsp" %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <%@ include file="/WEB-INF/head.jsp" %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="${pageContext.request.contextPath}/resources/CSS/product.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/CSS/cart.css" rel="stylesheet">
     <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AWWXYZ8Roz4DUf2sWAyz6nTArrGfOwWE6EcEIsaHeK9keQY0L63PlD9YjaobcUi8uKZ0-I3oOgIN-nyp"></script>
     <script src="${pageContext.request.contextPath}/resources/JS/cart.js"></script>
     <script src="${pageContext.request.contextPath}/resources/JS/manageCart.js"></script>
 </head>
 <body>
+<%@ include file="/WEB-INF/mainTitle.jsp" %>
 <%@ include file="/WEB-INF/header.jsp" %>
-    <div id="mainSection">
+    <div id="mainSection" style="top: 30vh">
         <c:choose>
             <c:when test="${right==0}">
             <span>You do not have access to this feature due to a temporary banishment. If you have any complaints, please contact us <a href="contact">there</a>.</span>
@@ -37,15 +40,15 @@
                         <c:forEach items="${ cart }" var="item" varStatus="status">
                             <tr id="${item.getVideoGameId()}">
                                 <td>${CartUtil.getVideoGameNameIdForCart(item.getVideoGameId())}</td>
-                                <td><button class="decrementCart" onclick="decrementCart(${item.getVideoGameId()})">-</button></td>
+                                <td><button class="decrementCart buttonCart" onclick="decrementCart(${item.getVideoGameId()})">-</button></td>
                                 <td><span id="quantity">${item.getVideoGameQuantity()}</span></td>
-                                <td><button class="incrementCart" onclick="incrementCart(${item.getVideoGameId()})">+</button></td>
+                                <td><button class="incrementCart buttonCart" onclick="incrementCart(${item.getVideoGameId()})">+</button></td>
                                 <td>${item.getVideoGamePrice()}</td>
                                 <td>${item.getVideoGamePrice() * item.getVideoGameQuantity()}</td>
-                                <td><button class="removeCart" onclick="removeItemFromCart(${item.getVideoGameId()})">X</button></td>
+                                <td><button class="removeCart buttonCart" onclick="removeItemFromCart(${item.getVideoGameId()})">X</button></td>
                             </tr>
                         </c:forEach>
-                            <tr>
+                            <tr style="margin-top: 5px">
                                 <td>Total Price: <span id="price">${totalCartPrice-fidelityPoint}</span> euros</td>
                                 <td></td>
                                 <td>
@@ -85,6 +88,5 @@
                 .render("#paypal")
         }
     </script>
-    <%@ include file="/WEB-INF/footer.jsp" %>
 </body>
 </html>
