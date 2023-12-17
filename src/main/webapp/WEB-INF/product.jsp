@@ -62,14 +62,30 @@
 						<button id="decrement" onclick="decrementQuantity()">-</button>
 						<span id="quantity">${initialQuantity}</span>
 						<button id="increment" onclick="incrementQuantity(${product.videoGameStock})">+</button>
-						<button id="addCartButton" onclick="addToCartSession(${product.videoGameId}, ${product.videoGamePrice})">Add to Cart</button>
+						<button id="addCartButton" class="button addToCartButton" onclick="addToCartSession(${product.videoGameId}, ${product.videoGamePrice})">Add to Cart</button>
 					</div>
 
 				</article>
 
 
 			</section>
+
+			
 		</div>
+		<div class="popup" id="popup">
+			<h2>Thanks you !</h2>
+			<img id="addImg" src="${pageContext.request.contextPath}/resources/pictures/product/iconeCheckAddToHistory.png" alt="">
+			<p>The game : ${product.videoGameName} has succesfully been added to your cart !</p>
+			<button type="button" onclick="closePopup()">Ok</button>
+		</div>
+
+
+		<script>
+			let popup = document.getElementById("popup");			
+			function closePopup() {
+				popup.classList.remove("open-popup");
+			} 
+		</script>
 
 		<div id="test">
 

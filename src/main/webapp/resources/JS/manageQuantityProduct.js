@@ -29,6 +29,8 @@ function addToCartSession(gameId, price){
     if(quantityDesired > 0) {
         let priceVideoGame = price;
         let videoGameId = gameId;
+		let popup = document.getElementById("popup");			
+
 
         const xhr = new XMLHttpRequest();
         xhr.open('POST', '/JakartaEE-Project/ManageCartServlet', true);
@@ -39,8 +41,8 @@ function addToCartSession(gameId, price){
             if (xhr.readyState === 4 && xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
                 if (response.success) {
+					popup.classList.add("open-popup");
                     console.log('item added to cart');
-                    window.location.href = "/JakartaEE-Project/productList"
                 } else {
                     console.log("item can't be added to cart");
                     window.location.href = "/JakartaEE-Project/authentication";

@@ -84,11 +84,6 @@ section {
 	justify-content: space-around;
 }
 
-img {
-    width: 40vw;
-    height: 40vh;
-    padding: 50px;
-}
 
 #carousel{
     position: relative;
@@ -207,4 +202,68 @@ img {
 
 #test {
 	margin: 30vw 0;
+}
+
+
+.addToCartButton {
+	padding: 10px 60px;
+	background: #fff;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	font-size: 22px;
+	font-weight: 500;
+	border-radius: 30px;
+}
+
+.popup {
+	width: 400px;
+	background-color: #fff;
+	border-radius: 6px;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%,-50%) scale(0.1);
+	text-align: center;
+	padding: 0 30px 30px;
+	visibility: hidden;
+	color: #333;
+	transition: all 0.4s;
+	border: black solid 3px;
+	z-index: 3;
+}
+
+.open-popup {
+	z-index: 3;
+	visibility: visible;
+	top: 50%;
+	transform: translate(-50%,30%) scale(1);
+}
+
+.popup img {
+	width: 10vw;
+	transform: translateY(-90%);
+	border-radius: 50%;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.popup h2 {
+	font-size: 38px;
+	font-weight: 500;
+	margin: 30px 0 10px;
+	transform: translateY(15vh);
+}
+
+.popup button {
+	width: 100%;
+	margin-top: 50px;
+	padding: 10px 0;
+	background: #6fd649;
+	color: #fff;
+	border: 0;
+	outline: none;
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }
