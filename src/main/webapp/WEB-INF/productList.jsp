@@ -10,7 +10,7 @@ table tr td {
 }
 	</style>
 	<head>
-		<title>Pixel Paradise</title>
+		<title>Pixel Paradise - Video Games</title>
 		<%@ include file="/WEB-INF/head.jsp" %>
 		<link href="${pageContext.request.contextPath}/resources/CSS/productList.css" rel="stylesheet">
 	</head>
@@ -25,7 +25,7 @@ table tr td {
 			</svg>
 		</div>
 
-		<h1 id="mainTitle">ProductList</h1>
+		<h1 id="mainTitle">List of video games</h1>
 
 
 		<div class="container">
@@ -35,10 +35,10 @@ table tr td {
 			<input type="radio" name="grid" id="grid-4" value="4">
 
 			<div class="filterGrid">
-				<label for="grid-1"><img src="${pageContext.request.contextPath}/resources/pictures/productList/grid1.png"></label>
-				<label for="grid-2"><img src="${pageContext.request.contextPath}/resources/pictures/productList/grid2.png"></label>
-				<label for="grid-3"><img src="${pageContext.request.contextPath}/resources/pictures/productList/grid3.png"></label>
-				<label for="grid-4"><img src="${pageContext.request.contextPath}/resources/pictures/productList/grid4.png"></label>
+				<label for="grid-1"><img src="https://drive.google.com/uc?export=view&id=1eYPn_EmnZ7I3HukofW3tnXoAusSFJ1Bq" alt=""></label>
+				<label for="grid-2"><img src="https://drive.google.com/uc?export=view&id=1WJB9Z6iFL8Xwl6iLFofAupmOj_9js2R7" alt=""></label>
+				<label for="grid-3"><img src="https://drive.google.com/uc?export=view&id=1DMWEZZUzg5e73VfecAR9trE8wvCcv8BI" alt=""></label>
+				<label for="grid-4"><img src="https://drive.google.com/uc?export=view&id=1oDJa48KrpEa1jetFYYV7T5Hs239YW9-z" alt=""></label>
 			</div>
 			<div class="list">
 				<c:forEach items="${videoGames}" var="videoGame">

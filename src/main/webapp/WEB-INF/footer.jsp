@@ -3,7 +3,7 @@
         <div class="content_footer">
             <div class="profil">
                 <div class="logo_area">
-                    <img src="${pageContext.request.contextPath}/resources/pictures/logo.ico" alt="">
+                    <img src="https://drive.google.com/uc?export=view&id=1hJomfv6_r1adVwyNjxypEPKkzrK6HKDw" alt="">
                     <span class="logo_name">Pixel Paradise</span>
                 </div>
 

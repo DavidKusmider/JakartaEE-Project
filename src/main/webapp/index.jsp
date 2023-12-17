@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <title>Home - JakartaEE-Project</title>
+    <title>Pixel Paradise - Home</title>
     <link href="${pageContext.request.contextPath}/resources/CSS/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <%@ include file="/WEB-INF/head.jsp" %>
@@ -11,7 +11,7 @@
 <body>
 <%@ include file="/WEB-INF/header.jsp" %>
 
-<img src="${pageContext.request.contextPath}/resources/pictures/index-picture.gif"/>
+<img src="https://drive.google.com/uc?export=view&id=1X9QdC3idBqDvRZakl8ByP6I7AkIDno8-" alt=""/>
 
 
 <%@ include file="/WEB-INF/mainTitle.jsp" %>
