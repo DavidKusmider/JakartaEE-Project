@@ -5,7 +5,7 @@
 
 <html lang="en">
 	<head>
-		<title>Product</title>
+		<title>Pixel Paradise - ${product.videoGameName}</title>
 		<link href="${pageContext.request.contextPath}/resources/CSS/product.css" rel="stylesheet">
 		<%@ include file="/WEB-INF/head.jsp" %>
 		<script defer src="${pageContext.request.contextPath}/resources/JS/index.js"></script>
