@@ -6,17 +6,23 @@
 		<span></span>
 		<span></span>
 		<span></span>
-		All games
+		Tous les jeux
 	</a>
 	<a href="${pageContext.request.contextPath}/AllThemesServlet" class="buttonHeader">
 		<span></span>
 		<span></span>
 		<span></span>
 		<span></span>
-		Trending Themes
+		Les Themes Tendances	
 	</a>
 	<div id="place_for_title"></div>
-	<input type="text" id="searchBar" placeholder="SearchBar"/>
+
+	<div id="searchbar-container">
+		<div></div>
+		<input type="text" id="searchBar" placeholder="SearchBar" oninput="researchGame(this)" onfocusout="clearResearchGame(this)"/>
+		<div id="game-search-container"></div>
+	</div>
+
 	<c:choose>
 		<c:when test="${not empty user}">
 			<a href="${pageContext.request.contextPath}/ProfileServlet" id="Profil-button" class="buttonHeader LoginProfilButton">
@@ -38,17 +44,6 @@
 			</a>
 
 		</c:otherwise>
-	</c:choose>
-	<c:choose>
-		<c:when test="${not empty user}">
-			<a href="${pageContext.request.contextPath}/CartServlet" class="buttonHeader">
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				Cart
-			</a>
-		</c:when>
-		<c:otherwise></c:otherwise>
-	</c:choose>
+	</c:choose>	
+	<a href="${pageContext.request.contextPath}/CartServletTest">Panier</a>
 </header>

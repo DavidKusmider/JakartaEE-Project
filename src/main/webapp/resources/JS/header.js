@@ -33,3 +33,47 @@ if (window.location.pathname.includes("/index")) {
     // Si ce n'est pas la page index, ajoutez directement la classe
     titleContainer.classList.add('header-scrolledH1');
 }
+
+/********************************
+        SEARCH GAME
+*********************************/
+function researchGame(inputSearch) {
+    let searchValue = typeof inputSearch == "string" ? inputSearch : inputSearch.value;
+    let searchContainer = document.querySelector("#game-search-container");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/JakartaEE-Project/api/games/search', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            var response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                searchContainer.innerHTML = "";
+                let i = 0;
+                response.data.forEach(game => {
+                    if(i < 5) {
+                        searchContainer.innerHTML += `<div><a href="/JakartaEE-Project/ProductServlet?id=`+ game.gameId + `"><span>` + game.gameName + `</span></a></div>`;
+                        i++;
+                    }
+                });
+            } else {
+                searchContainer.innerHTML = "";
+                searchContainer.innerHTML += `<div><a href="#"><span>Aucun jeu trouvé</span></a></div>`;
+            }
+            document.querySelector("#searchbar-container > div:first-child").style.display = "block"
+        }
+    };
+
+    searchContainer.style.display = "block";
+    var params = "research=" + searchValue;
+    xhr.send(params);
+}
+
+function clearResearchGame(inputSearch) {
+    let searchContainer = document.querySelector("#game-search-container");
+    // searchContainer.innerHTML = "";
+    // searchContainer.style.display = "none";
+    inputSearch.value = "";
+    document.querySelector("#searchbar-container > div:first-child").style.display = "none"
+}

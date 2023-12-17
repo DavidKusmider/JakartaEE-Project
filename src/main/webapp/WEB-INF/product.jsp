@@ -44,7 +44,7 @@
 
 				<article id="informationProduct">
 
-					<h3>A propos du jeu</h3>
+					<h3>About the game</h3>
 					<p>${product.videoGameDescription}</p>
 
 
@@ -53,7 +53,7 @@
 					<p>${product.releaseDate}</p>
 
 					<div id="priceStock">
-						<p>Stock ${product.videoGameStock}</p>
+						<p>Inventory ${product.videoGameStock}</p>
 
 						<p><span id="priceVideoGame">${product.videoGamePrice}</span>$</p>
 					</div>
