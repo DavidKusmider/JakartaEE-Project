@@ -18,8 +18,12 @@
 			<div class="container_INS_CONN" id="container">
 				<div class="form-container sign-up-container">
 					<form method="post" action="authentication" class="form">
-
-						<h1 class="titleLogin">Create an account</h1>
+						<c:choose>
+							<c:when test="${not empty error}">
+								<p style="color: red">${error}</p>
+							</c:when>
+						</c:choose>
+						<h1 class="titleLogin" style="color: #000;">Create an account</h1>
 
 
 						<div class="input-container">
@@ -50,7 +54,12 @@
 
 				<div class="form-container sign-in-container">
 					<form method="get" action="authentication" class="form">
-						<h1 class="titleLogin">Log in</h1>
+						<c:choose>
+							<c:when test="${not empty error}">
+								<p style="color: red">${error}</p>
+							</c:when>
+						</c:choose>
+						<h1 class="titleLogin" style="color: #000">Log in</h1>
 						<div class="input-container">
 							<input type="email" name="mailLogin" class="text-input" id="mailLogin" placeholder="" required>
 							<label for="mailLogin" class="label">Email address</label>
