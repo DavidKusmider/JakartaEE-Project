@@ -305,7 +305,7 @@ textarea::placeholder {
     background-color: pink;
 }
 
-.waveProduct {
+.waweProduct {
     position: relative;
     bottom: 0;
     left: 0;
@@ -315,13 +315,13 @@ textarea::placeholder {
     transform: rotate(0deg);
 }
 
-.waveProduct svg {
+.waweProduct svg {
     position: relative;
     display: block;
     width: calc(100%);
     height: 58px;
 }
 
-.waveProduct .shape-fill {
+.waweProduct .shape-fill {
     fill: #560090;
 }

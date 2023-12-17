@@ -26,8 +26,8 @@
                         <span class="neon"></span>
                         Romain Barré</h2>
                     </div>
-                    <p class="position"> Developer </p>
-                    <p> I'm a 2nd year engineering student at CY TECH Cergy. Autonomous and hard-working, I aim to improve and deepen my knowledge and skills through the various projects I can carry out during my studies and my free time. </p>
+                    <p class="position">Développeur</p>
+                    <p> Etudiant en 2ème année en école d'ingénieur à CY TECH Cergy. Autonome et travailleur, j'ambitionne à améliorer et à approfondir mes connaissances et compétences par l'intermédiaire- des différents projets que je peux mener durant ma scolarité et mon temps libre. </p>
                     <div class="socials_icons">
                                 <span>
                                     <a href="https://www.linkedin.com/in/romain-barr%C3%A9-a2892b253/" target="_blank">
@@ -47,8 +47,8 @@
                         <span class="neon"></span>
                         Yann Etrillard</h2>
                     </div>
-                    <p class="position">Developer</p>
-                    <p> I'm a 2nd year engineering student at CY TECH Cergy. I'm passionate about IT and high technology, and I'm constantly looking to acquire new skills in a variety of areas. </p>
+                    <p class="position">Développeur</p>
+                    <p> Etudiant en 2ème année en école d'ingénieur à CY TECH Cergy. Passionné par le domaine de l'Informatique et des hautes technologiques, je cherche constamment à acquérir de nouvelles compétences dans des domaines variés. </p>
                     <div class="socials_icons">
                                 <span>
                                     <a href="https://www.linkedin.com/in/yann-etrillard/" target="_blank">
@@ -68,8 +68,8 @@
                         <span class="neon"></span>
                         David KUSMIDER</h2>
                     </div>
-                    <p class="position">Developer</p>
-                    <p> I'm 2nd year engineering student at CY TECH Cergy and trainee at CS SZWEDO. I'm capable of analysing and identifying problems and implementing corrective solutions using the engineering techniques I've learned in my courses and projects. My aim is to become an expert in cybersecurity. </p>
+                    <p class="position">Développeur</p>
+                    <p> Etudiant en 2ème année en école d'ingénieur à CY TECH Cergy et stagiaire chez CS SZWEDO. Je suis capable d'analyser, d'identifier les problèmes et de mettre en œuvre des solutions correctives en utilisant les techniques d'ingénierie acquises dans le cadre des cours et des projets. Je vise à devenir un expert en cybersécurité.</p>
                     <div class="socials_icons">
                                 <span>
                                     <a href="https://www.linkedin.com/in/david-kusmider-b54304253/" target="_blank">
@@ -89,11 +89,11 @@
                         <span class="neon"></span>
                         Lucas GUILLOT</h2>
                     </div>
-                    <p class="position">Developer</p>
-                    <p> As a 2nd year student at CY TECH Cergy, I'm passionate about IT, with a particular interest in Artificial Intelligence and cybersecurity. My engineering background fuels my curiosity and my desire to contribute to technological advances, while developing innovative and secure solutions. </p>
+                    <p class="position">Développeur</p>
+                    <p>A CHANGER</p>
                     <div class="socials_icons">
                                 <span>
-                                    <a href="https://www.linkedin.com/in/lucas-guillot/" target="_blank">
+                                    <a href="https://www.linkedin.com/in/robin-meneust/" target="_blank">
                                         <i class="fa-brands fa-linkedin"></i>
                                     </a>
                                 </span>

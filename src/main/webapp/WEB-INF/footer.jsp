@@ -27,19 +27,6 @@
             </div>
         </div>
 
-        <c:choose>
-            <c:when test="${not empty user}">
-                <form method="get" action="authentication" id="logOut-button" class="buttonHeader LoginProfilButton" style="width: 100%">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <input type="submit" id="logOut-input" value="Log out" />
-                </form>
-            </c:when>
-            <c:otherwise></c:otherwise>
-        </c:choose>
-
         <hr>
         
         <div class="footer_bottom">

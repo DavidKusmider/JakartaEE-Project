@@ -1,7 +1,7 @@
 package util;
 
-import entities.HistoryEntity;
-import model.HistoryEntityDAO;
+import entities.CartRow;
+import model.CartEntityDAO;
 import services.Courier;
 import services.SendService;
 import models.SendEnhancedRequestBody;
@@ -41,14 +41,14 @@ public class EmailSender {
     }
 
     public static void sendOrderConfirmationEmail(UserEntity user) {
-        HistoryEntityDAO historyEntityDAO = new HistoryEntityDAO();
-        List<HistoryEntity> history = historyEntityDAO.getAllHistories(user.getUserId());
+        CartEntityDAO cartDAO = new CartEntityDAO(user.getUserId());
+        List<CartRow> cart = cartDAO.getAllCartRows();
 
         String res ="\nName of the video game \t \tQuantity \t \tTotal price\n";     //TODO gérer le problème d'affichage
         double totalPrice = 0;
-        for (HistoryEntity historyEntity: history) {
-            res = res + historyEntity.getVideoGameId() + " \t \t" + historyEntity.getVideoGameQuantity() + " \t \t" + historyEntity.getVideoGamePrice()*historyEntity.getVideoGameQuantity() + " euros\n";
-            totalPrice += historyEntity.getVideoGamePrice()*historyEntity.getVideoGameQuantity();
+        for (CartRow cartRow: cart) {
+            res = res + cartRow.getName() + " \t \t" + cartRow.getQuantity() + " \t \t" + cartRow.getPrice()*cartRow.getQuantity() + " euros\n";
+            totalPrice += cartRow.getPrice()*cartRow.getQuantity();
         }
 
         Courier.init("pk_prod_NN1TZXNX1P45T5JZP61VWN8B0JY2");

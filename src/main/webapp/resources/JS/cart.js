@@ -182,14 +182,6 @@ function deleteCartRow(cartId, userId) {
     var params = `cartId=${cartId}&action=${action}&userIdPARAM=${userId}`;
     xhr.send(params);
 
-}
 
-function toggleNight() {
-    const sun = document.getElementById("retrobg");
-    if (sun.classList.contains("retrobg-shutdown")) {
-        sun.classList.remove("retrobg-shutdown");
-    } else {
-        sun.classList.add("retrobg-shutdown");
-    }
 }
 

@@ -1,7 +1,6 @@
 package controller.servlets;
 
 
-import entities.HistoryEntity;
 import entities.UserEntity;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -12,8 +11,6 @@ import util.EmailSender;
 import util.EncryptPassword;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet(name = "authentication", value = "/authentication")
 public class AuthenticationServlet extends HttpServlet {
@@ -34,13 +31,11 @@ public class AuthenticationServlet extends HttpServlet {
 				} else if (user.getUserPassword().equals(hashedPassword)) {
 					HttpSession session = request.getSession();
 					session.setAttribute("user", user);
-					List<HistoryEntity> cart = new ArrayList<HistoryEntity>();
-					session.setAttribute("cart", cart);
 					if (user.getUserType().equals(Type.Client)) {
 						response.sendRedirect(request.getContextPath() + "/index");
 						//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 					} else if (user.getUserType().equals(Type.Admin) || user.getUserType().equals(Type.Modo)) {
-						response.sendRedirect(request.getContextPath() + "/adminPageServlet");
+						response.sendRedirect(request.getContextPath() + "/admin/users");
 						//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 					}
 				} else {
@@ -86,9 +81,7 @@ public class AuthenticationServlet extends HttpServlet {
 				// send confirmation mail
 				EmailSender.sendAccountConfirmationEmail(user);
 
-				List<HistoryEntity> cart = new ArrayList<HistoryEntity>();
 				session.setAttribute("user", user);
-				session.setAttribute("cart", cart);
 				response.sendRedirect(request.getContextPath() + "/index");
 				//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 			}

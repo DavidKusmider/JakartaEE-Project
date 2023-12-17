@@ -20,7 +20,7 @@ body {
 	background-image: url("../pictures/product/layered-steps-haikei.svg");
 }
 
-.waveProduct {
+.waweProduct {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,14 +30,14 @@ body {
     transform: rotate(0deg);
 }
 
-.waveProduct svg {
+.waweProduct svg {
     position: relative;
     display: block;
     width: calc(100%);
     height: 58px;
 }
 
-.waveProduct .shape-fill {
+.waweProduct .shape-fill {
     fill: #560090;
 }
 
@@ -82,12 +82,6 @@ section {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-}
-
-img {
-    width: 40vw;
-    height: 40vh;
-    padding: 50px;
 }
 
 #carousel{

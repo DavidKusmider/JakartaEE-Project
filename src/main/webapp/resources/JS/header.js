@@ -3,12 +3,16 @@ const bottomLightbar = document.getElementById("bottomLightbar");
 const topLightbar = document.getElementById("topLightbar");
 const rightLightbar = document.getElementById("rightLightbar");
 
+console.log(topLightbar + rightLightbar);
+
 bottomLightbar.classList.add('visible');
 topLightbar.classList.add('visible');
 rightLightbar.classList.add('visible');
 
 // ####################3 HEADER
 const header = document.getElementsByTagName("header")[0];
+
+console.log(header);
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {

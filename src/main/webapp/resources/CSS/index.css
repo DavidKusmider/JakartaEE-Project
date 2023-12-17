@@ -39,7 +39,7 @@ img {
 	z-index: 2;
 }
 
-.blue-wave {
+.blue-wawe {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,14 +49,14 @@ img {
     transform: rotate(180deg);
 }
 
-.blue-wave svg {
+.blue-wawe svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
     height: 346px;
 }
 
-.blue-wave .shape-fill {
+.blue-wawe .shape-fill {
     fill: #000000;
 }
 
@@ -150,8 +150,7 @@ img {
 .item .des{
     margin: 20px 0;
     opacity: 0;
-    animation: showcontent 1s ease-in-out 0.3s 1 forwards;
-    font-weight: bold
+    animation: showcontent 1s ease-in-out 0.3s 1 forwards
 }
 .item button{
     padding: 10px 20px;
