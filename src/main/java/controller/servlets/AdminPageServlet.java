@@ -39,7 +39,7 @@ public class AdminPageServlet extends HttpServlet {
 		request.setAttribute("right", user.getUserRight());
 
 		if(user != null && !user.getUserType().equals(Type.Client)){
-			this.getServletContext().getRequestDispatcher("/admin").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/admin/users").forward(request, response);
 		}else{
 			response.sendRedirect(request.getContextPath() + "/index");
 		}
