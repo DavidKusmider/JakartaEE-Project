@@ -5,7 +5,7 @@
 	<head>
 		<title>Admin Page</title>
 		<%@ include file="/WEB-INF/head.jsp" %>
-		<link href="${pageContext.request.contextPath}/resources/css/adminPage.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/CSS/adminPage.css" rel="stylesheet">
 		<script src="${pageContext.request.contextPath}/resources/JS/admin.js"></script>
 	</head>
 	<body>
@@ -20,19 +20,19 @@
 		// }
 		%>
 
-		<h1 id="mainTitleAdmin">Page Admin</h1>
-
-		<input type="text" onchange="research(this)" placeholder="rechercher" />
+		<h1 id="mainTitleAdmin">Admin page</h1>
+		<h2>Video games</h2>
+		<input type="text" onchange="research(this)" placeholder="research" />
 
 		<table id="tableGames">
 			<thead>
 				<tr>
-					<th>VideoGameId</th>
-					<th>videoGameName</th>
-					<th>videoGameDescription</th>
-					<th>videoGamePrice</th>
-					<th>videoGameStock</th>
-					<th>releaseDate</th>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price per unit</th>
+					<th>Stock</th>
+					<th>Release date</th>
 				</tr>
 			</thead>
 
@@ -51,10 +51,14 @@
 								<input type="button" onclick="incrementValue('stock_${videoGame.videoGameId}')" value="Increment" />
 							</td>
 							<td><input type="text" name="releaseDate" id="releaseDate_${videoGame.videoGameId}" value="${videoGame.releaseDate}" /></td>
-							<td><input type="button" name="action" id="modifyButton_${videoGame.videoGameId}" onclick="updateGameData(${videoGame.videoGameId})" value="Modify"/></td>
-							<td><input type="button" name="action" id="deleteButton_${videoGame.videoGameId}" onclick="deleteGameData(${videoGame.videoGameId})" value="Delete"></td>
-                    
-
+							<td><input type="button" name="action" id="modifyButton_${videoGame.videoGameId}" onclick="updateGameData(${videoGame.videoGameId},${right})" value="Modify"/></td>
+							<c:choose>
+								<c:when test="${right>3}">
+									<td><input type="button" name="action" id="deleteButton_${videoGame.videoGameId}" onclick="deleteGameData(${videoGame.videoGameId})" value="Delete"></td>
+								</c:when>
+								<c:otherwise>
+								</c:otherwise>
+							</c:choose>
 
 						</tr>
 
@@ -64,86 +68,144 @@
 		</table>
 
 		<br/>
-		<h3>Ajouter du stock</h3>
-		<form>
-			<input type="text" name="gameId" id="addGameId" />
-			<input type="text" name="name" id="addName"/>
-			<input type="text" name="description" id="addDescription" />
-			<input type="text" name="price" id="addGamePrice" />
-			<input type="button" onclick="decrementValue('addStock')" value="Decrement" /> 
-			<input type="text" name="stock" id="addStock" value="0" />
-			<input type="button" onclick="incrementValue('addStock')" value="Increment" />
-			<input type="text" name="releaseDate" id="addReleaseDate"/>
-			<input type="button" name="action" id="addButton" onclick="addGameData()" value="Add"/>
+		<c:choose>
+			<c:when test="${right>3}">
+				<h3>Add a video game</h3>
+				<form>
+					<!--<input type="text" name="gameId" id="addGameId" placeholder="Id"/>-->
+					<input type="text" name="name" id="addName" placeholder="Name" required/>
+					<input type="text" name="description" id="addDescription" placeholder="Description" required/>
+					<input type="text" name="price" id="addGamePrice" placeholder="Price" required/>
+					<input type="button" onclick="decrementValue('addStock')" value="Decrement"/>
+					<input type="text" name="stock" id="addStock" value="0" required/>
+					<input type="button" onclick="incrementValue('addStock')" value="Increment"/>
+					<input type="text" name="releaseDate" id="addReleaseDate" placeholder="Release date" required/>
+					<input type="button" name="action" id="addButton" onclick="addGameData()" value="Add" required/>
+				</form>
+				<br>
+			</c:when>
+			<c:otherwise></c:otherwise>
+		</c:choose>
+		<c:choose>
+			<c:when test="${right>4}">
+				<h2>Users</h2>
 
-		</form>
-
-		<h2>Attribution de points de fidélités</h2>
-
-			<c:forEach items="${usersPARAM}" var="user">
-
-				<c:if test="${user.userType eq 'Client'}">
-
-					<form  id="form_${user.userId}" onsubmit="updateModoData(${user.userId}); return false;">
-
-						<input type="text" name="userId" id="userId_${user.userId}" value="${user.userId}" disabled />
-						<input type="text" name="userName" id="userName_${user.userId}" value="${user.userName}" disabled />
-						<input type="text" name="userPassword" id="userPassword_${user.userId}" value="${user.userPassword}" disabled/>
-						<input type="text" name="userMail" id="userMail_${user.userId}" value="${user.userMail}" disabled/>
-						<input type="text" name="userAddress" id="userAddress_${user.userId}" value="${user.userAddress}" disabled/>
-						<input type="text" name="userCreated" id="userCreated_${user.userId}" value="${user.userCreated}" disabled/>
-						<input type="text" name="isActive" id="isActive_${user.userId}" value="${user.isActive}" disabled/>
-						<input type="text" name="userType" id="userType_${user.userId}" value="${user.userType}" disabled/>
-						<input type="text" name="userRight" id="userRight_${user.userId}" value="${user.userRight}" disabled/>
-
-						<input type="button" onclick="decrementValue('userFidelityPoint_${user.userId}')" value="Decrement" /> 
-						<input type="text" name="userFidelityPoint" id="userFidelityPoint_${user.userId}" value="${user.userFidelityPoint}" />
-						<input type="button" onclick="incrementValue('userFidelityPoint_${user.userId}')" value="Increment" />
-
-						<input type="button" name="action" id="modifyButton_${user.userId}" onclick="updateModoData(${user.userId})" value="Modify"/>
-						<input type="button" name="action" id="deleteButton_${user.userId}" onclick="deleteModoData(${user.userId})" value="Delete">
-
-					</form>
-
-				</c:if>
-			
-			</c:forEach>
-
-		<br />
-
-		<h2>Ajout / Suppression de modérateur</h2>
-
-			<c:forEach items="${usersPARAM}" var="user">
-
-				<c:if test="${user.userType eq 'Modo'}">
-
-					<form  id="form_${user.userId}" onsubmit="updateModoData(${user.userId}); return false;">
-
-						<input type="text" name="userId" id="userId_${user.userId}" value="${user.userId}" />
-						<input type="text" name="userName" id="userName_${user.userId}" value="${user.userName}" />
-						<input type="text" name="userPassword" id="userPassword_${user.userId}" value="${user.userPassword}" />
-						<input type="text" name="userMail" id="userMail_${user.userId}" value="${user.userMail}" />
-						<input type="text" name="userAddress" id="userAddress_${user.userId}" value="${user.userAddress}" />
-						<input type="text" name="userCreated" id="userCreated_${user.userId}" value="${user.userCreated}" />
-						<input type="text" name="isActive" id="isActive_${user.userId}" value="${user.isActive}" />
-						<input type="text" name="userType" id="userType_${user.userId}" value="${user.userType}" />
-						<input type="text" name="userRight" id="userRight_${user.userId}" value="${user.userRight}" />
-
-						<input type="button" onclick="decrementValue('userFidelityPoint_${user.userId}')" value="Decrement" /> 
-						<input type="text" name="userFidelityPoint" id="userFidelityPoint_${user.userId}" value="${user.userFidelityPoint}" />
-						<input type="button" onclick="incrementValue('userFidelityPoint_${user.userId}')" value="Increment" />
-
-						<input type="button" name="action" id="modifyButton_${user.userId}" onclick="updateModoData(${user.userId})" value="Modify"/>
-						<input type="button" name="action" id="deleteButton_${user.userId}" onclick="deleteModoData(${user.userId})" value="Delete">
-
-						</tr>
-
-					</form>
-
-				</c:if>
-			
-			</c:forEach>
-
+				<table>
+					<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>E-mail</th>
+						<th>Address</th>
+						<th>Account creation date</th>
+						<th>Active</th>
+						<th>Rights</th>
+						<th>Fidelity points</th>
+					</tr>
+					</thead>
+					<tbody>
+					<c:forEach items="${usersPARAM}" var="user">
+						<c:if test="${user.userType eq 'Client'}">
+							<tr id="trUser_${user.userId}">
+							<form  id="form_${user.userId}" onsubmit="updateUserFidelityPoints(${user.userId}); return false;">
+								<td><input type="text" name="userId" id="userId_${user.userId}" value="${user.userId}" disabled /></td>
+								<td><input type="text" name="userName" id="userName_${user.userId}" value="${user.userName}" disabled /></td>
+								<td><input type="text" name="userMail" id="userMail_${user.userId}" value="${user.userMail}" disabled/></td>
+								<td><input type="text" name="userAddress" id="userAddress_${user.userId}" value="${user.userAddress}" disabled/></td>
+								<td><input type="text" name="userCreated" id="userCreated_${user.userId}" value="${user.userCreated}" disabled/></td>
+								<td><input type="text" name="isActive" id="isActive_${user.userId}" value="${user.isActive}" disabled/></td>
+								<c:choose>
+									<c:when test="${right>5}">
+										<td><input type="text" name="userRight" id="userRight_${user.userId}" value="${user.userRight}"/></td>
+									</c:when>
+									<c:otherwise>
+										<td><input type="text" name="userRight" id="userRight_${user.userId}" value="${user.userRight}" disabled/></td>
+									</c:otherwise>
+								</c:choose>
+								<td>
+									<input type="button" onclick="decrementValue('userFidelityPoint_${user.userId}')" value="Decrement"/>
+									<input type="text" name="userFidelityPoint" id="userFidelityPoint_${user.userId}" value="${user.userFidelityPoint}" />
+									<input type="button" onclick="incrementValue('userFidelityPoint_${user.userId}')" value="Increment"/>
+								</td>
+								<c:choose>
+									<c:when test="${right==5}">
+										<td><input type="button" name="action" id="modifyButton_${user.userId}" onclick="updateUserFidelityPoints(${user.userId})" value="Modify"/></td>
+									</c:when>
+									<c:otherwise>
+										<td><input type="button" name="action" id="modifyButton_${user.userId}" onclick="updateUserFidelityPointsAndRights(${user.userId},${right})" value="Modify"/></td>
+										<td><input type="button" name="action" id="deleteButton_${user.userId}" onclick="deleteModoData(${user.userId})" value="Delete"></td>
+									</c:otherwise>
+								</c:choose>
+								<!--<input type="text" name="userPassword" id="userPassword_${user.userId}" value="${user.userPassword}" disabled/>
+								<input type="text" name="userType" id="userType_${user.userId}" value="${user.userType}" disabled/>-->
+							</form>
+							</tr>
+						</c:if>
+					</c:forEach>
+					</tbody>
+				</table>
+				<br />
+			</c:when>
+			<c:otherwise></c:otherwise>
+		</c:choose>
+		<c:choose>
+			<c:when test="${right>6}">
+				<h2>Moderators</h2>
+				<table>
+					<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>E-mail</th>
+						<th>Address</th>
+						<th>Account creation date</th>
+						<th>Active</th>
+						<th>Rights</th>
+						<th>Fidelity points</th>
+					</tr>
+					</thead>
+					<tbody id="tbodyModo">
+					<c:forEach items="${usersPARAM}" var="user">
+						<c:if test="${user.userType eq 'Modo'}">
+							<tr id="trUser_${user.userId}">
+								<form  id="form_${user.userId}" onsubmit="updateUserFidelityPoints(${user.userId}); return false;">
+									<td><input type="text" name="userId" id="userId_${user.userId}" value="${user.userId}"/></td>
+									<td><input type="text" name="userName" id="userName_${user.userId}" value="${user.userName}"/></td>
+									<td><input type="text" name="userMail" id="userMail_${user.userId}" value="${user.userMail}"/></td>
+									<td><input type="text" name="userAddress" id="userAddress_${user.userId}" value="${user.userAddress}"/></td>
+									<td><input type="text" name="userCreated" id="userCreated_${user.userId}" value="${user.userCreated}"/></td>
+									<td><input type="text" name="isActive" id="isActive_${user.userId}" value="${user.isActive}"/></td>
+									<td><input type="text" name="userRight" id="modoRight_${user.userId}" value="${user.userRight}"/></td>
+									<td>
+										<input type="button" onclick="decrementValue('userFidelityPoint_${user.userId}')" value="Decrement"/>
+										<input type="text" name="userFidelityPoint" id="userFidelityPoint_${user.userId}" value="${user.userFidelityPoint}" />
+										<input type="button" onclick="incrementValue('userFidelityPoint_${user.userId}')" value="Increment"/>
+									</td>
+									<td><input type="button" name="action" id="modifyButton_${user.userId}" onclick="updateModoRights(${user.userId})" value="Modify"/></td>
+									<td><input type="button" name="action" id="deleteButton_${user.userId}" onclick="deleteModoData(${user.userId})" value="Delete"></td>
+									<!--<input type="text" name="userPassword" id="userPassword_${user.userId}" value="${user.userPassword}" disabled/>
+									<input type="text" name="userType" id="userType_${user.userId}" value="${user.userType}" disabled/>-->
+								</form>
+							</tr>
+						</c:if>
+					</c:forEach>
+					</tbody>
+				</table>
+				<br>
+				<h3>Add a moderator</h3>
+				<form>
+					<!--<input type="text" name="gameId" id="addGameId" placeholder="Id"/>-->
+					<input type="text" name="name" id="ModoName" placeholder="Name" required/>
+					<input type="text" name="e-mail" id="ModoEmail" placeholder="E-mail" required/>
+					<input type="text" name="password" id="ModoPassword" placeholder="password" required/>
+					<input type="text" name="address" id="ModoAddress" placeholder="Address"  required/>
+					<input type="text" name="right" id="ModoRight" placeholder="Right" required/>
+					<input type="button" name="action" id="addModo" onclick="addModoData()" value="AddModo" required/>
+				</form>
+				<br>
+			</c:when>
+			<c:otherwise></c:otherwise>
+		</c:choose>
 
 		<%@ include file="/WEB-INF/footer.jsp" %>
 

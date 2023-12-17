@@ -3,6 +3,7 @@ package controller.servlets;
 
 import java.io.IOException;
 
+import entities.VideoGameEntity;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,7 +18,9 @@ import model.Type;
 import entities.UserEntity;
 import model.UserEntityDAO;
 
+import org.json.JSONArray;
 import org.json.simple.JSONObject;
+import util.EncryptPassword;
 
 @WebServlet("/UpdateUserDataAJAX")
 public class UpdateUserDataAJAX extends HttpServlet {
@@ -108,6 +111,96 @@ public class UpdateUserDataAJAX extends HttpServlet {
 			}
 
 			
+		} else if (action.equals("updateFP")) {
+			int fidelityPoints = Integer.parseInt(request.getParameter("fidelityPoints"));
+			UserEntity user = userDAO.getUserEntityById(userId);
+			user.setUserFidelityPoint(fidelityPoints);
+			userDAO.modifyUserEntity(user);
+			jsonResponse.put("success", true);
+
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(jsonResponse.toString());
+		} else if (action.equals("updateFPR")) {
+			int fidelityPoints = Integer.parseInt(request.getParameter("fidelityPoints"));
+			int newRight = Integer.parseInt(request.getParameter("right"));
+
+			UserEntity user = userDAO.getUserEntityById(userId);
+			int right = user.getUserRight();
+
+			user.setUserFidelityPoint(fidelityPoints);
+			if (newRight<3) {
+				user.setUserRight(newRight);
+			}
+			userDAO.modifyUserEntity(user);
+
+			jsonResponse.put("success", true);
+			jsonResponse.put("value",right);
+
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(jsonResponse.toString());
+		} else if (action.equals("updateRights")) {
+			int newRight = Integer.parseInt(request.getParameter("right"));
+
+			UserEntity user = userDAO.getUserEntityById(userId);
+			int right = user.getUserRight();
+
+			if (newRight<6 && newRight>2) {
+				user.setUserRight(newRight);
+			}
+			userDAO.modifyUserEntity(user);
+
+			jsonResponse.put("success", true);
+			jsonResponse.put("value",right);
+
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(jsonResponse.toString());
+		} else if (action.equals("AddModo")) {
+			String name = request.getParameter("name");
+			String email = request.getParameter("email");
+			String password = request.getParameter("password");
+			String address = request.getParameter("address");
+			int right = Integer.parseInt(request.getParameter("right"));
+
+			UserEntityDAO userEntityDAO = new UserEntityDAO();
+			UserEntity userEntity = new UserEntity();
+			userEntity.setUserName(name);
+			userEntity.setUserMail(email.trim().toLowerCase());
+			userEntity.setUserPassword(new EncryptPassword().Encrypt(password.trim()));
+			userEntity.setUserAddress(address);
+			userEntity.setUserRight(right);
+			userEntity.setUserType(Type.Modo);
+			userEntityDAO.saveUserEntity(userEntity);
+
+			jsonResponse.put("success", true);
+			List<UserEntity> users = userDAO.getAllUserEntitys();
+			// Create a JSON array to hold the list of moderators
+			JSONArray data = new JSONArray();
+
+			for (UserEntity user : users) {
+				if (user.getUserType().equals(Type.Modo)) {
+					org.json.JSONObject userJSON = new org.json.JSONObject();
+					userJSON.put("id",user.getUserId());
+					userJSON.put("name",user.getUserName());
+					userJSON.put("mail",user.getUserMail());
+					userJSON.put("address",user.getUserAddress());
+					userJSON.put("date",user.getUserCreated().toString());
+					userJSON.put("isActive",user.getIsActive());
+					userJSON.put("right",user.getUserRight());
+					userJSON.put("points",user.getUserFidelityPoint());
+
+					data.put(userJSON);
+				}
+			}
+
+			// Add the data array to the JSON response
+			jsonResponse.put("data", data);
+
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(jsonResponse.toString());
 		} else {
 			UserEntity user = userDAO.getUserEntityById(userId);
 			userDAO.deleteUserEntity(userId);

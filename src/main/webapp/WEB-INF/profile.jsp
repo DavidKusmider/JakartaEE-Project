@@ -3,7 +3,7 @@
 	<head>
 		<title>Cart</title>
 		<%@ include file="/WEB-INF/head.jsp" %>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/profile.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/profile.css">
 	</head>
 	<body>
 		<%@ include file="/WEB-INF/header.jsp" %>

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Sign Up / Login</title>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/authentication.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/authentication.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<%@ include file="/WEB-INF/head.jsp" %>
 	</head>

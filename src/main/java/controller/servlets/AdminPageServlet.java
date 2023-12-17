@@ -35,7 +35,15 @@ public class AdminPageServlet extends HttpServlet {
 		request.setAttribute("videoGamesPARAM", videoGames);
 		request.setAttribute("usersPARAM", users);
 
-		UserEntity user = (UserEntity) request.getSession().getAttribute("user");
+        UserEntity user = null;
+        try {
+            user = (UserEntity) request.getSession().getAttribute("user");
+            request.setAttribute("right", user.getUserRight());
+        } catch (NullPointerException e) {
+            response.sendRedirect(request.getContextPath() + "/index");
+            return;
+        }
+
 		if(user != null && !user.getUserType().equals(Type.Client)){
 			this.getServletContext().getRequestDispatcher("/admin").forward(request, response);
 		}else{

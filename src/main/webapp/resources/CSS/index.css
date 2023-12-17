@@ -150,8 +150,7 @@ img {
 .item .des{
     margin: 20px 0;
     opacity: 0;
-    animation: showcontent 1s ease-in-out 0.3s 1 forwards;
-    font-weight: bold
+    animation: showcontent 1s ease-in-out 0.3s 1 forwards
 }
 .item button{
     padding: 10px 20px;
@@ -184,6 +183,22 @@ img {
     border: 1px solid #555;
     transition: 0.5s;
 }
+
 .buttons button:hover{
     background-color: #bac383;
 }
+
+#section2 {
+	transform: translateY(-20vh);
+}
+
+#logOut-button {
+		width: 30vw;
+}
+
+#logOut-input {
+	background: transparent;
+		color: white;
+		font-size: 1.2rem;
+}
+

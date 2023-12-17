@@ -20,16 +20,14 @@ public class AuthenticationServlet extends HttpServlet {
 		if(request.getSession().getAttribute("user") == null) {
 			String mail = request.getParameter("mailLogin");
 			String password = request.getParameter("passwordLogin");
-
-			String hashedPassword = new EncryptPassword().Encrypt(password);
-
 			if (mail == null || mail.trim().isEmpty() || password == null || password.trim().isEmpty()) {
-				response.sendRedirect(".");
+				response.sendRedirect(request.getContextPath() + "/login");
 			} else {
 				UserEntityDAO userDAO = new UserEntityDAO();
-				UserEntity user = userDAO.getUserEntityByEmail(mail);
+				UserEntity user = userDAO.getUserEntityByEmail(mail.trim().toLowerCase());
+				String hashedPassword = new EncryptPassword().Encrypt(password.trim());
 				if (user == null) {
-					response.sendRedirect(".");
+					response.sendRedirect(request.getContextPath() + "/login");
 				} else if (user.getUserPassword().equals(hashedPassword)) {
 					HttpSession session = request.getSession();
 					session.setAttribute("user", user);
@@ -37,16 +35,16 @@ public class AuthenticationServlet extends HttpServlet {
 						response.sendRedirect(request.getContextPath() + "/index");
 						//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 					} else if (user.getUserType().equals(Type.Admin) || user.getUserType().equals(Type.Modo)) {
-						response.sendRedirect(request.getContextPath() + "/adminPageServlet");
+						response.sendRedirect(request.getContextPath() + "/admin/users");
 						//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 					}
 				} else {
-					response.sendRedirect(".");
+					response.sendRedirect(request.getContextPath() + "/login");
 				}
 			}
 		} else if (request.getSession().getAttribute("user") != null) {
 			request.getSession().invalidate();
-			response.sendRedirect(".");
+			response.sendRedirect(request.getContextPath() + "/login");
 		}
 	}
 
@@ -58,21 +56,21 @@ public class AuthenticationServlet extends HttpServlet {
 		String address = request.getParameter("address");
 
 		if (name == null || name.trim().isEmpty() || mail == null || mail.trim().isEmpty() || password == null || password.trim().isEmpty() || address == null || address.trim().isEmpty()) {
-			response.sendRedirect(".");
+			response.sendRedirect(request.getContextPath() + "/login");
 		} else {
 
-			String hashedPassword = new EncryptPassword().Encrypt(password);
+			String hashedPassword = new EncryptPassword().Encrypt(password.trim());
 
 			UserEntityDAO userDAO = new UserEntityDAO();
 			UserEntity user = new UserEntity();
 
-			UserEntity userCheck = userDAO.getUserEntityByEmail(mail);
+			UserEntity userCheck = userDAO.getUserEntityByEmail(mail.trim().toLowerCase());
 			// check if user already existing with the same mail address.
 			if (userCheck != null) {
 				response.sendRedirect(".");
 			} else {
 				user.setUserName(name);
-				user.setUserMail(mail);
+				user.setUserMail(mail.trim().toLowerCase());
 				user.setUserPassword(hashedPassword);
 				user.setUserAddress(address);
 
@@ -84,7 +82,7 @@ public class AuthenticationServlet extends HttpServlet {
 				EmailSender.sendAccountConfirmationEmail(user);
 
 				session.setAttribute("user", user);
-				response.sendRedirect(request.getContextPath() + "/productList");
+				response.sendRedirect(request.getContextPath() + "/index");
 				//this.getServletContext().getRequestDispatcher("/adminCheck").forward(request, response);
 			}
 		}

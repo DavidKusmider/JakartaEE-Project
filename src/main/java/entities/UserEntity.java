@@ -53,7 +53,7 @@ public class UserEntity {
 			userType = Type.Client;
 		}
 		if(userRight == null){
-			userRight = 1;
+			userRight = 2;
 		}
 		if(userFidelityPoint == null){
 			userFidelityPoint = 0;

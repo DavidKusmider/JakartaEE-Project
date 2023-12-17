@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.*;
-
+import org.hibernate.query.Query;
 
 public class UserEntityDAO {
 
@@ -28,6 +28,32 @@ public class UserEntityDAO {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		List<UserEntity> users = session.createQuery("FROM UserEntity", UserEntity.class).list();
 		session.close();
+		return users;
+	}
+
+    public List<UserEntity> researchUser(String userName) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+
+		int id = -1;
+		try {
+			id = Integer.parseInt(userName);
+		} catch (NumberFormatException e) {
+			// En cas d'erreur de conversion, nous laissons id à -1 pour indiquer que ce n'est pas un entier valide.
+		}
+
+		String likePattern = '%' + userName + '%';
+
+		// Créez une requête avec des paramètres nommés
+		Query<UserEntity> query = session.createQuery(
+			"FROM UserEntity WHERE userId = :id OR userName LIKE :likePattern OR userMail LIKE :likePattern", UserEntity.class
+		);
+
+		query.setParameter("id", id);
+		query.setParameter("likePattern", likePattern);
+
+		List<UserEntity> users = query.list();
+		session.close();
+
 		return users;
 	}
 

@@ -6,7 +6,7 @@
 <html lang="en">
 	<head>
 		<title>Product</title>
-		<link href="${pageContext.request.contextPath}/resources/css/product.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/CSS/product.css" rel="stylesheet">
 		<%@ include file="/WEB-INF/head.jsp" %>
 		<script defer src="${pageContext.request.contextPath}/resources/JS/index.js"></script>
 	</head>
@@ -35,42 +35,42 @@
 					<div id="carousel">
 
 				<div id="slide">
-					<div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/11.png);">
+					<div class="item" style="background-image: url(./resources/pictures/ARK-picture.jpeg);">
 						<div class="content">
 							<div class="name">LUNDEV</div>
 							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/Gris-picture.avif);">
+					<div class="item" style="background-image: url(./resources/pictures/Gris-picture.avif);">
 						<div class="content">
 							<div class="name">LUNDEV</div>
 							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/1.png);">
+					<div class="item" style="background-image: url(./resources/pictures/Undertale-picture.jpg);">
 						<div class="content">
 							<div class="name">LUNDEV</div>
 							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/5.png);">
+					<div class="item" style="background-image: url(./resources/pictures/theWitcherIII-picture.jpg);">
 						<div class="content">
 							<div class="name">LUNDEV</div>
 							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/9.png);">
+					<div class="item" style="background-image: url(./resources/pictures/OuterWilds-picture.webp);">
 						<div class="content">
 							<div class="name">LUNDEV</div>
 							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
 							<button>See more</button>
 						</div>
 					</div>
-					<div class="item" style="background-image: url(${pageContext.request.contextPath}/resources/pictures/games/6.png);">
+					<div class="item" style="background-image: url(./resources/pictures/battlefield1-picture.webp);">
 						<div class="content">
 							<div class="name">LUNDEV</div>
 							<div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
@@ -99,12 +99,12 @@
 					<div id="priceStock">
 						<p>Stock ${product.videoGameStock}</p>
 
-						<p>${product.videoGamePrice}€</p>
+						<p>${product.videoGamePrice}$</p>
 					</div>
 
 					<div id="controlAddCart">
 						<button>-</button>
-						1
+						0
 						<button>+</button>
 						<button>Add to Cart</button>
 					</div>
