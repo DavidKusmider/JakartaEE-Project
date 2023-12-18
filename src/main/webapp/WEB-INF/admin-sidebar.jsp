@@ -12,7 +12,7 @@
             <span class="tooltip">Search</span>
         </li>
         <li>
-            <a href="${pageContext.request.contextPath}/">
+            <a href="${pageContext.request.contextPath}/index">
             <i class="fa-solid fa-table-cells-large"></i>
             <span class="links_name">Website</span>
             </a>

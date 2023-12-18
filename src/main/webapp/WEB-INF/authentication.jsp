@@ -20,7 +20,7 @@
 					<form method="post" action="authentication" class="form">
 						<c:choose>
 							<c:when test="${not empty error}">
-								<p style="color: red">${error}</p>
+								<p style="border: 1px solid red; background-color: pink; color: black;">${error}</p>
 							</c:when>
 						</c:choose>
 						<h1 class="titleLogin" style="color: #000;">Create an account</h1>
@@ -56,7 +56,7 @@
 					<form method="get" action="authentication" class="form">
 						<c:choose>
 							<c:when test="${not empty error}">
-								<p style="color: red">${error}</p>
+								<p style="border: 1px solid red; background-color: pink; color: black;">${error}</p>
 							</c:when>
 						</c:choose>
 						<h1 class="titleLogin" style="color: #000">Log in</h1>

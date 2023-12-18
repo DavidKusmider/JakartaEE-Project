@@ -17,6 +17,9 @@
 		</div>
 
 		<h1 id="titleProfile">User's Profile</h1>
+		<c:if test="${user.userRight eq 7}">
+			<a href="${pageContext.request.contextPath}/adminPageServlet" id="administration">Administration</a>
+		</c:if>
 
 		<c:if test="${user ne null}">
 			<table id="informationProfile">

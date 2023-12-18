@@ -18,6 +18,7 @@
 	display: flex;
 	margin: 20vh 0;
 	z-index: -1;
+	opacity: 0.4;
 }
 
 .bubbles span {
@@ -209,4 +210,19 @@ button.color__red {
 		font-size: 6px;
 		padding: 3px;
 	}
+}
+
+#administration {
+    display: inline-block;
+    padding: 10px 15px;
+	margin-bottom: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#administration:hover {
+    background-color: #2980b9; 
 }

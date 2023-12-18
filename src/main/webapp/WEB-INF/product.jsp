@@ -62,7 +62,14 @@
 						<button id="decrement" onclick="decrementQuantity()">-</button>
 						<span id="quantity">${initialQuantity}</span>
 						<button id="increment" onclick="incrementQuantity(${product.videoGameStock})">+</button>
-						<button id="addCartButton" class="button addToCartButton" onclick="addToCartSession(${product.videoGameId}, ${product.videoGamePrice})">Add to Cart</button>
+						<c:choose>
+							<c:when test="${user.userRight eq 1}">
+								<button class="button addToCartButton" onclick="openErrorPopup()">Add to Cart</button>
+							</c:when>
+							<c:otherwise>
+								<button class="button addToCartButton" onclick="addToCartSession(${product.videoGameId}, ${product.videoGamePrice})">Add to Cart</button>
+							</c:otherwise>
+						</c:choose>		
 					</div>
 
 				</article>
@@ -79,9 +86,25 @@
 			<button type="button" onclick="closePopup()">Ok</button>
 		</div>
 
+		<div class="popupError" id="popupError">
+			<h2>Warning ! You dont have the right to do that, please contact an Admin !</h2>
+			<img id="addImg" src="${pageContext.request.contextPath}/resources/pictures/product/retirer.png" alt="">
+			<button type="button" onclick="closeErrorPopup()">Ok</button>
+		</div>
+
+
 
 		<script>
 			let popup = document.getElementById("popup");			
+			let popupError = document.getElementById("popupError");			
+			  console.log(popup);
+			  console.log(popupError);
+			function openErrorPopup() {
+				popupError.classList.add("open-popupError");
+			}
+			function closeErrorPopup() {
+				popupError.classList.remove("open-popupError");
+			}
 			function closePopup() {
 				popup.classList.remove("open-popup");
 			} 
