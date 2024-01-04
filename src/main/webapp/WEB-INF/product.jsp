@@ -80,7 +80,7 @@
 			
 		</div>
 		<div class="popup" id="popup">
-			<h2>Thanks you !</h2>
+			<h2>Thank you !</h2>
 			<img id="addImg" src="${pageContext.request.contextPath}/resources/pictures/product/iconeCheckAddToHistory.png" alt="">
 			<p>The game : ${product.videoGameName} has succesfully been added to your cart !</p>
 			<button type="button" onclick="closePopup()">Ok</button>

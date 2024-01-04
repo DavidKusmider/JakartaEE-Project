@@ -6,14 +6,14 @@
 		<span></span>
 		<span></span>
 		<span></span>
-		Tous les jeux
+		All Games	
 	</a>
 	<a href="${pageContext.request.contextPath}/AllThemesServlet" class="buttonHeader">
 		<span></span>
 		<span></span>
 		<span></span>
 		<span></span>
-		Les Themes Tendances	
+		Trending Themes	
 	</a>
 	<div id="place_for_title"></div>
 
@@ -30,7 +30,7 @@
 				<span></span>
 				<span></span>
 				<span></span>
-				Profil
+				Profile
 			</a>
 
 		</c:when>

@@ -11,7 +11,7 @@
 <body>
 <%@ include file="/WEB-INF/header.jsp" %>
 
-<img src="https://drive.google.com/uc?export=view&id=1X9QdC3idBqDvRZakl8ByP6I7AkIDno8-" alt=""/>
+<img src="${pageContext.request.contextPath}/resources/pictures/index-picture.gif"/>
 
 
 <%@ include file="/WEB-INF/mainTitle.jsp" %>
