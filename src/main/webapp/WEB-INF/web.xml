@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+		xmlns:my="http://jakarta.apache.org/tomcat/jsp2-example-taglib"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+  <display-name>Archetype Created Web Application</display-name>
+
+
+    <servlet>
+        <servlet-name>AuthenticationVue</servlet-name>
+        <jsp-file>/WEB-INF/authentication.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AuthenticationVue</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+	<servlet>
+		<servlet-name>ProfileVue</servlet-name>
+		<jsp-file>/WEB-INF/profile.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProfileVue</servlet-name>
+		<url-pattern>/profile</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminPageVue</servlet-name>
+        <jsp-file>/WEB-INF/admin.jsp</jsp-file>
+    </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>AdminPageVue</servlet-name>
+	  <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	  <servlet-name>AllThemesVue</servlet-name>
+	  <jsp-file>/WEB-INF/allThemes.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>AllThemesVue</servlet-name>
+	  <url-pattern>/allThemes</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProductListVue</servlet-name>
+    <jsp-file>/WEB-INF/productList.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ProductListVue</servlet-name>
+    <url-pattern>/productList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	  <servlet-name>ProductVue</servlet-name>
+	  <jsp-file>/WEB-INF/product.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>ProductVue</servlet-name>
+	  <url-pattern>/product</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ContactVue</servlet-name>
+        <jsp-file>/WEB-INF/contactUs.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ContactVue</servlet-name>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AboutUsVue</servlet-name>
+        <jsp-file>/WEB-INF/aboutUs.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AboutUsVue</servlet-name>
+        <url-pattern>/aboutUs</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CartVue</servlet-name>
+        <jsp-file>/WEB-INF/cart.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CartVue</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IndexVue</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IndexVue</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,228 @@
+#titleProfile {
+	margin: 100px;
+}
+
+#titleError {
+	margin: 40vh 100px;
+}
+
+.containerProfile {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.bubbles {
+	position: relative;
+	display: flex;
+	margin: 20vh 0;
+	z-index: -1;
+	opacity: 0.4;
+}
+
+.bubbles span {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	background: #4fc3dc;
+	margin: 0 4px;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #4fc3dc44,
+				0 0 50px #4fc3Dc,
+				0 0 100px #4fc3Dc;
+	animation: animate 15s linear infinite;
+	animation-duration: calc(125s / var(--i));
+} 
+
+.bubbles span:nth-child(even) {
+	background: #ff2d75;
+	box-shadow: 0 0 10px #ff2d7544,
+				0 0 50px #ff2d75,
+				0 0 100px #ff2d75;
+
+}
+
+@keyframes animate {
+	0%
+	{
+		transform: translateY(20vh) scale(0);
+	}
+	100%
+	{
+		transform: translateY(-70vh) scale(1);
+	}
+
+
+}
+
+#informationProfile {
+	margin: auto;
+}
+
+.waveProduct {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(0deg);
+}
+
+.waveProduct svg {
+    position: relative;
+    display: block;
+    width: calc(100%);
+    height: 58px;
+}
+
+.waveProduct .shape-fill {
+    fill: #560090;
+}
+
+tr {
+	margin: 5px;
+	margin-bottom: 10px;
+}
+
+button {
+	background-color: transparent;
+	border: transparent;
+}
+
+button.color__red {
+	filter: hue-rotate(170deg);
+}
+
+.input1 {
+	padding: 10px;
+	border: white solid 1.5px;
+	border-radius: 20px;
+	background-color: transparent; /* Couleur de fond translucide */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+	outline: none; /* Supprime la bordure de focus par défaut */
+	transition: background-color 0.3s ease;
+}
+
+.input1::placeholder {
+	color: #888; /* Couleur du texte de l'indicateur de lieu */
+}
+
+.input1:focus {
+	background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond légèrement plus opaque lors du focus */
+}
+
+.input2 {
+	padding: 10px;
+	border: white solid 1.5px;
+	border-radius: 20px;
+	background-color: transparent; /* Couleur de fond translucide */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+	outline: none; /* Supprime la bordure de focus par défaut */
+	transition: background-color 0.3s ease;
+}
+
+.input2::placeholder {
+	color: #888; /* Couleur du texte de l'indicateur de lieu */
+}
+
+.input2:focus {
+	background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond légèrement plus opaque lors du focus */
+}
+
+.submit {
+	padding: 10px;
+	color: #03e9f4;
+	border: solid 1.5px;
+	border-radius: 20px;
+	border-color: #03e9f4;
+	background-color: transparent;
+	box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+	outline: none;
+	transition: background-color 0.3s ease;
+	filter: hue-rotate(270deg);
+}
+
+.submit:hover {
+	color: black;
+	background-color: #03e9f4;
+}
+
+#form {
+	position: relative;
+	animation: slideDown 2s ease-out;
+}
+
+@keyframes slideDown {
+	from {
+		top: -50px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.buttonHeader {
+		font-size: 1rem;
+		padding: 16px 16px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.buttonHeader {
+		font-size: 0.7rem;
+		padding: 12px 12px;
+	}
+	#place_for_title {
+		max-width: calc(100vw/5);
+	}
+
+	#searchBar {
+		max-width: calc(100vw/5);
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.input1, .input2, .submit, #searchBar {
+		font-size: 10px;
+		padding: 5px;
+	}
+}
+
+
+@media screen and (max-width: 500px) {
+	.buttonHeader {
+		font-size: 0.5rem;
+		padding: 8px 8px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.buttonHeader {
+		font-size: 0.2rem;
+		padding: 5px 5px;
+	}
+	.input1, .input2, .submit, #searchBar {
+		font-size: 6px;
+		padding: 3px;
+	}
+}
+
+#administration {
+    display: inline-block;
+    padding: 10px 15px;
+	margin-bottom: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#administration:hover {
+    background-color: #2980b9; 
+}
